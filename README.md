@@ -1,93 +1,98 @@
 # KTB-lite
 
+## Contents:
+- Intro 
+- Corpora in KTB-lite
+- First time installation 
+- Instructions for using the search
+- Quickstart
 
 
-## Getting started
+## Intro
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+This is the lite version of the [KTB platform](https://gitlab.com/polinayordanova/treebanking).
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+KTB is a tool for data management, processing and manipulation, and querying of XML based morpho-syntactically annotated (treebanked) corpora. It has been developed by Polina Yordanova and Jamie Norrish on the basis of the [Kiln platform](https://kiln.readthedocs.io/en/latest/projects.html), for the research purposes of Yordanova's doctoral project.  In its specification as a search platform for Ancient Greek treebanks created within the AGDT framework, it has a generalised search, allowing a non-technically prepared user to search for the main features from the AGDT annotation scheme, and additional annotations built on the basis of those features allowing for more complicated queries. The searching functionalities in the lite version are are organised in three levels:
+- Document search
+- Sentence search
+- Word search
 
-## Add your files
+## Corpora in KTB-lite
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+The treebanked corpora that currently make up the content of KTB-lite are:
+- papygreek - the corpus prepared within the Digital Grammar of Greek Documentary Papyri project https://papygreek.com/ ;
+- papygreek_letters - a subset of PapyGreek's collection containing only letters;
+- duke_letters - automatically annotated data from DDbDP, prepared by Alek Keersmaekers https://github.com/alekkeersmaekers/duke-nlp/blob/master/README.md . The version of the corpus housed in KTB-lite has been downloaded in 2022 and contains the letters that are found in both PapyGreek’s and Duke-nlp’s collections;
+- literature_prose - a compound corpus made up of AGDT's https://perseusdl.github.io/treebank_data/  prose authors and Vanessa Gorman's trees https://perseids-publications.github.io/gorman-trees/ ;
+- literature_verse - AGDT's verse authors plus Sappho, prepared within the PEDALION project https://en.pedalion.org/about, and Balbilla, annotated by Gabriel Bodard and Marja Vierros in PapyGreek's platform .
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/polinayordanova/ktb-lite.git
-git branch -M main
-git push -uf origin main
-```
+## First time installation:
 
-## Integrate with your tools
+Start by checking what version of Java you are running: open your Command Prompt / Terminal and type in “java -version”. My system is using 15; any of the recent ones should work too, but if at any point during the following steps you encounter a Java error, you might need to uninstall the version you’re currently using and install 15 instead.
 
-- [ ] [Set up project integrations](https://gitlab.com/polinayordanova/ktb-lite/-/settings/integrations)
+If you are working on a Mac, you should also have wget - here are some instructions how to install it https://www.fossmint.com/install-and-use-wget-on-mac/  
 
-## Collaborate with your team
+Installation steps:
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+1. Clone or download KTB-lite from the repository https://gitlab.com/polinayordanova/ktb-lite. If you downloaded the ZIP, you will need to unzip it before you can do anything with it. Remember which directory you are putting it in; I’d recommend you put it on the Desktop if you have enough space, while you get used to the whole procedure.
 
-## Test and Deploy
+2. In your Command prompt/Terminal navigate to the directory where KTB-lite is. The command to change directory is “cd” and the “path” that leads to the directory. Then press Enter. The folder containing the whole platform is called “ktb-lite”, so if you put it on the Desktop, it would look like this:
 
-Use the built-in continuous integration in GitLab.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+- For Windows: 
+cd Desktop\ktb-lite
 
-***
+- For Mac:
+cd Desktop/ktb-lite
 
-# Editing this README
+(the only difference here being the direction of the slash - forward for Windows and backward for Mac; keep in mind that it is case sensitive)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+3. Start the server that runs the platform by typing in the following and pressing Enter:
 
-## Suggestions for a good README
+- For Windows:
+build.bat
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+- For Mac:
+sh build.sh
 
-## Name
-Choose a self-explaining name for your project.
+Wait until the message “Development server is running at http://127.0.0.1:9999. Quit the server with CONTROL-C.” shows up. 
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+NB! This needs to be running the whole time while you are using the platform! You can just minimize it to get it out of the way, but don’t close the window.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+4. Go to http://127.0.0.1:9999 in your browser. Once you are seeing the home page with the Corpus selection and the Menu, you are ready for indexing.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+5. For indexing: open *another* Command Prompt/Terminal window. Once again follow the instructions from step 2 to navigate to the folder containing the platform.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+6. To index:
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+- If you want to index everything:
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+  
+  - For Windows: build.bat solr
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+  - For Mac: sh build.sh solr
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+- If you only want to index a single corpus:
+  - For Windows: build.bat index
+  - For Mac: sh build.sh index
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+(then, when you are prompted by the terminal, enter the desired corpus directory)
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Indexing of all corpora takes about 5 hours, so my advice is to do it overnight. Once you have indexed all the documents, the Command Prompt/Terminal will have returned into its initial state where it allows you to type in another command and that’s how you know the procedure has finished successfully. You only ever need to do indexing once.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Now you are ready to start having fun with the lite version of KTB! The home page with the Corpus Selection is mostly for summary and overview purposes, querying is now done through the searches in the menu tab.
 
-## License
-For open source projects, say how it is licensed.
+## Instructions for using the Search:
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+By default, the field where you type in the word you are searching for works with the lemma. If you want to type in a particular form instead, you need to tick the Search word forms box first.
+Always use the Facets first! Make sure to have set as many parameters from your search in the facets as possible, since this will change the numbers displayed and it will give you a more exact overview. Only use the table column filter once you are sure you have all the important query parameters set in place in the facets.
+You can reorder the results in the table by clicking on the title of the column (for example, to order forward or backwards alphabetically, or to bring up the rows that actually have a result in that column).
+The hyperlink in the Text tab takes you to the sentence containing this particular word and its tree.
+
+## Quickstart (for every time you want to be using KTB-lite from now on):
+
+Open the Command Prompt / Terminal and cd to the directory where you put KTB-lite.
+(e.g. cd Downloads/ktb-lite)
+Type in “build.bat” or “./build.sh” and press Enter. Wait until the message “Development server is running at http://127.0.0.1:9999. Quit the server with CONTROL-C.” shows up.
+Go to http://127.0.0.1:9999/ and follow the links from there.
+In order to close the platform, just close the Command Prompt / Terminal.
