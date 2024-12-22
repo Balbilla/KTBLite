@@ -212,13 +212,9 @@
      required="false" stored="true" type="string" />
    <field indexed="true" multiValued="false" name="w_first_head_has_article"
      required="false" stored="true" type="boolean" />
-   <field indexed="true" multiValued="false" name="w_first_head_has_ds"
-     required="false" stored="true" type="boolean" />
    <field indexed="true" multiValued="false" name="w_first_head_other_modifiers"
      required="false" stored="true" type="string" />
    <field indexed="true" multiValued="false" name="w_first_head_is_name"
-     required="false" stored="true" type="boolean" />
-   <field indexed="true" multiValued="false" name="w_first_head_has_numeral"
      required="false" stored="true" type="boolean" />
    <field indexed="true" multiValued="true" name="w_first_level_dependent_lemma"
      required="false" stored="true" type="string" />
@@ -240,18 +236,14 @@
      required="false" stored="true" type="string" />
    <field indexed="true" multiValued="false" name="w_has_article"
      required="false" stored="true" type="boolean" />
-   <field indexed="true" multiValued="false" name="w_has_numeral"
-     required="false" stored="true" type="boolean" />
    <field indexed="true" multiValued="true" name="w_article_case"
      required="false" stored="true" type="string" />
    <field indexed="true" multiValued="false" name="w_is_proper_name"
      required="false" stored="true" type="boolean" />
-   <field indexed="true" multiValued="false" name="w_is_ag"
-     required="false" stored="true" type="boolean" />
    <field indexed="true" multiValued="false" name="w_animacy"
      required="false" stored="true" type="string" />
    <field indexed="true" multiValued="false" name="w_is_in_hyperbaton"
-     required="false" stored="true" type="boolean" />   
+     required="false" stored="true" type="boolean" />
    <field indexed="true" multiValued="false" name="w_agrees_with_governor"
      required="false" stored="true" type="boolean" />
    <field indexed="true" multiValued="false" name="w_position_in_np"
@@ -262,14 +254,178 @@
      required="false" stored="true" type="string" />
    <field indexed="true" multiValued="false" name="w_np_forms"
      required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="w_subtree_size"
+     required="false" stored="true" type="int" />
+   <field indexed="true" multiValued="false" name="w_subtree_heaviness"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="w_subtree_is_discontinuous_to_first_non_coordinator_governor"
+     required="false" stored="true" type="boolean" />
    <field indexed="true" multiValued="false" name="w_is_next_to_governor"
      required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="false" name="np_is_np_head"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="false" name="np_is_verbal_noun"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="false" name="np_preceding_adjective_syllable_contour"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="false" name="np_following_adjective_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_demonstrative_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_following_demonstrative_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_noun_syllable_contour"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="false" name="np_following_noun_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_numeral_syllable_contour"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="false" name="np_following_numeral_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_participle_syllable_contour"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="false" name="np_following_participle_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_pp_syllable_contour"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="false" name="np_following_pp_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_pronoun_syllable_contour"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="false" name="np_following_pronoun_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_quantifier_syllable_contour"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="false" name="np_following_quantifier_syllable_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_subtree_sizes"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_mmnp_distribution"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_articular_mmnp_position"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_preceding_subtree_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_following_subtree_sizes"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_following_subtree_contour"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_tree_pattern"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_simple_pattern"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_span_pattern"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_articular_adjectival_subpattern"
+     required="false" stored="true" type="string" />
    <field indexed="false" multiValued="false" name="np_forms"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_is_in_greeting_formula"
+     required="false" stored="true" type="boolean" />   
+   <field indexed="true" multiValued="false" name="np_is_in_dating_formula"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="false" name="np_has_multiple_modifiers"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="true" name="np_types_of_multiple_modifiers"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_types_of_modifiers"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_adjective_coordination"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_discontinuity_type"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_has_deprecated_ap"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="false" name="np_has_adnominal_genitive"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="false" name="np_introduced_by_adp"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="true" name="np_ag_is_name"
+     required="false" stored="true" type="boolean" />   
+   <field indexed="true" multiValued="true" name="np_ag_pos"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_ag_gender"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_ag_form"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_ag_lemma"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_ag_number"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_ag_has_article"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="true" name="np_ag_position"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_ag_tree_size"
+     required="false" stored="true" type="int" />
+   <field indexed="true" multiValued="true" name="np_ag_animacy"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_has_only_ag_modifier"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="true" name="np_can_govern_genitive_category"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_has_agreeing_adjective"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="true" name="np_agreeing_adjective_position_incl_quantifiers"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_adj_position"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_adjectives"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_hyperbaton_adjectives"
+     required="false" stored="true" type="string" />   
+   <field indexed="true" multiValued="true" name="np_hyperbaton_edge_degrees"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_hyperbaton_gap_degrees"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_hyperbaton_instigated_by"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="hyperbaton_instigated_by"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_demonstrative_position"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_demonstrative_lemma"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_has_demonstrative_modifier"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="true" name="np_noun_position"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_pp_position"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_pp_lemma"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="np_has_pp_modifier"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="false" name="np_has_pronominal_modifier"
+     required="false" stored="true" type="boolean" />
+   <field indexed="true" multiValued="true" name="np_pronoun_lemma"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="np_pronominal_modifier_position"
      required="false" stored="true" type="string" />
    <field indexed="true" multiValued="true" name="sentence_b_w_o_pattern"
      required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_b_w_o_subjects_pos"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_b_w_o_subjects_case"
+     required="false" stored="true" type="string" />
    <field indexed="true" multiValued="true" name="sentence_subject_is_name"
      required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_b_w_o_objects_pos"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_b_w_o_objects_case"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_b_w_o_infinitive_subjects"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_b_w_o_infinitive_objects"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_object_verb_pattern"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="true" name="sentence_subject_verb_pattern"
+     required="false" stored="true" type="string" />
+   <field indexed="true" multiValued="false" name="sentence_count_subordinate_clauses"
+     required="false" stored="true" type="int" />
+   <field indexed="true" multiValued="false" name="sentence_maximum_subordinate_clauses_depth"
+     required="false" stored="true" type="int" />
    <field indexed="true" multiValued="false" name="sentence_real_token_count"
      required="false" stored="true" type="int" />
    <field indexed="true" multiValued="false" name="sentence_verb_final"

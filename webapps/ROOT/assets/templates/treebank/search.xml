@@ -12,13 +12,20 @@
   <xsl:variable name="q_value" select="normalize-space(/aggregation/h:request/h:requestParameters/h:parameter[@name='q']/h:value)" />
   <xsl:variable name="df_value" select="normalize-space(/aggregation/h:request/h:requestParameters/h:parameter[@name='df']/h:value)" />
 
-  <xsl:variable name="metadata_fields" select="('text_corpus', 'text_century', 'text_century_earliest', 'text_century_latest', 'text_century_minimal_range', 'text_genre', 'text_author', 'text_language_type', 'text_verse_type', 'text_language_proficiency', 'w_sentence_id_string')"/>
+  <xsl:variable name="metadata_fields" select="('text_corpus', 'text_century', 'text_century_earliest', 'text_century_latest', 
+    'text_century_minimal_range', 'text_genre', 'text_author', 'text_language_type', 'text_verse_type', 'text_language_proficiency', 'w_sentence_id_string')"/>
   <xsl:variable name="morphology_fields" select="('w_pos', 'w_number', 'w_case', 'w_gender', 'w_degree', 'w_mood', 'w_tense', 'w_voice', 'w_lemma', 'w_person')"/>
-  <xsl:variable name="syntax_fields" select="('w_relation', 'w_agrees_with_governor', 'w_is_ag', 'w_is_attributive', 'w_has_article', 'w_article_case', 'w_has_ds')"/>
+  <xsl:variable name="syntax_fields" select="('w_relation', 'w_agrees_with_governor', 'w_is_attributive', 'w_has_article', 'w_article_case')"/>
   <xsl:variable name="semantics_fields" select="('w_animacy', 'w_is_proper_name')"/>
-  <xsl:variable name="first_governor_fields" select="('w_first_head_lemma', 'w_first_governor_pos', 'w_first_governor_relation', 'w_first_governor_is_root', 'w_first_head_is_name', 'w_first_head_animacy', 'w_first_head_case', 'w_first_head_gender', 'w_first_head_mood', 'w_first_head_number', 'w_first_head_pos', 'w_first_head_relation', 'w_first_head_tense', 'w_first_head_has_article', 'w_first_head_other_modifiers')"/>
-  <xsl:variable name="first_dependent_fields" select="('w_first_level_dependent_lemma', 'w_first_level_dependent_mood', 'w_first_level_dependent_case', 'w_first_level_dependent_number', 'w_first_level_dependent_person', 'w_first_level_dependent_pos', 'w_first_level_dependent_relation', 'w_first_level_dependent_tense')"/>
-  <xsl:variable name="other_fields" select="('sentence_b_w_o_pattern', 'w_position_in_np', 'w_position_in_np_full', 'w_is_next_to_governor')"/>
+  <xsl:variable name="first_governor_fields" select="('w_first_governor_pos', 'w_first_governor_relation', 'w_first_head_lemma', 'w_first_governor_is_root', 
+    'w_first_head_is_name', 'w_first_head_animacy', 'w_first_head_case', 'w_first_head_gender', 'w_first_head_mood', 
+    'w_first_head_number', 'w_first_head_pos', 'w_first_head_relation', 'w_first_head_tense', 'w_first_head_has_article',
+    'w_first_head_other_modifiers')"/>
+  <xsl:variable name="first_dependent_fields" select="('w_first_level_dependent_lemma', 'w_first_level_dependent_mood', 'w_first_level_dependent_case', 
+    'w_first_level_dependent_number', 'w_first_level_dependent_person', 'w_first_level_dependent_pos', 'w_first_level_dependent_relation', 
+    'w_first_level_dependent_tense')"/>
+  <xsl:variable name="other_fields" select="('sentence_b_w_o_pattern','w_is_in_greeting_formula', 'w_is_in_dating_formula', 'w_count_dependent_verbs', 
+    'w_position_in_np', 'w_position_in_np_full')"/>
   
   <kiln:parent>
     <xi:include href="base.xml" />

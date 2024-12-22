@@ -226,11 +226,47 @@
             </xsl:choose>
           </field>        
       </xsl:if>
+      <xsl:for-each select="tokenize(@object-verb-pattern, '\s+')">
+          <field name="sentence_object_verb_pattern">
+            <xsl:value-of select="."/>
+          </field>
+      </xsl:for-each>
+      <xsl:for-each select="tokenize(@subject-verb-pattern, '\s+')">
+        <field name="sentence_subject_verb_pattern">
+          <xsl:value-of select="."/>
+        </field>
+      </xsl:for-each>
       <xsl:for-each select="tokenize(@subjects-name, '\s+')">
         <field name="sentence_subject_is_name">
           <xsl:value-of select="."/>
         </field>
       </xsl:for-each>
+      <xsl:for-each select="tokenize(@subjects-pos, '\s+')">
+        <field name="sentence_b_w_o_subjects_pos">
+          <xsl:value-of select="."/>
+        </field>
+      </xsl:for-each>
+      <xsl:for-each select="tokenize(@subjects-case, '\s+')">
+        <field name="sentence_b_w_o_subjects_case">
+          <xsl:value-of select="."/>
+        </field>
+      </xsl:for-each>
+      <xsl:for-each select="tokenize(@infinitive-subjects, '\s+')">
+        <field name="sentence_b_w_o_infinitive_subjects">
+          <xsl:value-of select="."/>
+        </field>
+      </xsl:for-each>
+      <xsl:for-each select="tokenize(@a-objects-pos, '\s+')">
+        <field name="sentence_b_w_o_objects_pos">
+          <xsl:value-of select="."/>
+        </field>
+      </xsl:for-each>
+      <field name="sentence_count_subordinate_clauses">
+        <xsl:value-of select="@subordination-count"/>
+      </field>
+      <field name="sentence_maximum_subordinate_clauses_depth">
+        <xsl:value-of select="@maximum-subordinate-clauses-depth"/>
+      </field>
       <field name="sentence_real_token_count">
         <xsl:value-of select="count(descendant::word[tb:is-real-token(.)])"/>
       </field>
@@ -598,6 +634,7 @@
       <field name="w_first_head_is_name">
         <xsl:value-of select="tb:is-name(ancestor::word[not(tb:is-coordinator(.))][1])"/>
       </field> 
+      
       <!-- First dependent -->
       <xsl:for-each select="word">
         <field name="w_first_level_dependent_lemma">
@@ -653,14 +690,41 @@
           </xsl:otherwise>
         </xsl:choose>
       </field>
+      <xsl:variable name="w_subtree_size">
+        <!-- Minus articles and emphasizers-->
+        <xsl:value-of select="count(descendant-or-self::word) - count(word[tb:is-article-to-word(., current())]) - count(word[tb:is-emphasizer(.)])"/>
+      </xsl:variable>
+      <field name="w_subtree_size">
+        <xsl:value-of select="$w_subtree_size"/>
+      </field>
+      <field name="w_subtree_heaviness">
+        <xsl:choose>
+          <xsl:when test="$w_subtree_size = 1">
+            <xsl:text>light</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>heavy</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+      </field>
+      <field name="w_subtree_is_discontinuous_to_first_non_coordinator_governor">
+        <xsl:value-of select="tb:subtree-is-discontinued-by-word(., $non_coordinator_first_ancestor)"/>
+      </field>
       <field name="w_is_next_to_governor">
         <xsl:value-of select="tb:words-are-continguous($non_coordinator_first_ancestor, .)"/>
       </field>
+      <!-- New test stuff -->
       <xsl:for-each select="word[tb:is-article(.)]">
         <field name="w_article_case">
           <xsl:value-of select="tb:get-case(.)"/> 
         </field>
       </xsl:for-each>
+      <field name="w_np_head_form">
+        <xsl:value-of select="tb:get-governing-substantive(.)[@np-head='true']/@form"/>
+      </field>
+      <field name="w_np_forms">
+        <xsl:value-of select="tb:get-governing-substantive(.)[@np-head='true']/@span-forms"/>
+      </field>
       <xsl:if test="@position-in-np">
         <field name="w_position_in_np_full">
           <xsl:choose>
@@ -701,13 +765,418 @@
           </xsl:choose>
         </field>
       </xsl:if>
+      <xsl:if test="@np-head='true'">
+        <field name="np_is_np_head">
+          <xsl:value-of select="true()"/>
+        </field>    
+        <field name="np_is_verbal_noun">
+          <xsl:choose>
+            <xsl:when test="@verbal-noun">
+              <xsl:value-of select="true()"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="false()"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </field>            
+        <field name="np_preceding_subtree_sizes">
+          <xsl:value-of select="@preceding-subtree-sizes"/>
+        </field>
+        <field name="np_preceding_subtree_contour">
+          <xsl:value-of select="@preceding-subtree-contour"/>
+        </field>
+        <field name="np_following_subtree_sizes">
+          <xsl:value-of select="@following-subtree-sizes"/>
+        </field>
+        <field name="np_following_subtree_contour">
+          <xsl:value-of select="@following-subtree-contour"/>
+        </field>
+        <xsl:if test="@multiple-modifiers='true'">
+          <field name="np_mmnp_distribution">
+            <xsl:choose>
+              <xsl:when test="@following-subtree-contour='none'">
+                <xsl:text>only preceding</xsl:text>
+              </xsl:when>
+              <xsl:when test="@preceding-subtree-contour='none'">
+                <xsl:text>only following</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>both sides</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>    
+          </field>
+        </xsl:if>        
+        <field name="np_tree_pattern">
+          <xsl:value-of select="@tree-pattern"/>
+        </field>
+        <field name="np_simple_pattern">
+          <xsl:value-of select="@simple-pattern"/>
+        </field>
+        <field name="np_span_pattern">
+          <xsl:value-of select="@span-pattern"/>
+        </field>
+        <xsl:variable name="pattern_elements" select="('2art', '2adj', '1noun', '9art')"/>
+        <xsl:variable name="subpattern" as="xs:string*">
+          <xsl:for-each select="tokenize(@tree-pattern, '\s+')">
+            <xsl:if test=". = $pattern_elements">
+              <xsl:value-of select="."/>
+            </xsl:if>
+          </xsl:for-each>
+        </xsl:variable>
+        <xsl:if test="exists($subpattern)">
+          <field name="np_articular_adjectival_subpattern">
+            <xsl:value-of select="$subpattern"/>
+          </field>
+        </xsl:if>
+        <field name="np_forms">
+          <xsl:value-of select="@span-forms"/>          
+        </field>
+        <field name="np_is_in_greeting_formula">
+          <xsl:value-of select="ancestor::sentence/@is-greeting-formula"/>
+        </field>
+        <field name="np_is_in_dating_formula">
+          <xsl:value-of select="ancestor::sentence/@is-dating-formula"/>
+        </field>
+        <field name="np_has_agreeing_adjective">
+          <xsl:choose>
+            <xsl:when test="contains(@tree-pattern, '2adj')">
+              <xsl:value-of select="true()"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="false()"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </field>   
+        <xsl:variable name="subpattern-string" select="string-join($subpattern, ' ')"/>
+        <xsl:if test="contains($subpattern-string, '2adj') and tb:is-noun(.)">
+          <field name="np_agreeing_adjective_position_incl_quantifiers">
+            <xsl:choose>
+              <xsl:when test="matches($subpattern-string, '[29]art.* [29]art')">
+                <xsl:text>DS</xsl:text>
+              </xsl:when>
+              <xsl:when test="matches($subpattern-string, '1.* [29]art.* 2adj')">
+                <xsl:text>DS</xsl:text>
+              </xsl:when>
+              <xsl:when test="starts-with($subpattern-string, '2adj')">
+                <xsl:text>preposed</xsl:text>
+              </xsl:when>
+              <xsl:when test="matches($subpattern-string, '[29]art.* 2adj.* 1')">
+                <xsl:text>internal</xsl:text>
+              </xsl:when>
+              <xsl:when test="matches($subpattern-string, '1.* 2adj')">
+                <xsl:text>postposed</xsl:text>
+              </xsl:when>              
+            </xsl:choose>
+          </field>
+        </xsl:if>
+        <xsl:if test="@adjectival-modifiers">
+          <xsl:for-each select="distinct-values(tokenize(@adjective-modifier-positions, '\s+'))">
+            <field name="np_adj_position">
+              <xsl:value-of select="."/>
+            </field>
+          </xsl:for-each>
+        </xsl:if>
+        <field name="np_has_multiple_modifiers">
+          <xsl:value-of select="@multiple-modifiers"/>
+        </field>
+        <xsl:if test="normalize-space(@mmnp-articular-position)">
+          <field name="np_articular_mmnp_position">
+            <xsl:value-of select="@mmnp-articular-position"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-adjectival-modifiers)"> 
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>adjective</xsl:text>
+          </field> 
+          <field name="np_preceding_adjective_syllable_contour">
+            <xsl:value-of select="@preceding-adjectival-syllable-contour"/>
+          </field>
+          <field name="np_following_adjective_syllable_contour">
+            <xsl:value-of select="@following-adjectival-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-demonstrative-modifiers)"> 
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>demonstrative</xsl:text>
+          </field> 
+          <field name="np_preceding_demonstrative_syllable_contour">
+            <xsl:value-of select="@preceding-demonstrative-syllable-contour"/>
+          </field>
+          <field name="np_following_demonstrative_syllable_contour">
+            <xsl:value-of select="@following-demonstrative-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-nominal-modifiers)">
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>noun</xsl:text>
+          </field>
+          <field name="np_preceding_noun_syllable_contour">
+            <xsl:value-of select="@preceding-nominal-syllable-contour"/>
+          </field>
+          <field name="np_following_noun_syllable_contour">
+            <xsl:value-of select="@following-nominal-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-numeral-modifiers)">
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>numeral</xsl:text>
+          </field>
+          <field name="np_preceding_numeral_syllable_contour">
+            <xsl:value-of select="@preceding-numeral-syllable-contour"/>
+          </field>
+          <field name="np_following_numeral_syllable_contour">
+            <xsl:value-of select="@following-numeral-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-participial-modifiers)">
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>participle</xsl:text>
+          </field>
+          <field name="np_preceding_participle_syllable_contour">
+            <xsl:value-of select="@preceding-participial-syllable-contour"/>
+          </field>
+          <field name="np_following_participle_syllable_contour">
+            <xsl:value-of select="@following-participial-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-pp-modifiers)">
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>pp</xsl:text>
+          </field>
+          <field name="np_preceding_pp_syllable_contour">
+            <xsl:value-of select="@preceding-pp-syllable-contour"/>
+          </field>
+          <field name="np_following_pp_syllable_contour">
+            <xsl:value-of select="@following-pp-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-pronominal-modifiers)">
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>pronoun</xsl:text>
+          </field>
+          <field name="np_preceding_pronoun_syllable_contour">
+            <xsl:value-of select="@preceding-pronominal-syllable-contour"/>
+          </field>
+          <field name="np_following_pronoun_syllable_contour">
+            <xsl:value-of select="@following-pronominal-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="normalize-space(@multiple-quantifier-modifiers)">
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>quantifier</xsl:text>
+          </field>
+          <field name="np_preceding_quantifier_syllable_contour">
+            <xsl:value-of select="@preceding-quantifier-syllable-contour"/>
+          </field>
+          <field name="np_following_quantifier_syllable_contour">
+            <xsl:value-of select="@following-quantifier-syllable-contour"/>
+          </field>
+        </xsl:if>
+        <xsl:if test="@multiple-modifiers='true' 
+          and not(normalize-space(@multiple-adjectival-modifiers))
+          and not(normalize-space(@multiple-demonstrative-modifiers))
+          and not(normalize-space(@multiple-nominal-modifiers))
+          and not(normalize-space(@multiple-numeral-modifiers))
+          and not(normalize-space(@multiple-participial-modifiers))
+          and not(normalize-space(@multiple-pp-modifiers))
+          and not(normalize-space(@multiple-pronominal-modifiers))
+          and not(normalize-space(@multiple-pp-modifiers))
+          and not(normalize-space(@multiple-quantifier-modifiers))">
+          <field name="np_types_of_multiple_modifiers">
+            <xsl:text>mixed</xsl:text>
+          </field>
+        </xsl:if>
+        <xsl:if test="@adjectival-coordination">
+          <xsl:for-each select="tokenize(@adjectival-coordination, '\s+')">
+            <field name="np_adjective_coordination">
+              <xsl:value-of select="."/>
+            </field>
+          </xsl:for-each>
+        </xsl:if>
+        <xsl:variable name="has_adnominal_genitive" as="xs:boolean">
+          <xsl:choose>
+            <xsl:when test="contains(@tree-pattern, '8')">
+              <xsl:value-of select="true()"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="false()"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <field name="np_has_adnominal_genitive">
+          <xsl:value-of select="$has_adnominal_genitive"/>
+        </field>
+        <xsl:if test="@can-govern-genitive-category">
+          <field name="np_can_govern_genitive_category">
+            <xsl:value-of select="@can-govern-genitive-category"/>
+          </field>
+        </xsl:if>
+        <field name="np_introduced_by_adp">
+          <xsl:choose>
+            <xsl:when test="contains(@tree-pattern, '4prep')">
+              <xsl:value-of select="true()"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="false()"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </field>
+        <field name="np_has_demonstrative_modifier">
+          <xsl:choose>
+            <xsl:when test="@demonstrative-modifiers">
+              <xsl:value-of select="true()"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="false()"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </field>
+        <xsl:if test="@demonstrative-modifier-positions">
+          <xsl:for-each select="distinct-values(tokenize(@demonstrative-modifier-positions, '\s+'))">
+            <field name="np_demonstrative_position">
+              <xsl:value-of select="."/>
+            </field>
+          </xsl:for-each>
+          <xsl:for-each select="distinct-values(tokenize(@demonstrative-modifier-lemma, '\s+'))">
+            <field name="np_demonstrative_lemma">
+              <xsl:value-of select="."/>
+            </field>            
+          </xsl:for-each>
+        </xsl:if>
+        <xsl:if test="$has_adnominal_genitive">
+          <xsl:call-template name="adnominal-genitive-fields"/>
+        </xsl:if>
+        <xsl:if test="@noun-modifier-positions">
+          <xsl:for-each select="distinct-values(tokenize(@noun-modifier-positions, '\s+'))">
+            <field name="np_noun_position">
+              <xsl:value-of select="."/>
+            </field>
+          </xsl:for-each>          
+        </xsl:if>
+        <field name="np_has_pp_modifier">
+          <xsl:choose>
+            <xsl:when test="@pp-modifiers">
+              <xsl:value-of select="true()"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="false()"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </field>
+        <xsl:if test="@pp-modifier-positions">
+          <xsl:for-each select="distinct-values(tokenize(@pp-modifier-positions, '\s+'))">
+            <field name="np_pp_position">
+              <xsl:value-of select="."/>
+            </field>
+          </xsl:for-each>
+          <xsl:for-each select="distinct-values(tokenize(@pp-modifier-preposition, '\s+'))">
+            <field name="np_pp_lemma">
+              <xsl:value-of select="."/>
+            </field>
+          </xsl:for-each>
+        </xsl:if>
+        <xsl:if test="@pronominal-modifiers">
+          <xsl:for-each select="distinct-values(tokenize(@pronominal-modifier-positions, '\s+'))">
+            <field name="np_pronominal_modifier_position">
+              <xsl:value-of select="."/>
+            </field>
+          </xsl:for-each>
+          <xsl:for-each select="distinct-values(tokenize(@pronominal-modifier-lemma, '\s+'))">
+            <field name="np_pronoun_lemma">
+              <xsl:value-of select="."/>
+            </field>            
+          </xsl:for-each>
+        </xsl:if>
+        <field name="np_has_pronominal_modifier">
+          <xsl:choose>
+            <xsl:when test="@pronominal-modifiers">
+              <xsl:value-of select="true()"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="false()"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </field>
+        <field name="np_discontinuity_type">
+          <xsl:choose>
+            <xsl:when test="contains(@span-pattern, '6')">
+              <xsl:choose>
+                <xsl:when test="count(tokenize(@span-pattern, '6')) = count(tokenize(@span-pattern, '6part'))">
+                  <xsl:text>necessary</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:text>deliberate</xsl:text>
+                </xsl:otherwise>
+              </xsl:choose>              
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>none</xsl:text>
+            </xsl:otherwise>
+          </xsl:choose>
+        </field>
+        <field name="np_has_deprecated_ap">
+          <xsl:value-of select="@deprecated-ap"/>
+        </field>
+        <xsl:for-each select=".//word[contains(@np-heads, concat(' ', current()/@id, ' '))][tb:is-adjective(.)]">
+          <field name="np_adjectives">
+            <xsl:value-of select="@lemma"/>
+            <xsl:if test="not(normalize-space(@lemma))">
+              <xsl:text>lemma unavailable</xsl:text>
+            </xsl:if>
+          </field>
+        </xsl:for-each>
+        <xsl:variable name="adjectives-in-hyperbaton-within-this-np" select=".//word[@governing-substantive = current()/@id]"/>
+        <xsl:for-each select="$adjectives-in-hyperbaton-within-this-np">
+          <field name="np_hyperbaton_adjectives">
+            <xsl:value-of select="@lemma"/>
+            <xsl:if test="not(normalize-space(@lemma))">
+              <xsl:text>lemma unavailable</xsl:text>
+            </xsl:if>
+          </field>
+          <field name="np_hyperbaton_edge_degrees">
+            <xsl:value-of select="@edge-degree"/>
+          </field>
+          <field name="np_hyperbaton_gap_degrees">
+            <xsl:value-of select="@gap-degree"/>
+          </field>
+          <field name="np_hyperbaton_instigated_by">
+            <xsl:value-of select="@instigated-by"/>
+          </field>
+        </xsl:for-each>             
+      </xsl:if>
       <xsl:if test="@governing-substantive">
         <field name="w_is_in_hyperbaton">
           <xsl:value-of select="true()"/>
         </field>
+        <field name="hyperbaton_instigated_by">
+          <xsl:value-of select="@instigated-by"/>
+        </field>
       </xsl:if>
+      <field name="np_has_only_ag_modifier">
+        <xsl:choose>
+          <xsl:when test="@ag-modifiers 
+            and not(@adjectival-modifiers)
+            and not(@demonstrative-modifiers)
+            and not(@participial-modifiers)
+            and not(@quantifier-modifiers)
+            and not(@nominal-modifiers)
+            and not(@numeral-modifiers)
+            and not(@pp-modifiers)
+            and not(@pronominal-modifiers)">
+            <xsl:value-of select="true()"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="false()"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </field>
       <!-- QAZ, NB etc. - pay attention, future Polina! Currently this is only set up to 
         work for the adnominal genitive chapter; needs tweaking in the future! -->
+      <xsl:if test="@ag-modifiers">
+        <field name="np_types_of_modifiers">
+          <xsl:value-of select="tb:get-other-np-modifiers(.)"/>
+        </field>
+      </xsl:if>
     </doc>
   </xsl:template>
   
@@ -716,6 +1185,119 @@
     <xsl:text> </xsl:text>
   </xsl:template>
   
+  <xsl:template name="adnominal-genitive-fields">
+    
+    <xsl:call-template name="np_ag_position_field"/>    
+    <xsl:call-template name="np_ag_tree_sizes_field">
+      <xsl:with-param name="tree-sizes" select="@ag-tree-sizes"/>
+    </xsl:call-template>
+    <xsl:variable name="np-head" select="."/>
+    <xsl:for-each select="tokenize(@ag-modifiers, '\s+')">
+      <xsl:variable name="ag_component" select="$np-head//word[@id = current()]"/>
+      <xsl:call-template name="np_ag_animacy_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template>
+      <xsl:call-template name="np_ag_form_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template>
+      <xsl:call-template name="np_ag_has_art_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template>
+      <xsl:call-template name="np_ag_is_name_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template>
+      <xsl:call-template name="np_ag_lemma_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template>
+      <xsl:call-template name="np_ag_number_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template>
+      <xsl:call-template name="np_ag_pos_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template> 
+      <xsl:call-template name="np_ag_gender_field">
+        <xsl:with-param name="ag_component" select="$ag_component"/>
+      </xsl:call-template>
+    </xsl:for-each>
+  </xsl:template>
+  
+  <xsl:template name="np_ag_position_field">
+    <xsl:for-each select="tokenize(@ag-modifier-positions, '\s+')">
+      <field name="np_ag_position">
+        <xsl:value-of select="."/>
+      </field>
+    </xsl:for-each>
+  </xsl:template>
+  
+  <xsl:template name="np_ag_tree_sizes_field">
+    <xsl:param name="tree-sizes"/>
+    <xsl:if test="normalize-space($tree-sizes)">
+      <xsl:for-each select="tokenize($tree-sizes, '\s+')">
+        <field name="np_ag_tree_size">
+          <xsl:value-of select="."/>
+        </field>
+      </xsl:for-each>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="np_ag_pos_field">
+    <xsl:param name="ag_component"/>
+    <field name="np_ag_pos">
+      <xsl:value-of select="tb:get-pos($ag_component)"/>
+    </field>    
+  </xsl:template>
+  
+  <xsl:template name="np_ag_gender_field">
+    <xsl:param name="ag_component"/>
+    <field name="np_ag_gender">
+      <xsl:value-of select="tb:get-gender($ag_component)"/>
+    </field>    
+  </xsl:template>
+  
+  <xsl:template name="np_ag_animacy_field">
+    <xsl:param name="ag_component"/>
+    <xsl:if test="normalize-space($ag_component/@animacy)">
+      <field name="np_ag_animacy">
+        <xsl:value-of select="$ag_component/@animacy"/>
+      </field>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="np_ag_form_field">
+    <xsl:param name="ag_component"/>
+    <field name="np_ag_form">           
+      <xsl:value-of select="$ag_component/@form"/>
+    </field>
+  </xsl:template>
+  
+  <xsl:template name="np_ag_has_art_field">
+    <xsl:param name="ag_component"/>
+    <field name="np_ag_has_article">      
+      <xsl:value-of select="tb:has-article($ag_component)"/>
+    </field>    
+  </xsl:template>
+  
+  <xsl:template name="np_ag_is_name_field">
+    <xsl:param name="ag_component"/>
+    <field name="np_ag_is_name">
+      <xsl:value-of select="tb:is-name($ag_component)"/>
+    </field>    
+  </xsl:template>
+  
+  <xsl:template name="np_ag_lemma_field">
+    <xsl:param name="ag_component"/>
+    <field name="np_ag_lemma">           
+      <xsl:value-of select="$ag_component/@lemma"/>
+    </field>
+  </xsl:template>
+  
+  <xsl:template name="np_ag_number_field">
+    <xsl:param name="ag_component"/>
+    <field name="np_ag_number">           
+      <xsl:value-of select="tb:get-number($ag_component)"/>
+    </field>
+  </xsl:template>
+     
   <xsl:template name="get-century">
     <xsl:choose>
       <xsl:when test="starts-with(., '-')">

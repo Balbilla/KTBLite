@@ -67,12 +67,12 @@
             <xsl:with-param name="title" select="'Semantics'"/>
           </xsl:call-template>
         </li>
-        <li>
+        <!--<li>
           <xsl:call-template name="display-facet-group">
             <xsl:with-param name="fields" select="$heaviness_fields"/>
             <xsl:with-param name="title" select="'Heaviness'"/>
           </xsl:call-template>
-        </li>
+        </li>-->
         <li>
           <xsl:call-template name="display-facet-group">
             <xsl:with-param name="fields" select="$first_governor_fields"/>
