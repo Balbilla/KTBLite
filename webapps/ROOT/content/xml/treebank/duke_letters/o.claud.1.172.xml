@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="199" place_name="Claudianus Mons"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Ἀνείκητος" head="2" lemma="Ἀνίκητος" postag="n-s---mn-" relation="SBJ_CO" id="1" animacy="name"/>
+    <word form="καὶ" head="8" lemma="καί" postag="b--------" relation="COORD" id="2"/>
+    <word form="Ἡρακλείδης" head="2" lemma="Ἡρακλείδης" postag="n-s---mn-" relation="SBJ_CO" id="3" animacy="name"/>
+    <word form="Σωτηρίχῳ" head="8" lemma="Σωτήριχος" postag="n-s---md-" relation="OBJ" id="4" animacy="name"/>
+    <word form="τῷ" head="6" lemma="ὁ" postag="l-s---md-" relation="ATR" id="5"/>
+    <word form="πατρὶ" head="4" lemma="πατήρ" postag="n-s---md-" relation="APOS" id="6" animacy="person"/>
+    <word form="χαίρειν" head="8" lemma="χαίρω" postag="v--pna---" relation="OBJ" id="7"/>
+    <word form="ἔπεμψάς" head="0" lemma="πέμπω" orig_form="ἔπεν-ψάς" postag="v2saia---" relation="PRED" id="8"/>
+    <word form="μοι" head="8" lemma="ἐγώ" postag="p-s---cd-" relation="OBJ" id="9"/>
+    <word form="φάσιν" head="7" lemma="φάσις" postag="n-s---fa-" relation="OBJ" id="10" animacy="nonconc"/>
+    <word form="περὶ" head="10" lemma="περί" postag="r--------" relation="AuxP" id="11"/>
+    <word form="τοῦ" head="13" lemma="ὁ" postag="l-s---ng-" relation="ATR" id="12"/>
+    <word form="ὀφειλομένου" head="11" lemma="ὀφείλω" orig_form="ὀφελο-μένου" postag="v-sppeng-" relation="ATR" id="13"/>
+    <word form="πέμψω" head="8" lemma="πέμπω" orig_form="πέν-ψω" postag="v1sfia---" relation="CO" id="14"/>
+    <word form="σοι" head="14" lemma="σύ" postag="p-s---cd-" relation="OBJ" id="15"/>
+    <word form="ταχύτερον" head="14" lemma="ταχύς" postag="a-s---nac" relation="ADV" id="16"/>
+    <word form="ἐὰν" head="14" lemma="ἐάν" postag="c--------" relation="AuxC" id="17"/>
+    <word form="αὐτὸν" head="19" lemma="αὐτός" postag="a-s---ma-" relation="OBJ" id="18"/>
+    <word form="πωλήσω" head="17" lemma="πωλέω" postag="v1sasa---" relation="ADV" id="19"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="20"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ἔρρωσο" head="0" lemma="ῥώννυμι" postag="v2srme---" relation="PRED" id="1"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+  </sentence>
+</treebank>

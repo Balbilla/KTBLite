@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<query>
+  <df default="true">w_sentence_text</df>
+  <q default="true">*</q>
+  <fq escape="false">document_type:sentence</fq>
+  <facet>true</facet>
+  <!-- Metadata -->
+  <facet.field join="or">text_corpus</facet.field>
+  <facet.field mincount="1" join="or">text_century</facet.field>
+  <facet.field mincount="1">text_century_earliest</facet.field>
+  <facet.field mincount="1">text_century_latest</facet.field>
+  <facet.field>text_century_minimal_range</facet.field>
+  <facet.field join="or" mincount="1" sort="count">text_author</facet.field>
+  <facet.field mincount="1" sort="count" join="or">text_genre</facet.field>
+  <!-- Subject facets -->
+  <facet.field mincount="1" sort="count">sentence_b_w_o_subjects_pos</facet.field>
+  <facet.field mincount="1" sort="count">sentence_b_w_o_subjects_case</facet.field>
+  <facet.field>sentence_b_w_o_infinitive_subjects</facet.field>
+  <!-- Object facets -->
+  <facet.field mincount="1" sort="count">sentence_b_w_o_objects_pos</facet.field>
+  <facet.field mincount="1" sort="count">sentence_b_w_o_objects_case</facet.field>
+  <facet.field>sentence_b_w_o_infinitive_objects</facet.field>
+  <!-- Subordinate clause facets -->
+  <facet.field join="or" mincount="1">sentence_count_subordinate_clauses</facet.field>
+  <facet.field join="or" mincount="1">sentence_maximum_subordinate_clauses_depth</facet.field>
+  <!-- Order patterns -->
+  <facet.field mincount="1" sort="count">sentence_b_w_o_pattern</facet.field>
+  <facet.field>sentence_verb_final</facet.field>
+  <facet.field mincount="1">sentence_object_verb_pattern</facet.field>
+  <facet.field mincount="1">sentence_subject_verb_pattern</facet.field>
+  <facet.field mincount="1">sentence_subject_is_name</facet.field>
+  <facet.limit>-1</facet.limit>
+  <facet.mincount>0</facet.mincount>
+  <facet.sort>index</facet.sort>
+  <!-- The number of rows returned by Solr at once (that is the number
+       displayed per page of results). -->
+  <rows default="true">10000</rows>
+</query>

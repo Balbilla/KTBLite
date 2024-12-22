@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="-99" date_not_after="99" place_name="Herakleopolites"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="τῶι" head="3" lemma="ὁ" postag="l-s---md-" relation="ATR" id="1"/>
+    <word form="σεμνοτάτωι" head="3" lemma="σεμνός" postag="a-s---mds" relation="ATR" id="2"/>
+    <word form="διοικητῆι" head="5" lemma="διοικητής" postag="n-s---md-" relation="SBJ" id="3" animacy="person"/>
+    <word form="·" head="0" lemma="·" postag="u--------" relation="AuxK" id="4"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="5"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ἐὰν" head="4" lemma="ἐάν" postag="c--------" relation="AuxC" id="1"/>
+    <word form="φαίνηται" head="1" lemma="φαίνω" postag="v3spse---" relation="ADV" id="2"/>
+    <word form="συντάξεις" head="4" lemma="σύνταξις" postag="n-p---fn-" relation="SBJ" id="3" animacy="nonconc"/>
+    <word form="δοθῆναί" head="11" lemma="δίδωμι" postag="v--anp---" relation="OBJ" id="4"/>
+    <word form="μοι" head="4" lemma="ἐγώ" postag="p-s---cd-" relation="OBJ" id="5"/>
+    <word form="τὸ" head="9" lemma="ὁ" postag="l-s---nn-" relation="ATR" id="6"/>
+    <word form="καὶ" head="9" lemma="καί" postag="b--------" relation="AuxZ" id="7"/>
+    <word form="πέρυσι" head="9" lemma="πέρυσι" postag="d--------" relation="ADV" id="8"/>
+    <word form="δεδομένον" head="4" lemma="δίδωμι" postag="v-srpenn-" relation="SBJ" id="9"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="10"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="11"/>
+  </sentence>
+</treebank>

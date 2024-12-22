@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:h="http://apache.org/cocoon/request/2.0"
+           xmlns:tb="https://papygreek.hum.helsinki.fi/py/"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:param name="corpus"/>
+
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+
+  <kiln:child>
+
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:text>Broken sentences in </xsl:text><xsl:value-of select="$corpus"/>
+    </kiln:block>
+
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:text>Broken sentences in </xsl:text><xsl:value-of select="$corpus"/>
+      <xsl:for-each select="/aggregation/response/lst[@name='facet_counts']/lst[@name='facet_fields']/lst/int[normalize-space(@selected)]">
+        <xsl:value-of select="concat(@selected, @name)"/>
+        <xsl:if test="position() != last()">
+          <xsl:text> </xsl:text>
+        </xsl:if>
+      </xsl:for-each>
+    </kiln:block>
+
+    <kiln:block name="content">
+      <xsl:for-each select="/aggregation/xincludes/file[treebank/borked]">
+        <h2><xsl:value-of select="@path"/></h2>
+        <ul>
+          <xsl:for-each select="treebank/borked">
+            <li><xsl:value-of select="."/></li>
+          </xsl:for-each>
+        </ul>
+      </xsl:for-each>
+    </kiln:block>
+
+  </kiln:child>
+
+</kiln:root>

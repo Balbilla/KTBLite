@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Custom query for branch sizes; needed so I can specify the mincount of the w_subtree_size 
+  facet without having to change it every time I need to use another query.-->
+<query>
+  <df default="true">w_lemma</df>
+  <q default="true">*</q>
+  <fq escape="false">document_type:word</fq>
+  <facet>true</facet>
+  <facet.field join="or">text_corpus</facet.field>
+  <facet.field mincount="1" join="or">text_century</facet.field>
+  <facet.field mincount="1">text_century_earliest</facet.field>
+  <facet.field mincount="1">text_century_latest</facet.field>
+  <facet.field>text_century_minimal_range</facet.field>
+  <facet.field join="or" mincount="1" sort="count">text_author</facet.field>
+  <facet.field mincount="1" sort="count" join="or">text_genre</facet.field>
+  <facet.field mincount="1" join="or">text_language_type</facet.field>
+  <facet.field mincount="1" join="or">text_language_proficiency</facet.field>
+  <facet.field>text_verse_type</facet.field>
+  <facet.field mincount="1" sort="count">w_lemma</facet.field>
+  <facet.field join="or" sort="count">w_case</facet.field>
+  <facet.field join="or" sort="count">w_degree</facet.field>
+  <facet.field join="or" sort="count">w_gender</facet.field>
+  <facet.field join="or" sort="count">w_mood</facet.field>
+  <facet.field join="or" sort="count">w_number</facet.field>
+  <facet.field join="or" sort="count">w_person</facet.field>
+  <facet.field join="or" sort="count">w_pos</facet.field>
+  <facet.field join="or" mincount="1" sort="count">w_relation</facet.field>
+  <facet.field join="or" sort="count">w_tense</facet.field>  
+  <facet.field join="or" sort="count">w_voice</facet.field>
+  <facet.field join="or" sort="count">w_article_case</facet.field>
+  <facet.field sort="count">w_is_attributive</facet.field>
+  <facet.field sort="count">w_is_ag</facet.field>
+  <facet.field sort="count">w_agrees_with_governor</facet.field>
+  <facet.field sort="count" mincount="5">w_subtree_size</facet.field>
+  <facet.field>w_subtree_heaviness</facet.field>
+  <facet.field>w_subtree_is_discontinuous_to_first_non_coordinator_governor</facet.field>
+  <facet.field sort="count">w_first_head_has_numeral</facet.field>
+  <!-- First governor -->
+  <facet.field sort="count" mincount="1">w_first_governor_pos</facet.field>
+  <facet.field sort="count" mincount="1">w_first_governor_relation</facet.field>
+  <facet.field sort="count">w_first_head_is_name</facet.field>  
+  <facet.field sort="count" mincount="1">w_first_head_lemma</facet.field>
+  <facet.field sort="count">w_first_head_semantic_type_animacy</facet.field>
+  <facet.field sort="count">w_first_head_semantic_type_person</facet.field>
+  <facet.field sort="count">w_first_head_semantic_type_group</facet.field>
+  <facet.field sort="count" mincount="1">w_first_head_animacy</facet.field>
+  <facet.field sort="count" mincount="1">w_first_head_gender</facet.field>
+  <facet.field sort="count" mincount="1">w_first_head_mood</facet.field>
+  <facet.field sort="count" mincount="1">w_first_head_number</facet.field>
+  <facet.field sort="count" mincount="1">w_first_head_pos</facet.field>
+  <facet.field sort="count" join="or" mincount="1">w_first_head_relation</facet.field>
+  <facet.field sort="count" mincount="1">w_first_head_tense</facet.field>
+  <facet.field sort="count">w_first_head_has_article</facet.field>
+  <facet.field sort="count">w_first_head_has_only_ag_modifier</facet.field>
+  <facet.field sort="count">w_first_head_other_modifiers</facet.field>
+  <facet.field mincount="1">w_first_head_can_govern_genitive_category</facet.field>
+  <facet.field>w_first_head_introduced_by_adposition</facet.field>
+  <!-- First dependent -->  
+  <facet.field sort="count" mincount="1">w_first_level_dependent_gender</facet.field>
+  <facet.field sort="count" mincount="1">w_first_level_dependent_mood</facet.field>
+  <facet.field sort="count" mincount="1">w_first_level_dependent_number</facet.field>
+  <facet.field sort="count" mincount="1">w_first_level_dependent_person</facet.field>
+  <facet.field sort="count" mincount="1">w_first_level_dependent_pos</facet.field>
+  <facet.field sort="count" mincount="1">w_first_level_dependent_relation</facet.field>
+  <facet.field sort="count" mincount="1">w_first_level_dependent_tense</facet.field>
+  <facet.field sort="count">w_has_article</facet.field>
+  <facet.field sort="count">w_is_proper_name</facet.field>
+  <facet.field mincount="1" join="or">w_animacy</facet.field>
+  <facet.field>w_semantic_type_animacy</facet.field>
+  <facet.field>w_semantic_type_group</facet.field>
+  <facet.field>w_semantic_type_person</facet.field>
+<!--  <facet.field sort="count">w_adjective_type</facet.field>
+  <facet.field sort="count">w_adjective_position</facet.field>-->
+  <facet.field sort="count" join="or">w_position_in_np</facet.field>
+  <facet.field sort="count" join="or">w_size_to_head</facet.field>
+  <facet.field sort="count" join="or">w_position_in_np_full</facet.field>
+  <facet.field>w_position_bakker_category</facet.field>
+  <facet.field>w_is_next_to_governor</facet.field>
+  <facet.field>w_is_in_greeting_formula</facet.field>
+  <facet.field>w_is_in_dating_formula</facet.field>
+  <facet.field join="or" mincount="1">w_count_dependent_verbs</facet.field>
+  <facet.limit>-1</facet.limit>
+  <facet.mincount>0</facet.mincount>
+  <facet.sort>index</facet.sort>
+  <!-- The number of rows returned by Solr at once (that is the number
+       displayed per page of results). -->
+  <rows default="true">10000</rows>
+</query>

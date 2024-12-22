@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/treebank/display-text.xsl" />
+
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+
+  <kiln:child>
+
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:value-of select="/aggregation/treebank/@text"/>
+      <xsl:text> in corpus </xsl:text>
+      <xsl:value-of select="/aggregation/treebank/@corpus"/>
+    </kiln:block>
+
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:value-of select="/aggregation/treebank/@text"/>
+      <xsl:text> in corpus </xsl:text>
+      <xsl:value-of select="/aggregation/treebank/@corpus"/>
+    </kiln:block>
+
+    <kiln:block name="content">
+      <section class="uk-margin">
+        <h2>Medatada</h2>
+
+        <xsl:apply-templates select="/aggregation/treebank/metadata"/>
+      </section>
+
+      <section class="uk-margin">
+        <h2>Text</h2>
+        <p>
+          <xsl:apply-templates select="/aggregation/treebank/sentences/sentence" />
+        </p>
+      </section>
+    </kiln:block>
+
+  </kiln:child>
+
+</kiln:root>

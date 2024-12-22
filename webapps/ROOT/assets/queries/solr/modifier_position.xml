@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<query q_fields="np_has_adnominal_genitive w_form" range_fields="np_ag_tree_size">
+  <df default="true">w_lemma</df>
+  <q default="true">*</q>
+  <np_has_adnominal_genitive>true</np_has_adnominal_genitive>
+  <np_is_np_head>true</np_is_np_head>
+  <fq escape="false">document_type:word</fq>
+  <facet>true</facet>
+  <facet.field mincount="1" join="or">text_corpus</facet.field>
+  <facet.field mincount="1" join="or">text_genre</facet.field>
+  <facet.field mincount="1" join="or">text_language_type</facet.field>
+  <facet.field mincount="1" join="or">text_century</facet.field>
+  <facet.field mincount="1" join="or">text_author</facet.field>
+  <facet.field join="or" mincount="1" sort="count">w_pos</facet.field>
+  <facet.field mincount="1">w_number</facet.field>  
+  <facet.field>w_has_article</facet.field>
+  <facet.field>w_animacy</facet.field>
+  <facet.field>w_is_proper_name</facet.field>
+  <facet.field >np_ag_animacy</facet.field>
+  <facet.field mincount="1">np_ag_pos</facet.field>
+  <facet.field mincount="1">np_ag_number</facet.field>
+  <facet.field join="or">np_ag_position</facet.field>
+  <facet.field >np_ag_is_name</facet.field>
+  <facet.field>np_ag_has_article</facet.field>   
+  <facet.field join="or" mincount="1">np_ag_tree_size</facet.field>
+  <facet.field mincount="1" join="or">text_language_proficiency</facet.field>
+  <facet.limit>-1</facet.limit>
+  <facet.mincount>0</facet.mincount>
+  <facet.sort>index</facet.sort>
+  <!-- The number of rows returned by Solr at once (that is the number
+       displayed per page of results). -->
+  <rows default="true">1000000</rows>
+</query>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="-199" date_not_after="-100" place_name="Memphis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Πτολεμαῖος" head="5" lemma="Πτολεμαῖος" postag="n-s---mn-" relation="SBJ" id="1" animacy="name"/>
+    <word form="Ἀπολλωνίωι" head="1" lemma="Ἀπολλώνιος" postag="n-s---md-" relation="ATR" id="2" animacy="name"/>
+    <word form="χαίρειν" head="1" lemma="χαίρω" postag="v--pna---" relation="ATR" id="3"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="4"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="5"/>
+  </sentence>
+  <sentence id="2">
+    <word form="καὶ" head="7" lemma="καί" postag="b--------" relation="AuxZ" id="1"/>
+    <word form="τὰ" head="3" lemma="ὁ" postag="l-p---nn-" relation="ATR" id="2"/>
+    <word form="ἄλλα" head="7" lemma="ἄλλος" postag="a-p---nn-" relation="SBJ" id="3"/>
+    <word form="σοι" head="7" lemma="σύ" postag="p-s---cd-" relation="ADV" id="4"/>
+    <word form="κατὰ" head="7" lemma="κατά" postag="r--------" relation="AuxP" id="5"/>
+    <word form="λόγον" head="5" lemma="λόγος" postag="n-s---ma-" relation="PNOM" id="6" animacy="nonconc"/>
+    <word form="ἐστίν" head="0" lemma="εἰμί" postag="v3spia---" relation="PRED" id="7"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="8"/>
+  </sentence>
+  <sentence id="3">
+    <word form="ου|gap=4||gap=2|" head="0" lemma="_" postag="z--------" relation="AuxG" id="1"/>
+    <word form="Πτολεμαῖος" head="3" lemma="Πτολεμαῖος" postag="n-s---mn-" relation="SBJ" id="2" animacy="name"/>
+    <word form="|gap=4||gap=4||gap=1|" head="4" lemma="_" postag="z--------" relation="GAP" id="3"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="4"/>
+  </sentence>
+</treebank>

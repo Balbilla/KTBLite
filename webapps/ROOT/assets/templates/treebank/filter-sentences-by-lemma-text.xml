@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:tei="http://www.tei-c.org/ns/1.0"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <xsl:param name="corpus"/>
+  <xsl:param name="text"/>
+  <xsl:param name="lemma"/>
+  
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/treebank/lemma-inventory/filter-sentences-by-lemma-text.xsl" />
+  
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+  
+  <kiln:child>
+    
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:text>Lemma </xsl:text>
+      <xsl:value-of select="$lemma"/>
+      <xsl:text> in text </xsl:text>
+      <xsl:value-of select="$text"/>
+      <xsl:text> in corpus </xsl:text>
+      <xsl:value-of select="$corpus"/>
+    </kiln:block>
+    
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:text>Lemma </xsl:text>
+      <xsl:value-of select="$lemma"/>
+     <xsl:text> in text </xsl:text>
+      <xsl:value-of select="$text"/>
+      <xsl:text> in corpus </xsl:text>
+      <xsl:value-of select="$corpus"/>
+    </kiln:block>
+    
+    <kiln:block name="content">
+      <div class="row">
+        <div class="large-12 columns">
+          <xsl:call-template name="display-sentences">
+            <xsl:with-param name="sentences" select="/aggregation/treebank/sentences/sentence"/>
+          </xsl:call-template>
+        </div>
+      </div>
+    </kiln:block>
+        
+  </kiln:child>
+  
+</kiln:root>

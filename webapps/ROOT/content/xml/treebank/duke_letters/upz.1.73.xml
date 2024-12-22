@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="-200" date_not_after="-150" place_name="Memphis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Ἀπολλώνιος" head="3" lemma="Ἀπολλώνιος" postag="n-s---mn-" relation="SBJ" id="1" animacy="name"/>
+    <word form="Σαραπίωνι" head="3" lemma="Σαραπίων" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="ος|gap=3|" head="0" lemma="_" postag="z--------" relation="GAP" id="3"/>
+    <word form="τῷ" head="5" lemma="ὁ" postag="l-s---md-" relation="ATR" id="4"/>
+    <word form="ἀδελφῶι" head="2" lemma="ἀδελφός" postag="n-s---md-" relation="APOS" id="5" animacy="person"/>
+    <word form="χαίρειν" head="3" lemma="χαίρω" postag="v--pna---" relation="OBJ" id="6"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="7"/>
+  </sentence>
+  <sentence id="2">
+    <word form="καλῶς" head="3" lemma="καλός" postag="d--------" relation="ADV" id="1"/>
+    <word form="οὖν" head="3" lemma="οὖν" postag="d--------" relation="AuxY" id="2"/>
+    <word form="ποιήσεις" head="0" lemma="ποιέω" orig_form="ποισης" postag="v2sfia---" relation="PRED" id="3" shows-iotacism="true"/>
+    <word form="φροντίσαι" head="3" lemma="φροντίζω" orig_form="φροτίσαι" postag="v--ana---" relation="OBJ" id="4"/>
+    <word form="μοι" head="4" lemma="ἐγώ" postag="p-s---cd-" relation="OBJ" id="5"/>
+    <word form="σιτάριον" head="4" lemma="σιτάριον" postag="n-s---na-" relation="OBJ" id="6"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="7"/>
+  </sentence>
+  <sentence id="3">
+    <word form="δέδωκα" head="0" lemma="δίδωμι" postag="v1sria---" relation="PRED" id="1"/>
+    <word form="Πτολεμαίωι" head="1" lemma="Πτολεμαῖος" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="τὰς" head="4" lemma="ὁ" postag="l-p---fa-" relation="ATR" id="3"/>
+    <word form="δραχμὰς" head="1" lemma="δραχμή" postag="n-p---fa-" relation="OBJ" id="4" animacy="concrete"/>
+    <word form="σ" head="4" lemma="ς#" postag="a--------" relation="ATR" id="5" is_number="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="6"/>
+  </sentence>
+  <sentence id="4">
+    <word form="εὐτύχει" head="0" lemma="εὐτυχέω" postag="v2spma---" relation="PRED" id="1"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+  </sentence>
+</treebank>

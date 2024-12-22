@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<query q_fields="np_is_np_head">
+  <df default="true">w_lemma</df>
+  <q default="true">*</q>
+  <np_is_np_head>true</np_is_np_head>
+  <fq escape="false">document_type:word</fq>
+  <facet>true</facet>
+  <!-- Metadata -->
+  <facet.field join="or">text_corpus</facet.field>
+  <facet.field mincount="1" join="or">text_century</facet.field>
+  <facet.field mincount="1">text_century_earliest</facet.field>
+  <facet.field mincount="1">text_century_latest</facet.field>
+  <facet.field>text_century_minimal_range</facet.field>
+  <facet.field join="or" mincount="1" sort="count">text_author</facet.field>
+  <facet.field mincount="1" join="or">text_genre</facet.field>
+  <facet.field mincount="1" join="or">text_language_type</facet.field>
+  <facet.field>text_verse_type</facet.field>
+  <facet.field mincount="1" join="or">text_language_proficiency</facet.field>
+  <!-- NP head morph -->
+  <facet.field mincount="1" sort="count" join="or">w_lemma</facet.field>
+  <facet.field mincount="1" sort="count" join="or">w_pos</facet.field>
+  <facet.field mincount="1" sort="count">w_case</facet.field>
+  <facet.field mincount="1" sort="count">w_degree</facet.field>
+  <facet.field mincount="1" sort="count">w_gender</facet.field>
+  <facet.field mincount="1" sort="count">w_number</facet.field>
+  <!-- Syntax -->
+  <facet.field join="or" mincount="1" sort="count">w_relation</facet.field>
+  <facet.field>w_has_article</facet.field>
+  <!-- Semantics -->
+  <facet.field join="or" mincount="1">w_animacy</facet.field>
+  <facet.field>w_semantic_type_animacy</facet.field>
+  <facet.field>w_semantic_type_group</facet.field>
+  <facet.field>w_semantic_type_person</facet.field>
+  <facet.field>w_is_proper_name</facet.field>
+   <!--Order patterns--> 
+  <facet.field sort="count" mincount="1">np_tree_pattern</facet.field>
+  <facet.field sort="count" mincount="1"  limit="100">np_simple_pattern</facet.field>
+  <facet.field sort="count" mincount="1"  limit="100">np_span_pattern</facet.field> 
+   <!--Adjective position-related, hyperbaton-->  
+  <facet.field>np_has_agreeing_adjective</facet.field>
+  <facet.field>np_adjective_coordination</facet.field>
+  <facet.field>np_adj_position</facet.field>
+  <facet.field>np_agreeing_adjective_position_incl_quantifiers</facet.field>
+  <facet.field mincount="1" sort="count">np_articular_adjectival_subpattern</facet.field>  
+  <facet.field sort="count" limit="10">np_adjectives</facet.field>
+  <facet.field sort="count" limit="10">np_hyperbaton_adjectives</facet.field>  
+  <facet.field>np_discontinuity_type</facet.field>
+  <facet.field sort="count">np_hyperbaton_edge_degrees</facet.field>
+  <facet.field sort="count">np_hyperbaton_gap_degrees</facet.field>
+  <facet.field mincount="1" sort="count">np_hyperbaton_instigated_by</facet.field>  
+  <!-- Adnominal genitives -->
+  <facet.field>np_has_adnominal_genitive</facet.field>
+  <facet.field>np_has_only_ag_modifier</facet.field>
+  <facet.field>np_types_of_modifiers</facet.field>
+  <facet.field>np_can_govern_genitive_category</facet.field>
+  <facet.field>np_ag_animacy</facet.field>
+  <facet.field sort="count" mincount="2">np_ag_form</facet.field>
+  <facet.field mincount="1">np_ag_gender</facet.field>
+  <facet.field sort="count" mincount="1" join="or">np_ag_lemma</facet.field>
+  <facet.field mincount="1">np_ag_number</facet.field>
+  <facet.field mincount="1">np_ag_pos</facet.field>
+  <facet.field sort="count" join="or">np_ag_position</facet.field>
+  <facet.field>np_ag_is_name</facet.field>
+  <facet.field>np_ag_has_article</facet.field>   
+  <facet.field join="or" mincount="1">np_ag_tree_size</facet.field>
+  <!-- Demonstratives -->
+  <facet.field>np_demonstrative_position</facet.field>
+  <facet.field join="or" sort="count" mincount="1">np_demonstrative_lemma</facet.field>
+  <facet.field>np_has_demonstrative_modifier</facet.field>
+  <!-- Nouns -->
+  <facet.field>np_noun_position</facet.field>
+  <!-- Numerals -->
+  <facet.field>w_has_numeral</facet.field>
+  <!--   Prepositional phrases -->
+  <facet.field join="or">np_pp_position</facet.field>
+  <facet.field join="or" sort="count" mincount="1">np_pp_lemma</facet.field>
+  <facet.field>np_has_pp_modifier</facet.field>
+  <facet.field>np_introduced_by_adp</facet.field>
+  <!-- Pronouns -->
+  <facet.field>np_pronominal_modifier_position</facet.field>
+  <facet.field join="or" sort="count" mincount="1">np_pronoun_lemma</facet.field>
+  <facet.field>np_has_pronominal_modifier</facet.field>
+  <!--MMNP-related--> 
+  <facet.field>np_has_multiple_modifiers</facet.field>
+  <facet.field sort="count">np_mmnp_distribution</facet.field>
+  <facet.field mincount="1" sort="count">np_preceding_subtree_sizes</facet.field>
+  <facet.field mincount="1" sort="count">np_following_subtree_sizes</facet.field> 
+  <facet.field>np_preceding_subtree_contour</facet.field>
+  <facet.field>np_following_subtree_contour</facet.field>   
+  <facet.field>np_types_of_multiple_modifiers</facet.field> 
+<!-- Dating / greeting formulae -->
+  <facet.field>np_is_in_greeting_formula</facet.field>
+  <facet.field>np_is_in_dating_formula</facet.field>
+<!--   Governor info -->
+<!--  <facet.field>w_first_head_is_name</facet.field>
+  <facet.field sort="count">w_first_governor_pos</facet.field>
+  <facet.field sort="count">w_first_governor_relation</facet.field>
+  <facet.field sort="count">w_first_head_pos</facet.field>
+  <facet.field sort="count">w_first_head_relation</facet.field> -->
+<!-- Varia -->
+  <facet.field>w_position_bakker_category</facet.field>
+  <facet.field>np_has_deprecated_ap</facet.field>
+  <facet.field>np_is_verbal_noun</facet.field>
+  <facet.field>np_is_in_pg_measure_list</facet.field>
+  <facet.field>np_is_in_pg_nonmeasure_list</facet.field>
+  <facet.field>np_is_shared_lemma_pg_prose</facet.field>
+  <facet.limit>-1</facet.limit>
+  <facet.mincount>0</facet.mincount>
+  <facet.sort>index</facet.sort>
+  <!-- The number of rows returned by Solr at once (that is the number
+       displayed per page of results). -->
+  <rows default="true">10000</rows>
+</query>

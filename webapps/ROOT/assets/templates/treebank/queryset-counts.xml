@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/solr/queryset-to-html.xsl"/>
+
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+
+  <kiln:child>
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:value-of select="/queryset/title"/>
+    </kiln:block>
+
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:value-of select="/queryset/title"/>
+    </kiln:block>
+
+    <kiln:block name="content">
+      <section class="uk-margin">
+        <h2>Introduction</h2>
+
+        <table class="uk-table">
+          <tr>
+            <th scope="row">Query file</th>
+            <td>assets/queries/solr/<xsl:value-of select="/queryset/query_file"/>.xml</td>
+          </tr>
+          <tr>
+            <th scope="row">Groups [for rows]</th>
+            <td>
+              <ul class="uk-list">
+                <xsl:for-each select="/queryset/groups/group">
+                  <li><xsl:value-of select="@name"/></li>
+                </xsl:for-each>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Columns</th>
+            <td>
+              <ul class="uk-list">
+                <xsl:for-each select="/queryset/columns/column">
+                  <li><xsl:value-of select="@name"/></li>
+                </xsl:for-each>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Static query elements</th>
+            <td>
+              <xsl:choose>
+                <xsl:when test="/queryset/base/item">
+                  <ul class="uk-list">
+                    <xsl:for-each select="/queryset/base/item">
+                      <li><xsl:value-of select="."/></li>
+                    </xsl:for-each>
+                  </ul>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:text>None</xsl:text>
+                </xsl:otherwise>
+              </xsl:choose>
+            </td>
+          </tr>
+        </table>
+
+        <p>The following tables are generated automatically in a
+        generic fashion, and therefore may require some
+        explanation. Every value for each <code>group</code> in the
+        queryset is combined in a query, along with every value for
+        each <code>column</code>, and the count of matching items is
+        returned. These are then grouped into tables based on shared
+        combination of <code>group</code> values.</p>
+      </section>
+
+      <section class="uk-margin">
+        <h2>Tables</h2>
+
+        <xsl:apply-templates select="/queryset/results/table"/>
+      </section>
+    </kiln:block>
+
+  </kiln:child>
+
+</kiln:root>

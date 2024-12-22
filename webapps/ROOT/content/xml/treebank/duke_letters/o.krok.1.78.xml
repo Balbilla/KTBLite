@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="1" date_not_after="199" place_name="Krokodilo"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="|gap=18|" head="0" lemma="_" postag="z--------" relation="GAP" id="1"/>
+    <word form="Ἀντωνίῳ" head="1" lemma="Ἀντώνιος" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="κουράτορι" head="2" lemma="κουράτωρ" postag="n-s---md-" relation="ATR" id="3" animacy="person"/>
+    <word form="πραισιδίου" head="2" lemma="πραισίδιον" postag="n-s---ng-" relation="APOS" id="4"/>
+    <word form="Κορκοδίλων" head="4" lemma="Κορκόδιλος" postag="n-p---mg-" relation="ATR" id="5" animacy="name"/>
+    <word form="χαίρειν" head="5" lemma="χαίρω" postag="v--pna---" relation="ATR" id="6"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="7"/>
+  </sentence>
+  <sentence id="2">
+    <word form="|gap=17|με" head="16" lemma="_" postag="z--------" relation="GAP" id="1"/>
+    <word form="πρὸς" head="4" lemma="πρός" postag="r--------" relation="AuxP" id="2"/>
+    <word form="σὲ" head="2" lemma="σύ" postag="p-s---ca-" relation="ExD" id="3"/>
+    <word form="|gap=15|" head="1" lemma="_" postag="z--------" relation="AuxG" id="4"/>
+    <word form="τῷ" head="6" lemma="ὁ" postag="l-s---md-" relation="ATR" id="5"/>
+    <word form="ἀναδιδόντι" head="4" lemma="ἀναδίδωμι" postag="v-sppamd-" relation="OBJ" id="6"/>
+    <word form="σοι" head="6" lemma="σύ" postag="p-s---cd-" relation="OBJ" id="7"/>
+    <word form="τὸ" head="9" lemma="ὁ" postag="l-s---na-" relation="ATR" id="8"/>
+    <word form="ὄστρακον" head="6" lemma="ὄστρακον" postag="n-s---na-" relation="OBJ" id="9" animacy="concrete"/>
+    <word form="|gap=8|" head="0" lemma="_" postag="z--------" relation="AuxG" id="10"/>
+    <word form="ὕδατος" head="12" lemma="ὕδωρ" orig_form="ὕδατους" postag="n-s---ng-" relation="ATR" id="11" animacy="concrete" ending-mismatch="true"/>
+    <word form="ἀσκοὺς" head="6" lemma="ἀσκός" postag="n-p---ma-" relation="OBJ" id="12" animacy="concrete"/>
+    <word form="|gap=8|" head="12" lemma="_" postag="z--------" relation="GAP" id="13"/>
+    <word form="Ἁθυρ" head="15" lemma="Ἁθυρ" postag="n-s---ma-" relation="ExD" id="14" animacy="name"/>
+    <word form="|gap=unknown|" head="1" lemma="_" postag="z--------" relation="AuxK" id="15"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="16"/>
+  </sentence>
+</treebank>

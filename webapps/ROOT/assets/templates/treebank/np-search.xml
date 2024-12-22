@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:h="http://apache.org/cocoon/request/2.0"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:param name="query-string"/>
+  
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/treebank/utils.xsl"/>
+
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/solr/np-results-to-html.xsl"/>
+
+  <xsl:variable name="q_value" select="normalize-space(/aggregation/h:request/h:requestParameters/h:parameter[@name='q']/h:value)" />
+  <xsl:variable name="df_value" select="normalize-space(/aggregation/h:request/h:requestParameters/h:parameter[@name='df']/h:value)" />
+
+  <xsl:variable name="metadata_fields" select="('text_corpus', 'text_century', 'text_century_earliest', 'text_century_latest', 'text_century_minimal_range', 'text_genre', 'text_author', 'text_language_type', 'text_verse_type', 'text_language_proficiency')"/>
+  <xsl:variable name="morphology_fields" select="('w_pos', 'w_number', 'w_case', 'w_gender', 'w_degree', 'w_tense', 'w_lemma', 'w_person')"/>
+  <xsl:variable name="syntax_fields" select="('w_relation', 'w_has_article', 'w_article_case')"/>
+  <xsl:variable name="semantics_fields" select="('w_animacy', 'w_semantic_type_animacy', 'w_semantic_type_group', 'w_semantic_type_person', 'np_is_verbal_noun', 'w_is_proper_name')"/>
+  <xsl:variable name="order_fields" select="('np_tree_pattern', 'np_simple_pattern', 'np_span_pattern')"/>
+  <xsl:variable name="adjective_fields" select="('np_has_agreeing_adjective', 'np_adjective_coordination', 'np_adj_position', 'np_agreeing_adjective_position_incl_quantifiers', 'np_articular_adjectival_subpattern', 'np_adjectives', 'np_hyperbaton_adjectives', 'np_discontinuity_type', 'np_hyperbaton_edge_degrees', 'np_hyperbaton_gap_degrees', 'np_hyperbaton_instigated_by')"/>
+  <xsl:variable name="ag_fields" select="('np_has_adnominal_genitive', 'np_has_only_ag_modifier', 'np_types_of_modifier', 'np_can_govern_genitive_category', 'np_ag_animacy', 'np_ag_form', 'np_ag_gender', 'np_ag_lemma', 'np_ag_number', 'np_ag_pos', 'np_ag_position', 'np_ag_is_name', 'np_ag_has_article', 'np_ag_tree_size')"/>
+  <xsl:variable name="demonstrative_fields" select="('np_demonstrative_position', 'np_demonstrative_lemma', 'np_has_demonstrative_modifier')"/>
+  <xsl:variable name="noun_fields" select="('np_noun_position')"/>
+  <xsl:variable name="numeral_fields" select="('w_has_numeral')"/>
+  <xsl:variable name="pp_fields" select="('np_pp_position', 'np_pp_lemma', 'np_has_pp_modifier', 'np_is_introduced_by_adp')"/>
+  <xsl:variable name="pronoun_fields" select="('np_pronominal_modifier_position', 'np_pronoun_lemma', 'np_has_pronominal_modifier')"/>
+  <xsl:variable name="mmnp_fields" select="('np_has_multiple_modifiers', 'np_mmnp_distribution', 'np_preceding_subtree_sizes', 'np_following_subtree_sizes', 'np_preceding_subtree_contour', 'np_following_subtree_contour', 'np_types_of_multiple_modifiers')"/>
+  <xsl:variable name="heaviness_fields" select="('w_subtree_size', 'w_subtree_heaviness')"/>
+  <xsl:variable name="other_fields" select="('np_has_deprecated_ap', 'w_position_bakker_category', 'np_is_in_greeting_formula', 'np_is_in_dating_formula', 'np_is_in_pg_measure_list', 'np_is_in_pg_nonmeasure_list', 'np_is_shared_lemma_pg_prose')"/>
+  
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+
+  <kiln:child>
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:text>Noun Phrase Search</xsl:text>
+    </kiln:block>
+
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:text>Noun Phrase Search</xsl:text>
+    </kiln:block>
+
+    <kiln:block name="content">
+      <div class="uk-grid">
+        <div class="uk-width-1-4">
+          <form action="{kiln:url-for-match('np-search', (), 0)}" id="search-form" method="get">
+            <div>
+              <label class="label">NP head</label>
+              <input class="uk-input" name="q" placeholder="Search word" type="search">
+                <xsl:attribute name="value">
+                  <xsl:value-of select="$q_value" />
+                </xsl:attribute>
+              </input>
+            </div>
+            <div>
+              <label class="checkbox">
+                <input name="df" type="checkbox" value="w_form">
+                  <xsl:if test="$df_value = 'w_form'">
+                    <xsl:attribute name="checked">checked</xsl:attribute>
+                  </xsl:if>
+                </input>
+                <xsl:text> Search word forms</xsl:text>
+              </label>
+              <xsl:apply-templates mode="search-query" select="/aggregation/response/lst[@name='responseHeader']/lst[@name='params']/*[@name='fq']" />
+            </div>
+          </form>
+          <!-- List available facets. -->
+          <xsl:apply-templates select="/aggregation/response/lst[@name='facet_counts']/lst[@name='facet_fields']" mode="search-results" />
+        </div>
+        <div class="uk-width-3-4">
+          <!-- List of currently applied facets. -->
+          <xsl:apply-templates mode="search-results" select="/aggregation/response/lst[@name='responseHeader']/lst[@name='params']/*[@name='fq']" />
+          <!-- List results. -->
+          <xsl:apply-templates select="/aggregation/response/result" mode="search-results" />
+          <p>
+            <a href="{kiln:url-for-match('search-citation', (), 0)}?{$query-string}&amp;rows=100">Citations (first 100)</a>
+          </p>
+        </div>
+      </div>
+    </kiln:block>
+
+  </kiln:child>
+
+</kiln:root>

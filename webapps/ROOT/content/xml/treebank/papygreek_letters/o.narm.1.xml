@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank xmlns:saxon="http://saxon.sf.net/" text_id="16206" format="aldt" version="1.5" direction="ltr" xml:lang="grc">
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2021-04-27" layer="reg"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2021-04-27" layer="orig"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="annotated" date="2021-04-27" layer="reg"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="annotated" date="2021-04-27" layer="orig"/>
+  <document_meta name="o.narm.1.xml" series_name="o.narm" series_type="documentary" tm_id="29537" hgv_id="29537" date_not_before="101" date_not_after="300" place_name="Egypt: U21"/>
+  <hand_meta name="m1" id="2">
+    <text_type hypercategory="PRIVATE" category="List" subcategory="Names"/>
+    <person pg_id="591" tm_id="" role="writer" handwriting="fluid and clear (fluido e chiaro)" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="" gender="" uncertain=""/>
+    <person pg_id="592" tm_id="449734" role="addressee" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Pebes" gender="1" uncertain=""/>
+    <person pg_id="593" tm_id="279440" role="addressee" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Pasis, son of Pabis" gender="1" uncertain=""/>
+    <person pg_id="595" tm_id="279439" role="addressee" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Ptolemaios" gender="1" uncertain=""/>
+  </hand_meta>
+  <sentence id="1">
+    <word id="1" orig_form="πρὸς" lemma_orig="πρός" postag_orig="r--------" relation_orig="AuxP" head_orig="11" form="πρὸς" lemma="πρός" postag="r--------" relation="AuxP" head="11" textpart="" line_n="1" lang="grc" hand="m1"/>
+    <word id="2" orig_form="Πεβῆτι" lemma_orig="Πεβης" postag_orig="n-s---md-" relation_orig="OBJ_CO" head_orig="5" form="Πεβῆν" lemma="Πεβης" postag="n-s---ma-" relation="OBJ_CO" head="5" textpart="" line_n="1" lang="grc" hand="m1" animacy="name" ending-mismatch="true"/>
+    <word id="3" orig_form="καὶ" lemma_orig="καί" postag_orig="c--------" relation_orig="AuxY" head_orig="5" form="καὶ" lemma="καί" postag="c--------" relation="AuxY" head="5" textpart="" line_n="1" lang="grc" hand="m1"/>
+    <word id="4" orig_form="Πτολεμ|αῖς" lemma_orig="Πτολεμαῖος" postag_orig="n-s---m--" relation_orig="OBJ_CO" head_orig="5" form="(Πτολεμ|(αῖ))ον" lemma="Πτολεμαῖος" postag="n-s---ma-" relation="OBJ_CO" head="5" textpart="" line_n="2" lang="grc" hand="m1" animacy="name" ending-mismatch="true"/>
+    <word id="5" orig_form="καὶ" lemma_orig="καί" postag_orig="c--------" relation_orig="COORD" head_orig="1" form="καὶ" lemma="καί" postag="c--------" relation="COORD" head="1" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="6" orig_form="Φᾶσις" lemma_orig="Πασις" postag_orig="n-s---mn-" relation_orig="OBJ_CO" head_orig="5" form="Φᾶσιν" lemma="Πασις" postag="n-s---ma-" relation="OBJ_CO" head="5" textpart="" line_n="2" lang="grc" hand="m1" animacy="name" ending-mismatch="true"/>
+    <word id="7" orig_form="Παβοῦς" lemma_orig="Παβους" postag_orig="n-s---mn-" relation_orig="ATR" head_orig="6" form="Παβοῦτος" lemma="Παβους" postag="n-s---mg-" relation="ATR" head="6" textpart="" line_n="2" lang="grc" hand="m1" animacy="name" ending-mismatch="true"/>
+    <word id="8" orig_form="με|τὰ" lemma_orig="μετά" postag_orig="r--------" relation_orig="AuxP" head_orig="11" form="με|τὰ" lemma="μετά" postag="r--------" relation="AuxP" head="11" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="9" orig_form="κολακίας" lemma_orig="κολακεία" postag_orig="n-s---fg-" relation_orig="ADV" head_orig="8" form="κολακείας" lemma="κολακεία" postag="n-s---fg-" relation="ADV" head="8" textpart="" line_n="3" lang="grc" hand="m1" animacy="nonconc" shows-iotacism="true"/>
+    <word id="10" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="11" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="PRED" head_orig="0" form="[0]" lemma="" postag="" relation="PRED" head="0" insertion_id="0009e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+  <sentence id="2">
+    <word id="1" orig_form="¯ιε¯" lemma_orig="15" postag_orig="m-p---__-" relation_orig="ADV" head_orig="3" form="¯ιε¯" lemma="15" postag="m-p---__-" relation="ADV" head="3" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="2" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="3" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="ExD" head_orig="0" form="[0]" lemma="" postag="" relation="ExD" head="0" insertion_id="0001e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+</treebank>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank xmlns:saxon="http://saxon.sf.net/" text_id="10206" format="aldt" version="1.5" direction="ltr" xml:lang="grc">
+  <annotator name="Polina Yordanova" address="polina.v.yordanova@gmail.com" role="approved" date="2021-09-07" layer="reg"/>
+  <annotator name="Polina Yordanova" address="polina.v.yordanova@gmail.com" role="approved" date="2021-09-07" layer="orig"/>
+  <annotator name="Jamie Vesterinen" address="jamie.vesterinen@gmail.com" role="annotated" date="2019-09-30" layer="reg"/>
+  <annotator name="Jamie Vesterinen" address="jamie.vesterinen@gmail.com" role="annotated (previously)" date="2016-12-26" layer="orig"/>
+  <document_meta name="o.claud.1.163.xml" series_name="o.claud" series_type="documentary" tm_id="24171" hgv_id="24171" date_not_before="100" date_not_after="120" place_name="Egypt: Eastern Desert"/>
+  <hand_meta name="m1" id="2">
+    <text_type hypercategory="PRIVATE" category="Letter" subcategory=""/>
+    <person pg_id="56" tm_id="141537" role="author" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Petronianus (Πετρωνιανός)" gender="1" uncertain=""/>
+    <person pg_id="56" tm_id="141537" role="writer" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Petronianus (Πετρωνιανός)" gender="1" uncertain="1"/>
+  </hand_meta>
+  <sentence id="1">
+    <word id="1" orig_form="Πετρωνιανὸς" lemma_orig="Πετρωνιανός" postag_orig="n-s---mn-" relation_orig="SBJ" head_orig="5" form="Πετρωνιανὸς" lemma="Πετρωνιανός" postag="n-s---mn-" relation="SBJ" head="5" textpart="" line_n="1" lang="grc" hand="m1" animacy="name"/>
+    <word id="2" orig_form="πλῖστα" lemma_orig="πολύς" postag_orig="d-------s" relation_orig="ADV" head_orig="5" form="πλεῖστα" lemma="πολύς" postag="d-------s" relation="ADV" head="5" textpart="" line_n="2" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="3" orig_form="(χέ(ρειν))" lemma_orig="χαίρω" postag_orig="v_____---" relation_orig="OBJ" head_orig="5" form="(χαί(ρειν))" lemma="χαίρω" postag="v--pna---" relation="OBJ" head="5" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="4" orig_form="·" lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="·" lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="5" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="PRED" head_orig="0" form="[0]" lemma="" postag="" relation="PRED" head="0" insertion_id="0003e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+  <sentence id="2">
+    <word id="1" orig_form="vac.?" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="vac.?" lemma="" postag="" relation="" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+  </sentence>
+</treebank>

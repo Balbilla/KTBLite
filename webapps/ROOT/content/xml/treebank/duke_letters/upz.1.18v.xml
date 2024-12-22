@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="-199" date_not_after="-100" place_name="Memphis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="petition"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="παρὰ" head="10" lemma="παρά" postag="r--------" relation="AuxP" id="1"/>
+    <word form="Πτολεμαίου" head="1" lemma="Πτολεμαῖος" postag="n-s---mg-" relation="ADV" id="2" animacy="name"/>
+    <word form="Γλαυκίου" head="2" lemma="Γλαυκίας" postag="n-s---mg-" relation="ATR" id="3" animacy="name"/>
+    <word form="Μακεδόνος" head="2" lemma="Μακεδών" orig_form="Μακ[ε]δ[ών]" postag="n-s---mg-" relation="APOS" id="4" animacy="name" ending-mismatch="true"/>
+    <word form="τοῦ" head="2" lemma="ὁ" orig_form="ο" postag="l-s---ng-" relation="ATR" id="5" ending-mismatch="true"/>
+    <word form="ἐν" head="8" lemma="ἐν" postag="r--------" relation="AuxP" id="6"/>
+    <word form="κατοχῇ" head="6" lemma="κατοχή" postag="n-s---fd-" relation="ATR" id="7" animacy="nonconc"/>
+    <word form="ἔτος" head="11" lemma="ἔτος" orig_form="ἠτη" postag="n-s---na-" relation="ADV" id="8" animacy="time" ending-mismatch="true"/>
+    <word form="ἤδη" head="10" lemma="ἤδη" postag="d--------" relation="ADV" id="9"/>
+    <word form="ἑνδέκατον" head="8" lemma="ἑνδέκατος" postag="a-s---na-" relation="ATR" id="10"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="11"/>
+  </sentence>
+</treebank>

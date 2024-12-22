@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="199" place_name="Karanis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Receipt"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="σιτολόγοις" head="4" lemma="σιτόλογος" postag="n-p---md-" relation="OBJ" id="1"/>
+    <word form="κώμης" head="1" lemma="κώμη" postag="n-s---fg-" relation="ATR" id="2" animacy="place"/>
+    <word form="Καρανίδος" head="2" lemma="Καρηνίς" postag="a-s---fg-" relation="ATR" id="3"/>
+    <word form="χαίρειν" head="6" lemma="χαίρω" postag="v--pna---" relation="OBJ" id="4"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="5"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="6"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ἔσχον" head="0" lemma="ἔχω" postag="v1saia---" relation="PRED" id="1"/>
+    <word form="παρʼ" head="1" lemma="παρά" postag="r--------" relation="AuxP" id="2"/>
+    <word form="ὑμῶν" head="2" lemma="σύ" postag="p-p---cg-" relation="ADV" id="3"/>
+    <word form="εἰς" head="1" lemma="εἰς" postag="r--------" relation="AuxP" id="4"/>
+    <word form="δάνειον" head="4" lemma="δάνειον" orig_form="δάνιον" postag="n-s---na-" relation="ADV" id="5" animacy="nonconc" shows-iotacism="true"/>
+    <word form="σπέρματα" head="1" lemma="σπέρμα" postag="n-p---na-" relation="OBJ" id="6" animacy="concrete"/>
+    <word form="τοῦ" head="10" lemma="ὁ" postag="l-s---ng-" relation="ATR" id="7"/>
+    <word form="ἐνεστῶτος" head="10" lemma="ἐνίστημι" postag="v-srpang-" relation="ATR" id="8"/>
+    <word form="κ" head="10" lemma="κ#" postag="a--------" relation="ATR" id="9" is_number="true"/>
+    <word form="ἔτους" head="6" lemma="ἔτος" postag="n-s---ng-" relation="ATR" id="10" animacy="time"/>
+    <word form="ἀπὸ" head="1" lemma="ἀπό" postag="r--------" relation="AuxP" id="11"/>
+    <word form="γενήματος" head="11" lemma="γένημα" postag="n-s---ng-" relation="ADV" id="12" animacy="concrete"/>
+    <word form="τοῦ" head="14" lemma="ὁ" postag="l-s---ng-" relation="ATR" id="13"/>
+    <word form="διεληλυθότος" head="12" lemma="διέρχομαι" postag="v-srpang-" relation="ATR" id="14"/>
+    <word form="ιθ" head="16" lemma="ιθ#" postag="a--------" relation="ATR" id="15" is_number="true"/>
+    <word form="ἔτους" head="12" lemma="ἔτος" postag="n-s---ng-" relation="ATR" id="16" animacy="time"/>
+    <word form="|gap=unknown_lines|" head="0" lemma="_" postag="z--------" relation="AuxK" id="17"/>
+  </sentence>
+</treebank>

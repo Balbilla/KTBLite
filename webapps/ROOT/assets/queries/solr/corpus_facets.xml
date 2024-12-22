@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<query>
+  <df default="true">corpus_tags</df>
+  <q>*</q>
+  <fq escape="false">document_type:text</fq>
+  <facet>true</facet>
+  <facet.field>text_corpus</facet.field>
+  <facet.field>text_century</facet.field>
+  <facet.field>text_language_proficiency</facet.field>
+  <facet.field>text_author</facet.field>
+  <facet.field>text_genre</facet.field>
+  <facet.limit>-1</facet.limit>
+  <facet.mincount>1</facet.mincount>
+  <facet.sort>index</facet.sort>
+  <!-- The number of rows returned by Solr at once (that is the number
+       displayed per page of results). -->
+  <rows default="true">1</rows>
+</query>

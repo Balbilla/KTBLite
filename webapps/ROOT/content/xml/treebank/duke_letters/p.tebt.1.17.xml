@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="-199" date_not_after="-100" place_name="Kerkeosiris"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Πολέμων" head="5" lemma="Πολέμων" postag="n-s---mn-" relation="SBJ" id="1" animacy="name"/>
+    <word form="Μεγχεῖ" head="3" lemma="Μεγχεῦς" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="χαίρειν" head="1" lemma="χαίρω" postag="v--pna---" relation="ATR" id="3"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="4"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="5"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ἐπεὶ" head="21" lemma="ἐπεί" postag="c--------" relation="AuxC" id="1"/>
+    <word form="διέγνωσται" head="1" lemma="διαγιγνώσκω" postag="v3srie---" relation="ADV" id="2"/>
+    <word form="τὸν" head="4" lemma="ὁ" postag="l-s---ma-" relation="ATR" id="3"/>
+    <word form="ἐπιμελητὴν" head="5" lemma="ἐπιμελητής" postag="n-s---ma-" relation="SBJ" id="4" animacy="person"/>
+    <word form="παραγίνεσθαι" head="13" lemma="παραγίγνομαι" postag="v--pne---" relation="OBJ_CO" id="5"/>
+    <word form="ἅμʼ" head="5" lemma="ἅμα" postag="d--------" relation="ADV" id="6"/>
+    <word form="ἡμέραι" head="5" lemma="ἡμέρα" postag="n-p---fn-" relation="SBJ" id="7" animacy="time"/>
+    <word form="τῆι" head="5" lemma="τῇ" postag="d--------" relation="ADV" id="8"/>
+    <word form="ιε" head="7" lemma="ιε#" postag="a--------" relation="ATR" id="9" is_number="true"/>
+    <word form="εἰς" head="5" lemma="εἰς" postag="r--------" relation="AuxP" id="10"/>
+    <word form="Βερενικίδα" head="10" lemma="Βερενικίς" postag="n-s---fa-" relation="OBJ" id="11" animacy="name"/>
+    <word form="τῆι" head="15" lemma="τῇ" postag="d--------" relation="ADV" id="12"/>
+    <word form="δὲ" head="2" lemma="δέ" postag="b--------" relation="COORD" id="13"/>
+    <word form="ιϛ" head="15" lemma="ιϛ#" postag="a--------" relation="ADV" id="14" is_number="true"/>
+    <word form="παράγειν" head="13" lemma="παράγω" postag="v--pna---" relation="OBJ_CO" id="15"/>
+    <word form="τὴν" head="17" lemma="ὁ" postag="l-s---fa-" relation="ATR" id="16"/>
+    <word form="κώμην" head="15" lemma="κώμη" postag="n-s---fa-" relation="OBJ" id="17" animacy="place"/>
+    <word form="εἰς" head="15" lemma="εἰς" postag="r--------" relation="AuxP" id="18"/>
+    <word form="Θεογονίδα" head="18" lemma="Θεογονίς" orig_form="Θεογογονίδα" postag="n-s---fa-" relation="OBJ" id="19" animacy="name"/>
+    <word form="," head="0" lemma="," postag="u--------" relation="AuxX" id="20"/>
+    <word form="στόχασαι" head="0" lemma="στοχάζομαι" postag="v2samm---" relation="PRED" id="21"/>
+    <word form="ὡς" head="21" lemma="ὡς" postag="c--------" relation="AuxC" id="22"/>
+    <word form="πάντα" head="25" lemma="πᾶς" postag="a-p---na-" relation="ATR" id="23"/>
+    <word form="τὰ" head="25" lemma="ὁ" postag="l-p---na-" relation="ATR" id="24"/>
+    <word form="ἐνοφειλόμενα" head="31" lemma="ἐνοφείλω" postag="v-pppena-" relation="SBJ" id="25"/>
+    <word form="περὶ" head="25" lemma="περί" postag="r--------" relation="AuxP" id="26"/>
+    <word form="τὴν" head="28" lemma="ὁ" postag="l-s---fa-" relation="ATR" id="27"/>
+    <word form="κώμην" head="26" lemma="κώμη" postag="n-s---fa-" relation="OBJ" id="28" animacy="place"/>
+    <word form="ἐν" head="31" lemma="ἐν" postag="r--------" relation="AuxP" id="29"/>
+    <word form="μέτρωι" head="29" lemma="μέτρον" postag="n-s---nd-" relation="PNOM" id="30" animacy="nonconc"/>
+    <word form="ἔσται" head="22" lemma="εἰμί" postag="v3sfim---" relation="OBJ" id="31"/>
+    <word form="ὅπως" head="31" lemma="ὅπως" postag="c--------" relation="AuxC" id="32"/>
+    <word form="μὴ" head="38" lemma="μή" postag="d--------" relation="AuxZ" id="33"/>
+    <word form="ἐπικατασχὼν" head="38" lemma="ἐπικατέχω" postag="v-sapamn-" relation="ADV" id="34"/>
+    <word form="αὐτὸν" head="34" lemma="αὐτός" postag="a-s---ma-" relation="OBJ" id="35"/>
+    <word form="εἰς" head="38" lemma="εἰς" postag="r--------" relation="AuxP" id="36"/>
+    <word form="δαπάνας" head="36" lemma="δαπάνη" postag="n-p---fa-" relation="OBJ" id="37" animacy="nonconc"/>
+    <word form="ἐμπέσῃς" head="32" lemma="ἐμπίπτω" postag="v2sasa---" relation="ADV" id="38"/>
+    <word form="οὐκ" head="40" lemma="οὐ" postag="d--------" relation="AuxZ" id="39"/>
+    <word form="ὀλίγας" head="37" lemma="ὀλίγος" orig_form="ὀλίας" postag="a-p---fa-" relation="ATR" id="40" ending-mismatch="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="41"/>
+  </sentence>
+  <sentence id="3">
+    <word form="ἔρρωσο" head="0" lemma="ῥώννυμι" postag="v2srme---" relation="PRED" id="1"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+  </sentence>
+  <sentence id="4">
+    <word form="ἔτους" head="3" lemma="ἔτος" postag="n-s---ng-" relation="ATR" id="1" animacy="time"/>
+    <word form="γ" head="1" lemma="γ#" postag="a--------" relation="ATR" id="2" is_number="true"/>
+    <word form="Παῦνι" head="6" lemma="Παῦνι" postag="n-s------" relation="ADV" id="3" animacy="name"/>
+    <word form="ια" head="3" lemma="ια#" postag="a--------" relation="ATR" id="4" is_number="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="5"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="6"/>
+  </sentence>
+  <sentence id="5">
+    <word form="κωμογραμματεῖ" head="4" lemma="κωμογραμματεύς" postag="n-s---md-" relation="ADV" id="1" animacy="person"/>
+    <word form="Μεγχεῖ" head="1" lemma="Μεγχεῦς" postag="n-s---md-" relation="ATR" id="2" animacy="name"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="3"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="4"/>
+  </sentence>
+</treebank>

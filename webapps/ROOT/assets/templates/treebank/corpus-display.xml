@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:h="http://apache.org/cocoon/request/2.0"
+           xmlns:tb="https://papygreek.hum.helsinki.fi/py/"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:param name="corpus"/>
+
+  <xsl:include href="cocoon://_internal/template/xsl/stylesheets/treebank/utils.xsl"/>
+  <xsl:include href="cocoon://_internal/template/xsl/stylesheets/treebank/corpus-display.xsl"/>
+
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+
+  <kiln:child>
+
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:text>Corpus </xsl:text><xsl:value-of select="$corpus"/>
+    </kiln:block>
+
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:text>Corpus </xsl:text>
+      <xsl:for-each select="/aggregation/response/lst[@name='facet_counts']/lst[@name='facet_fields']/lst/int[normalize-space(@selected)]">
+        <xsl:value-of select="concat(@selected, @name)"/>
+        <xsl:if test="position() != last()">
+          <xsl:text> </xsl:text>
+        </xsl:if>
+      </xsl:for-each>
+    </kiln:block>
+
+    <kiln:block name="content">
+      <ul data-uk-tab="">
+        <li class="is-active"><a href="#summary">Summary</a></li>
+        <li><a href="#texts">Texts</a></li>
+        <li><a href="#queries">Queries</a></li>
+        <li><a href="#corpus-selection">Corpus selection</a></li>
+      </ul>
+      <ul class="uk-switcher">
+        <li><xsl:call-template name="summary"/></li>
+        <li><xsl:call-template name="texts"/></li>
+        <li><xsl:call-template name="queries"/></li>
+        <li><xsl:call-template name="corpus-selection"/></li>
+      </ul>
+    </kiln:block>
+
+  </kiln:child>
+
+</kiln:root>

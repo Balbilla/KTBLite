@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:views>
+    <map:view from-label="content" name="content">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+
+  <map:pipelines>
+    <map:pipeline id="lemma-inventory">
+      <!-- Texts filtered to sentences containing lemma -->
+      <!-- Parameters: 1 - lemma, 2 - corpus, 3 - text -->
+      <map:match id="preprocess-filter-sentences-by-lemma-text" pattern="pp/filter-sentences/*/*/*.xml">d
+        <map:generate src="cocoon://pp/tree/{2}/{3}.xml"/>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-filter-sentences-by-lemma-text.xsl">
+          <map:parameter name="lemma" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Corpus filtered to sentences containing lemma -->
+      <!-- Parameters: 1 - lemma, 2 - corpus -->
+      <map:match id="preprocess-filter-sentences-by-lemma-corpus" pattern="pp/filter-sentences/*/*.xml">
+        <map:generate src="cocoon://index/corpus/{2}/lemma-inventory/pp/filter-sentences/{1}.xml"/>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-filter-sentences-by-lemma-text.xsl">
+          <map:parameter name="lemma" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Filter lemma inventory -->
+      <!-- I need both ** at the end of the pattern here because I use it for both text and corpus -->
+      <!-- Gender, lemma, and pos are specified via request parameters (bits after the '?' in the url). They don't need to be specified. -->
+
+      <map:match id="preprocess-filter-lemma-inventory" pattern="pp/filter-lemma-inventory/**.xml">
+        <map:generate src="cocoon:/lemma-inventory/{1}.xml"/>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-filter-lemma-inventory.xsl">
+          <map:parameter name="gender" value="request-param:gender"/>
+          <map:parameter name="lemma" value="request-param:lemma"/>
+          <map:parameter name="pos" value="request-param:pos"/>
+        </map:transform>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-filter-lemma-inventory-update-counts.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Full lemma inventory -->
+      <!-- At some point this must be integrated to the lemma inventory and filtering scheme! -->
+
+      <map:match id="preprocess-full-lemma-inventory-corpus" pattern="pp/full-lemma-inventory/*.xml">
+        <map:generate src="cocoon://index/corpus/{1}/lemma-inventory/pp/full-lemma-inventory.xml"/>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-full-lemma-inventory-corpus.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="preprocess-full-lemma-inventory-text" pattern="pp/full-lemma-inventory/*/*.xml">
+        <map:generate src="cocoon://pp/tree/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-full-lemma-inventory-text.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+          <map:parameter name="text" value="{2}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Lemma inventory  -->
+      <map:match id="preprocess-lemma-inventory-corpus" pattern="pp/lemma-inventory/*.xml">
+        <map:generate src="cocoon://index/corpus/{1}/lemma-inventory/pp/lemma-inventory.xml"/>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-lemma-inventory-corpus.xsl">
+          <map:parameter name="corpus" value="{1}"/><!-- this is a corpus definition string, e.g. "gorman+perseids" -->
+        </map:transform>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-lemma-inventory-corpus-count.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="preprocess-lemma-inventory-text" pattern="pp/lemma-inventory/*/*.xml">
+        <map:generate src="cocoon://pp/tree/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/pp-lemma-inventory-text.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Display of lemma filter for corpus -->
+      <!-- Parameters: 1 - corpus, 2 - lemma -->
+
+      <map:match id="filter-sentences-by-lemma-corpus" pattern="*/filter-sentences-by-lemma/*.html">
+        <map:aggregate element="aggregation">
+          <map:part src="cocoon:/pp/filter-sentences/{2}/{1}.xml"/>
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/lemma-inventory/filter-sentences-by-lemma-corpus.xsl">
+          <map:parameter name="lemma" value="{2}"/>
+          <map:parameter name="corpus" value="{1}"/>
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Display of lemma filter for a single text -->
+      <!-- Parameters: 1 - corpus, 2 - text, 3 - lemma -->
+      <map:match id="filter-sentences-by-lemma-text" pattern="*/filter-sentences-by-lemma/*/*.html">
+        <map:aggregate element="aggregation">
+          <map:part src="cocoon:/pp/filter-sentences/{3}/{1}/{2}.xml"/><!-- lemma - corpus - text -->
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/filter-sentences-by-lemma-text.xsl">
+          <map:parameter name="lemma" value="{3}"/>
+          <map:parameter name="corpus" value="{1}"/>
+          <map:parameter name="text" value="{2}"/>
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Display of full lemma inventory -->
+      <map:match id="full-lemma-inventory-corpus" pattern="*/full-lemma-inventory.xml">
+        <map:generate src="cocoon:/pp/full-lemma-inventory/{1}.xml"/>
+        <map:transform src="cocoon://_internal/template/treebank/full-lemma-inventory-corpus.xsl"/>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Display a merge of the existing adjective lemma inventory with the adjective
+           lemma inventory of the specified corpus. Result should be saved over the top of
+           the existing adjectives-semantics.xml -->
+      <map:match id="merged-adjective-lemma-inventory" pattern="*/adjective-lemma-inventory.xml">
+        <map:aggregate element="aggregation">
+          <map:part src="../content/xml/adjectives-semantics.xml"/>
+          <map:part src="cocoon:/pp/filter-lemma-inventory/{1}.xml?pos=a"/>
+        </map:aggregate>
+        <map:transform src="../stylesheets/treebank/lemma-inventory/merge-lemma-inventory.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

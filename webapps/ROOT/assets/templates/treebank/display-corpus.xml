@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:tb="https://papygreek.hum.helsinki.fi/py/"
+  xmlns:tei="http://www.tei-c.org/ns/1.0"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+  <xsl:include href="cocoon://_internal/template/xsl/stylesheets/treebank/utils.xsl"/>
+  
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+  
+  <kiln:child>
+    
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:text>Summary of corpus </xsl:text><xsl:value-of select="aggregation/xincludes/file[1]/treebank/@corpus"/>
+    </kiln:block>
+    
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:text>Summary of corpus </xsl:text><xsl:value-of select="aggregation/xincludes/file[1]/treebank/@corpus"/>
+    </kiln:block>
+    
+    <kiln:block name="content">
+      <div class="row">
+        <div class="large-12 columns">
+          <table>
+            <tr>
+              <th>Number of texts</th>
+              <td><xsl:value-of select="count(/aggregation/xincludes/file)"/></td>
+            </tr>
+            <tr>
+              <th>Number of sentences</th>
+              <td><xsl:value-of select="sum(/aggregation/xincludes/file/treebank/sentences/@n)"/></td>
+            </tr>
+            <tr>
+              <th>Number of tokens (all)</th>
+              <td><xsl:value-of select="sum(/aggregation/xincludes/file/treebank/sentences/@token-count-all)"/></td>
+            </tr>
+            <tr>
+              <th>Number of tokens (minus punctuation)</th>
+              <td><xsl:value-of select="sum(/aggregation/xincludes/file/treebank/sentences/@token-count-actual)"/></td>
+            </tr>
+          </table>    
+          <table class="tablesorter">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Number of texts</th>
+                <th>Number of sentences</th>
+                <th>Number of tokens (all)</th>
+                <th>Number of tokens (minus punctuation)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <xsl:for-each-group select="/aggregation/xincludes/file/treebank" group-by="tb:get-genre(.)">
+                <tr>
+                  <td><xsl:value-of select="current-grouping-key()"/></td>
+                  <td><xsl:value-of select="count(current-group())"/></td>
+                  <td><xsl:value-of select="sum(current-group()/sentences/@n)"/></td>
+                  <td><xsl:value-of select="sum(current-group()/sentences/@token-count-all)"/></td>
+                  <td><xsl:value-of select="sum(current-group()/sentences/@token-count-actual)"/></td>
+                </tr>
+              </xsl:for-each-group>
+            </tbody>
+          </table>
+          <table class="tablesorter">
+            <thead>
+              <tr>
+                <th>Text</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Number of sentences</th>
+                <th>Number of tokens (all)</th>
+                <th>Number of tokens (minus punctuation)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <xsl:for-each select="/aggregation/xincludes/file/treebank">
+                <tr>
+                  <td><a href="{kiln:url-for-match('display-text', (@corpus, @text), 0)}"><xsl:value-of select="@text"/></a></td>
+                  <td><xsl:value-of select="tb:display-text-date(.)"/></td>
+                  <td><xsl:value-of select="tb:get-genre(.)"/></td>
+                  <td><xsl:value-of select="sentences/@n"/></td>
+                  <td><xsl:value-of select="sentences/@token-count-all"/></td>
+                  <td><xsl:value-of select="sentences/@token-count-actual"/></td>
+                </tr>
+              </xsl:for-each>
+            </tbody>
+          </table>
+                    
+        </div>
+      </div>
+    </kiln:block>
+    
+  </kiln:child>
+  
+</kiln:root>
+
+

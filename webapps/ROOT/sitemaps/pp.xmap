@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:views>
+    <map:view from-label="content" name="content">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+
+  <map:pipelines>
+    <map:pipeline id="preprocessing">
+      <map:match id="index-pp-trees" pattern="tree_list/*.html">
+        <map:generate src="cocoon://_internal/dirlist/content/xml/treebank/{1}.xml"/>
+        <map:transform src="../stylesheets/treebank/pp-corpus-dir-list-to-tree-list.xsl"/>
+        <map:serialize/>
+      </map:match>
+
+      <map:match id="temp-renumbering" pattern="temp/renumbering/*/*.xml">
+        <map:generate src="../content/xml/treebank/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-renumber-sentences.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="preprocess-treebank-to-xml" pattern="tree/*/*.xml">
+        <map:generate src="../content/xml/treebank/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-to-xml.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+          <map:parameter name="text" value="{2}"/>
+        </map:transform>
+        <map:transform src="../stylesheets/treebank/pp/treebank-normalize-unicode.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-clean.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-clean-2.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-fix-leuven-dating-formulae-fix-etous-parent-kaisaros.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-fix-leuven-dating-formulae-fix-etous-parent-month.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-fix-leuven-dating-formulae-separate-from-errwso.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-fix-leuven-dating-formulae-reposition-month.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-fix-leuven-dating-formulae-correct-relations.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-annotate-greeting-formula.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-validate.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-mobility.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-metadata.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-date.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-add-animacy-annotation.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-dichotomous-semantic-annotation.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-renumber-sentences.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/treebank-subordination.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="preprocess-sentence" pattern="sentence/*/*.xml">
+        <map:generate src="cocoon:/tree/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/pp/sentence-annotate-basic-word-order-pattern-obj-distinction.xsl"/>
+        <map:transform src="../stylesheets/treebank/pp/sentence-annotate-constituent-position-relative-to-verb.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Generate data for a sentence in a text, being the pruned
+           treebank and the words converted to a Google
+           Charts-suitable format. -->
+      <map:match id="preprocess-sentence" pattern="sentence/*/*/*.xml">
+        <!-- {1}: corpus (dir) name
+             {2}: text (file) name
+             {3}: sentence number -->
+        <map:generate src="cocoon:/tree/{1}/{2}.xml" />
+        <map:transform src="../stylesheets/treebank/pp/sentence.xsl">
+          <map:parameter name="sentence" value="{3}" />
+        </map:transform>
+        <map:serialize type="xml" />
+      </map:match>
+
+      <map:match id="corpus-metadata" pattern="corpus-metadata/*.xml">
+        <map:generate src="cocoon://index/corpus/{1}/pp/text-metadata.xml"/>
+        <map:transform src="../stylesheets/treebank/pp/collate-corpus-metadata.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="text-metadata" pattern="text-metadata/*/*.xml">
+        <map:generate src="cocoon:/tree/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/pp/metadata-prune.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="np-adnominal-genitives-exploration-corpus" pattern="adnominal-genitives/*.html">
+        <map:generate src="cocoon://index/corpus/{1}/adnominal-genitives.xml"/>
+        <map:transform src="cocoon://_internal/template/treebank/np-adnominal-genitives.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+        </map:transform>
+        <map:serialize />
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

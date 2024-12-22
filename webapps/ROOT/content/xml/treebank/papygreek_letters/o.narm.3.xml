@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank xmlns:saxon="http://saxon.sf.net/" text_id="16240" format="aldt" version="1.5" direction="ltr" xml:lang="grc">
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2021-04-27" layer="orig"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2021-04-27" layer="reg"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="annotated" date="2021-04-27" layer="reg"/>
+  <document_meta name="o.narm.3.xml" series_name="o.narm" series_type="documentary" tm_id="29539" hgv_id="29539" date_not_before="101" date_not_after="300" place_name="Egypt: U21"/>
+  <hand_meta name="m1" id="2">
+    <text_type hypercategory="PRIVATE" category="Memorandum (private)" subcategory=""/>
+    <person pg_id="591" tm_id="" role="writer" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="" gender="" uncertain=""/>
+  </hand_meta>
+  <sentence id="1">
+    <word id="1" orig_form="πρὸς" lemma_orig="πρός" postag_orig="r--------" relation_orig="AuxP" head_orig="6" form="πρὸς" lemma="πρός" postag="r--------" relation="AuxP" head="6" textpart="" line_n="1" lang="grc" hand="m1"/>
+    <word id="2" orig_form="φίλου|ς" lemma_orig="φίλος" postag_orig="a-p---ma-" relation_orig="OBJ" head_orig="1" form="φίλου|ς" lemma="φίλος" postag="a-p---ma-" relation="OBJ" head="1" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="3" orig_form="μετὰ" lemma_orig="μετά" postag_orig="r--------" relation_orig="AuxP" head_orig="6" form="μετὰ" lemma="μετά" postag="r--------" relation="AuxP" head="6" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="4" orig_form="κολα|γίας" lemma_orig="κολακεία" postag_orig="n-s---fg-" relation_orig="ADV" head_orig="3" form="κολα|κείας" lemma="κολακεία" postag="n-s---fg-" relation="ADV" head="3" textpart="" line_n="3" lang="grc" hand="m1" animacy="nonconc" shows-iotacism="true"/>
+    <word id="5" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="6" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="PRED" head_orig="0" form="[0]" lemma="" postag="" relation="PRED" head="0" insertion_id="0000e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+  <sentence id="2">
+    <word id="1" orig_form="ιϛ" lemma_orig="ιϛ" postag_orig="m-p---__-" relation_orig="ADV" head_orig="3" form="ιϛ" lemma="ιϛ" postag="m-p---__-" relation="ADV" head="3" textpart="" line_n="4" lang="grc" hand="m1"/>
+    <word id="2" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="4" lang="grc" hand="m1"/>
+    <word id="3" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="ExD" head_orig="0" form="[0]" lemma="" postag="" relation="ExD" head="0" insertion_id="0001e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+</treebank>

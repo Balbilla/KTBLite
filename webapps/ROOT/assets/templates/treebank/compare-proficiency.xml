@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:tei="http://www.tei-c.org/ns/1.0"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <xsl:param name="text"/>
+  
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+  
+  <kiln:child>
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:text>Language proficiency in </xsl:text><xsl:value-of select="$text"/>
+    </kiln:block>
+    
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:text>Language proficiency in </xsl:text><xsl:value-of select="$text"/>
+    </kiln:block>
+    
+    <kiln:block name="content">
+      <section class="uk-margin">
+        <h2>Comparison between BGU.16 documents in PapyGreek and Duke-nlp</h2>        
+        <table class="uk-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th scope="col">PapyGreek</th>
+              <th scope="col">Duke-nlp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <xsl:variable name="papygreek-tree" select="/aggregation/aggregation[1]/treebank/metadata/language_proficiency"/>
+            <xsl:variable name="duke-tree" select="/aggregation/aggregation[2]/treebank/metadata/language_proficiency"/>
+            <xsl:for-each select="$papygreek-tree/*">
+              <xsl:variable name="element-name" select="local-name(.)"/>
+              <xsl:variable name="duke-tree-element" select="$duke-tree/*[local-name(.) = $element-name]"/>
+              <tr>
+                <th scope="row">
+                  <xsl:value-of select="$element-name"/>
+                </th>
+                <td>
+                  <xsl:value-of select="@score"/>
+                  <xsl:text> (</xsl:text>
+                  <xsl:value-of select="."/>
+                  <xsl:text>)</xsl:text>
+                </td>
+                <td>
+                  <xsl:value-of select="$duke-tree-element/@score"/>
+                  <xsl:text> (</xsl:text>
+                  <xsl:value-of select="$duke-tree-element"/>
+                  <xsl:text>)</xsl:text>
+                </td>
+              </tr>
+            </xsl:for-each>
+            <tr>
+              <th scope="row">Total score</th>
+              <td>
+                <xsl:value-of select="$papygreek-tree/@total-score"/>
+                <xsl:text> - </xsl:text>
+                <xsl:value-of select="$papygreek-tree/@label"/>
+              </td>
+              <td>
+                <xsl:value-of select="$duke-tree/@total-score"/>
+                <xsl:text> - </xsl:text>
+                <xsl:value-of select="$duke-tree/@label"/>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </kiln:block>
+  </kiln:child>
+  
+</kiln:root>
+  

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="299" place_name="Narmouthis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Memorandum"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="πρὸς" head="9" lemma="πρός" postag="r--------" relation="AuxP" id="1"/>
+    <word form="τοὺς" head="3" lemma="ὁ" postag="l-p---ma-" relation="ATR" id="2"/>
+    <word form="γραμματεῖς" head="5" lemma="γραμματεύς" postag="n-p---ma-" relation="OBJ_CO" id="3" animacy="person"/>
+    <word form="γεωργῶν" head="3" lemma="γεωργός" orig_form="κεωρκῶν" postag="n-p---mg-" relation="ATR" id="4" animacy="person" ending-mismatch="true"/>
+    <word form="καὶ" head="1" lemma="καί" postag="b--------" relation="COORD" id="5"/>
+    <word form="γραμματεῖς" head="5" lemma="γραμματεύς" orig_form="γραμματιτέα" postag="n-p---ma-" relation="OBJ_CO" id="6" animacy="person" ending-mismatch="true" shows-iotacism="true"/>
+    <word form="σκαυρέων" head="6" lemma="σκα̣" postag="n-p----g-" relation="ATR" id="7"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="8"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="9"/>
+  </sentence>
+  <sentence id="2">
+    <word form="τὸ" head="2" lemma="ὁ" postag="l-s---nn-" relation="ATR" id="1"/>
+    <word form="κζ" head="4" lemma="κζ#" postag="a--------" relation="OBJ" id="2" is_number="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="3"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="4"/>
+  </sentence>
+  <sentence id="3">
+    <word form="μετὰ" head="8" lemma="μετά" postag="r--------" relation="AuxP" id="1"/>
+    <word form="κολακείας" head="5" lemma="κολακεία" orig_form="κολα-κίας" postag="n-s---fg-" relation="ADV_CO" id="2" animacy="nonconc" shows-iotacism="true"/>
+    <word form="καὶ" head="5" lemma="καί" postag="b--------" relation="AuxY" id="3"/>
+    <word form="δώρων" head="5" lemma="δῶρον" postag="n-p---ng-" relation="ADV_CO" id="4" animacy="concrete"/>
+    <word form="καὶ" head="1" lemma="καί" postag="b--------" relation="COORD" id="5"/>
+    <word form="ἀστρονομίας" head="5" lemma="ἀστρονομία" postag="n-s---fg-" relation="ADV_CO" id="6" animacy="nonconc"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="7"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="8"/>
+  </sentence>
+</treebank>

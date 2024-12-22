@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="../" name="solr">
+
+  <description>Solr Targets</description>
+
+  <target name="solr"
+          depends="init"
+          description="Creates a Solr index by crawling the content site's content XML files">
+    <echo>Deleting existing index.</echo>
+    <exec executable="wget">
+      <arg value="--spider" />
+      <arg value="-erobots=off" />
+      <arg value="http://localhost:${jetty.port}/index/delete.html" />
+    </exec>
+    <echo>Indexing all files individually.</echo>
+    <exec executable="wget">
+      <!-- recurse -->
+      <arg value="-r" />
+      <!-- ... to a level of ... -->
+      <arg value="-l" />
+      <!-- ... infinity -->
+      <arg value="1" />
+      <arg value="--spider" />
+      <!-- verbosity -->
+      <arg value="-nv" />
+      <!-- don't try to connect through the web proxy server -->
+      <arg value="--no-proxy" />
+      <!-- don't wait between requests -->
+      <arg value="--wait=0" />
+      <!-- write log file into datestamped file -->
+      <arg value="--output-file=solr-index.log" />
+      <!-- ignore the robots.txt file -->
+      <arg value="-erobots=off" />
+      <!-- because some pages can take a while -->
+      <arg value="--timeout=10800" />
+      <!-- home page -->
+      <arg value="http://localhost:${jetty.port}/index/site-list.html" />
+    </exec>
+    <echo>Optimising index.</echo>
+    <exec executable="wget">
+      <arg value="--spider" />
+      <arg value="-erobots=off" />
+      <arg value="--timeout=10800" />
+      <arg value="http://localhost:${jetty.port}/index/optimise.html" />
+    </exec>
+  </target>
+
+  <target name="reindex" depends="init, input-corpus-arg" description="Reindexes a subset of trees by crawling the content site's files.">
+    <echo>Reindexing treebank files matching corpus definition "${corpus}".</echo>
+    <exec executable="wget">
+      <arg value="-r" />
+      <arg value="-l 1" />
+      <arg value="--spider" />
+      <arg value="-erobots=off" />
+      <arg value="--output-file=solr-index.log" />
+      <arg value="-nv" />
+      <arg value="--no-proxy" />
+      <arg value="--wait=0" />
+      <arg value="--timeout=10800" />
+      <arg value="http://localhost:${jetty.port}/corpus/${corpus}/solr.html" />
+    </exec>
+    <echo>Optimising index.</echo>
+    <exec executable="wget">
+      <arg value="--spider" />
+      <arg value="-erobots=off" />
+      <arg value="--timeout=10800" />
+      <arg value="http://localhost:${jetty.port}/index/optimise.html" />
+    </exec>
+  </target>
+
+  <target name="index" depends="init, input-corpus-dir" description="Indexes a subset of trees by crawling the content site's files.">
+    <echo>Deleting existing index for corpus "${corpus}".</echo>
+    <exec executable="wget">
+      <arg value="--spider" />
+      <arg value="-erobots=off" />
+      <arg value="http://localhost:${jetty.port}/index/delete/corpus/${corpus}.html" />
+    </exec>
+    <echo>Indexing treebank files matching corpus directory "${corpus}".</echo>
+    <exec executable="wget">
+      <arg value="-r" />
+      <arg value="-l 1" />
+      <arg value="--spider" />
+      <arg value="-erobots=off" />
+      <arg value="--output-file=solr-index.log" />
+      <arg value="-nv" />
+      <arg value="--no-proxy" />
+      <arg value="--wait=0" />
+      <arg value="--timeout=10800" />
+      <arg value="http://localhost:${jetty.port}/corpus/${corpus}/solr-new.html" />
+    </exec>
+    <echo>Optimising index.</echo>
+    <exec executable="wget">
+      <arg value="--spider" />
+      <arg value="-erobots=off" />
+      <arg value="--timeout=10800" />
+      <arg value="http://localhost:${jetty.port}/index/optimise.html" />
+    </exec>
+  </target>
+
+  <target name="input-corpus-arg" unless="corpus">
+    <input addProperty="corpus" message="Enter the desired corpus definition (eg, +gorman-History):" />
+  </target>
+  
+  <target name="input-corpus-dir" unless="corpus">
+    <input addProperty="corpus" message="Enter the desired corpus directory (eg, perseids):" />
+  </target>
+</project>

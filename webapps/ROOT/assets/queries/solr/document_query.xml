@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<query>
+  <df default="true">w_lemma</df>
+  <q default="true">*</q>
+  <fq escape="false">document_type:text</fq>
+  <facet>true</facet>
+  <!-- Metadata -->
+  <facet.field join="or">text_corpus</facet.field>
+  <facet.field mincount="1" join="or">text_century</facet.field>    
+  <facet.field mincount="1">text_century_earliest</facet.field>
+  <facet.field mincount="1">text_century_latest</facet.field>
+  <facet.field>text_century_minimal_range</facet.field>
+  <facet.field mincount="1" sort="count" join="or">text_genre</facet.field>
+  <facet.field join="or" mincount="1" sort="count">text_author</facet.field>
+  <facet.field mincount="1">text_sentences</facet.field>
+  <facet.field mincount="1">text_tokens</facet.field>
+  <facet.limit>-1</facet.limit>
+  <facet.mincount>0</facet.mincount>
+  <facet.sort>index</facet.sort>
+  <!-- The number of rows returned by Solr at once (that is the number
+       displayed per page of results). -->
+  <rows default="true">10000</rows>
+</query>

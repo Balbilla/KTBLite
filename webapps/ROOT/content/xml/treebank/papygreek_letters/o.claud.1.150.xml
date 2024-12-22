@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank xmlns:saxon="http://saxon.sf.net/" text_id="10192" format="aldt" version="1.5" direction="ltr" xml:lang="grc">
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2019-10-11" layer="reg"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2019-10-11" layer="orig"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="annotated" date="2019-10-11" layer="orig"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="annotated" date="2019-10-11" layer="reg"/>
+  <annotator name="Jamie Vesterinen" address="jamie.vesterinen@gmail.com" role="annotated" date="2019-10-01" layer="reg"/>
+  <annotator name="Jamie Vesterinen" address="jamie.vesterinen@gmail.com" role="annotated" date="2019-10-01" layer="orig"/>
+  <document_meta name="o.claud.1.150.xml" series_name="o.claud" series_type="documentary" tm_id="24161" hgv_id="24161" date_not_before="100" date_not_after="120" place_name="Egypt: Eastern Desert"/>
+  <hand_meta name="m1" id="2">
+    <text_type hypercategory="" category="" subcategory=""/>
+    <text_type hypercategory="PRIVATE" category="Letter" subcategory=""/>
+    <person pg_id="28" tm_id="141506" role="author" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Cornelianus (Κορνηλιανός)" gender="1" uncertain=""/>
+    <person pg_id="29" tm_id="141507" role="addressee" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Asḳ... (Ἀσκ̣ [)" gender="" uncertain=""/>
+    <person pg_id="28" tm_id="141506" role="writer" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Cornelianus (Κορνηλιανός)" gender="1" uncertain="1"/>
+  </hand_meta>
+  <sentence id="1">
+    <word id="1" orig_form="Κορνηλιανὸς" lemma_orig="Κορνηλιανός" postag_orig="n-s---mn-" relation_orig="SBJ" head_orig="7" form="Κορνηλιανὸς" lemma="Κορνηλιανός" postag="n-s---mn-" relation="SBJ" head="7" textpart="" line_n="1" lang="grc" hand="m1" animacy="name"/>
+    <word id="2" orig_form="Ἀσκ̣[_.?]" lemma_orig="Ἀσκ̣|gap:?|" postag_orig="n-_---__-" relation_orig="OBJ" head_orig="7" form="Ἀσκ̣[_.?]" lemma="Ἀσκ|gap:?|" postag="n-_---m_-" relation="OBJ" head="7" textpart="" line_n="1" lang="grc" hand="m1" animacy="name"/>
+    <word id="3" orig_form="[τῷ]" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="[τῷ]" lemma="ὁ" postag="l-s---md-" relation="ATR" head="4" textpart="" line_n="1" lang="grc" hand="m1"/>
+    <word id="4" orig_form="[πα]|τρὶ" lemma_orig="" postag_orig="" relation_orig="ATR" head_orig="2" form="[πα]|τρὶ" lemma="πατήρ" postag="n-s---md-" relation="ATR" head="2" textpart="" line_n="2" lang="grc" hand="m1" animacy="person"/>
+    <word id="5" orig_form="(χ(αίρειν))" lemma_orig="χαίρω" postag_orig="v_____---" relation_orig="OBJ" head_orig="7" form="(χ(αίρειν))" lemma="χαίρω" postag="v--pna---" relation="OBJ" head="7" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="6" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="7" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="PRED" head_orig="0" form="[0]" lemma="" postag="" relation="PRED" head="0" insertion_id="0005e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+  <sentence id="2">
+    <word id="1" orig_form="κόμισαι" lemma_orig="κομίζω" postag_orig="v2samm---" relation_orig="PRED" head_orig="0" form="κόμισαι" lemma="κομίζω" postag="v2samm---" relation="PRED" head="0" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="2" orig_form="δ_.1[_.?]" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="δ_.1[_.?]" lemma="" postag="" relation="" head="0" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="3" orig_form="τὸ" lemma_orig="ὁ" postag_orig="l-s---n_-" relation_orig="ATR" head_orig="5" form="τὸ" lemma="ὁ" postag="l-s---n_-" relation="ATR" head="5" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="4" orig_form="γὰρ" lemma_orig="γάρ" postag_orig="d--------" relation_orig="AuxY" head_orig="" form="γὰρ" lemma="γάρ" postag="d--------" relation="AuxY" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="5" orig_form="σεῦτλον" lemma_orig="τεῦτλον" postag_orig="n-s---n_-" relation_orig="" head_orig="" form="σεῦτλον" lemma="τεῦτλον" postag="n-s---n_-" relation="" head="0" textpart="" line_n="3" lang="grc" hand="m1" animacy="concrete"/>
+    <word id="6" orig_form="ο" lemma_orig="ὅς" postag_orig="p-s---n_-" relation_orig="" head_orig="" form="ο" lemma="ὅς" postag="p-s---n_-" relation="" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="7" orig_form="ει[_.?]" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="ει[_.?]" lemma="" postag="" relation="" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="8" orig_form="η_.3" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="η_.3" lemma="" postag="" relation="" head="0" textpart="" line_n="4" lang="grc" hand="m1"/>
+    <word id="9" orig_form="δὲ" lemma_orig="δέ" postag_orig="c--------" relation_orig="AuxY" head_orig="" form="δὲ" lemma="δέ" postag="c--------" relation="AuxY" head="0" textpart="" line_n="4" lang="grc" hand="m1"/>
+    <word id="10" orig_form="καὶ" lemma_orig="καί" postag_orig="c--------" relation_orig="COORD" head_orig="" form="καὶ" lemma="καί" postag="c--------" relation="COORD" head="0" textpart="" line_n="4" lang="grc" hand="m1"/>
+    <word id="11" orig_form="ἀ̣ν̣ι̣εν̣_.1[_.?]" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="ἀ̣ν̣ι̣εν̣_.1[_.?]" lemma="" postag="" relation="" head="0" textpart="" line_n="4" lang="grc" hand="m1"/>
+    <word id="12" orig_form="[_.?lin]" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="[_.?lin]" lemma="" postag="" relation="" head="0" textpart="" line_n="5" lang="grc" hand="m1"/>
+  </sentence>
+</treebank>

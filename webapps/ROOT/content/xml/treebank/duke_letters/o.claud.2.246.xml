@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="199" place_name="Tiberiane"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Πετενεφώτης" head="6" lemma="Πετενεφώτης" postag="n-s---mn-" relation="SBJ" id="1" animacy="name"/>
+    <word form="Οὐαλερίῳ" head="6" lemma="Οὐαλέριος" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="τῷ" head="4" lemma="ὁ" postag="l-s---md-" relation="ATR" id="3"/>
+    <word form="ἀδελφῷ" head="2" lemma="ἀδελφός" postag="n-s---md-" relation="APOS" id="4" animacy="person"/>
+    <word form="πολλὰ" head="6" lemma="πολύς" postag="a-p---na-" relation="ADV" id="5"/>
+    <word form="χαίρειν" head="8" lemma="χαίρω" orig_form="χαίριν" postag="v--pna---" relation="OBJ" id="6" shows-iotacism="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="7"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="8"/>
+  </sentence>
+  <sentence id="2">
+    <word form="καλῶς" head="2" lemma="καλός" postag="d--------" relation="ADV" id="1"/>
+    <word form="ποιήσεις" head="0" lemma="ποιέω" orig_form="πυήσις" postag="v2sfia---" relation="PRED" id="2" shows-iotacism="true"/>
+    <word form="πέμψαι" head="2" lemma="πέμπω" orig_form="πέμψε" postag="v--ana---" relation="OBJ" id="3"/>
+    <word form="μοι" head="3" lemma="ἐγώ" postag="p-s---cd-" relation="OBJ" id="4"/>
+    <word form="δραχμὰς" head="3" lemma="δραχμή" postag="n-p---fa-" relation="OBJ" id="5" animacy="concrete"/>
+    <word form="δ" head="5" lemma="δ#" postag="a--------" relation="ATR" id="6" is_number="true"/>
+    <word form="ἵνα" head="3" lemma="ἵνα" postag="c--------" relation="AuxC" id="7"/>
+    <word form="λάβω" head="11" lemma="λαμβάνω" orig_form="λάβο" postag="v1sasa---" relation="ADV_CO" id="8" ending-mismatch="true"/>
+    <word form="τὸ" head="10" lemma="ὁ" postag="l-s---na-" relation="ATR" id="9"/>
+    <word form="πιττάκιν" head="8" lemma="πιττάκιον" postag="n-s---na-" relation="OBJ" id="10" animacy="concrete"/>
+    <word form="καὶ" head="7" lemma="καί" postag="b--------" relation="COORD" id="11"/>
+    <word form="εἰσέλθω" head="11" lemma="εἰσέρχομαι" orig_form="ἠσέλθω" postag="v1sasa---" relation="ADV_CO" id="12" shows-iotacism="true"/>
+    <word form="τῇ" head="14" lemma="ὁ" postag="l-s---fd-" relation="ATR" id="13"/>
+    <word form="κδ" head="12" lemma="κδ#" postag="a--------" relation="OBJ" id="14" is_number="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="15"/>
+  </sentence>
+  <sentence id="3">
+    <word form="πέμψον" head="0" lemma="πέμπω" orig_form="πέμ-ψεν" postag="v2sama---" relation="PRED" id="1" ending-mismatch="true"/>
+    <word form="αὐτὸ" head="1" lemma="αὐτός" orig_form="αὐτὼ" postag="a-s---na-" relation="OBJ" id="2" ending-mismatch="true"/>
+    <word form="μετὰ" head="1" lemma="μετά" postag="r--------" relation="AuxP" id="3"/>
+    <word form="Παχωμι" head="3" lemma="Παχομῶς" postag="n-s---md-" relation="ADV" id="4" animacy="name"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="5"/>
+  </sentence>
+  <sentence id="4">
+    <word form="πέμψον" head="0" lemma="πέμπω" orig_form="πέμψε̣ν" postag="v2sama---" relation="PRED" id="1" ending-mismatch="true"/>
+    <word form="καὶ" head="3" lemma="καί" postag="b--------" relation="AuxZ" id="2"/>
+    <word form="πιττάκιν" head="1" lemma="πιττάκιον" postag="n-s---na-" relation="OBJ" id="3" animacy="concrete"/>
+    <word form="μοι" head="1" lemma="ἐγώ" postag="p-s---cd-" relation="OBJ" id="4"/>
+    <word form="ἄγναφον" head="3" lemma="ἄγναφος" postag="a-s---na-" relation="ATR" id="5"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="6"/>
+  </sentence>
+  <sentence id="5">
+    <word form="μὴ" head="2" lemma="μή" postag="d--------" relation="AuxZ" id="1"/>
+    <word form="ἀμελήσῃς" head="0" lemma="ἀμελέω" orig_form="ἀμ[ε]-λήσις" postag="v2sasa---" relation="PRED" id="2" ending-mismatch="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="3"/>
+  </sentence>
+  <sentence id="6">
+    <word form="ἔρρωσο" head="0" lemma="ῥώννυμι" postag="v2srme---" relation="PRED" id="1"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+  </sentence>
+</treebank>

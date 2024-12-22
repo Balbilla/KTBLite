@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="100" date_not_after="199" place_name="Claudianus Mons"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Μάξιμος" head="7" lemma="Μάξιμος" postag="n-s---mn-" relation="SBJ" id="1" animacy="name"/>
+    <word form="Κασσιανῷ" head="7" lemma="Κασσιανός" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="τῷ" head="4" lemma="ὁ" postag="l-s---md-" relation="ATR" id="3"/>
+    <word form="γαμβρῷ" head="5" lemma="γαμβρός" postag="n-s---md-" relation="APOS_CO" id="4" animacy="person"/>
+    <word form="καὶ" head="2" lemma="καί" postag="b--------" relation="COORD" id="5"/>
+    <word form="ἀδελφῷ" head="5" lemma="ἀδελφός" postag="n-s---md-" relation="APOS_CO" id="6" animacy="person"/>
+    <word form="χαίρειν" head="9" lemma="χαίρω" postag="v--pna---" relation="OBJ" id="7"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="8"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="9"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ἄσπασαί" head="0" lemma="ἀσπάζομαι" postag="v2samm---" relation="PRED" id="1"/>
+    <word form="σου" head="4" lemma="σύ" postag="p-s---cg-" relation="ATR" id="2"/>
+    <word form="τὴν" head="4" lemma="ὁ" postag="l-s---fa-" relation="ATR" id="3"/>
+    <word form="θυγατέρα" head="1" lemma="θυγάτηρ" postag="n-s---fa-" relation="OBJ" id="4" animacy="person"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="5"/>
+  </sentence>
+  <sentence id="3">
+    <word form="ἀσπάζεται" head="0" lemma="ἀσπάζομαι" postag="v3spie---" relation="PRED" id="1"/>
+    <word form="ὑμᾶς" head="1" lemma="σύ" postag="p-p---ca-" relation="OBJ" id="2"/>
+    <word form="Ἀρτέμεις" head="1" lemma="Ἄρτεμις" postag="n-s---fn-" relation="SBJ" id="3" animacy="name"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="4"/>
+  </sentence>
+  <sentence id="4">
+    <word form="ἀσπάζου" head="0" lemma="ἀσπάζομαι" postag="v2spme---" relation="PRED" id="1"/>
+    <word form="πάντας" head="4" lemma="πᾶς" postag="a-p---ma-" relation="ATR" id="2"/>
+    <word form="τοὺς" head="4" lemma="ὁ" postag="l-p---ma-" relation="ATR" id="3"/>
+    <word form="φιλοῦντας" head="1" lemma="φιλέω" postag="v-pppama-" relation="OBJ" id="4"/>
+    <word form="ἡμᾶς" head="4" lemma="ἐγώ" postag="p-p---ca-" relation="OBJ" id="5"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="6"/>
+  </sentence>
+  <sentence id="5">
+    <word form="ἔρρωσο" head="0" lemma="ῥώννυμι" postag="v2srme---" relation="PRED" id="1"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+  </sentence>
+</treebank>

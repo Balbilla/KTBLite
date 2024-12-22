@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kiln:root xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/solr/index-to-html.xsl" />
+
+  <xsl:param name="file" />
+
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+
+  <kiln:child>
+    <kiln:block name="title">
+      <kiln:super/>
+      <xsl:text>Solr index result for </xsl:text>
+      <xsl:value-of select="$file" />
+    </kiln:block>
+
+    <kiln:block name="page-heading">
+      <kiln:super/>
+      <xsl:text>Solr index result for </xsl:text>
+      <xsl:value-of select="$file" />
+    </kiln:block>
+
+    <kiln:block name="content">
+      <xsl:apply-templates select="response" mode="solr" />
+    </kiln:block>
+  </kiln:child>
+
+</kiln:root>

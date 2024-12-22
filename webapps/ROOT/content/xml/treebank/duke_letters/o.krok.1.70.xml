@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="1" date_not_after="199" place_name="Krokodilo"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Τιτοσῆνος" head="2" lemma="Τιτοσῆνος" postag="n-s---mn-" relation="ATR" id="1" animacy="name"/>
+    <word form="Καπίτωι" head="7" lemma="Κάπιτως" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="τῶι" head="4" lemma="ὁ" postag="l-s---md-" relation="ATR" id="3"/>
+    <word form="τιμιωτάτωι" head="2" lemma="τίμιος" postag="a-s---mds" relation="ATR" id="4"/>
+    <word form="χαίρειν" head="4" lemma="χαίρω" postag="v--pna---" relation="OBJ" id="5"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="6"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="7"/>
+  </sentence>
+  <sentence id="2">
+    <word form="καλῶς" head="2" lemma="καλός" postag="d--------" relation="ADV" id="1"/>
+    <word form="ποιήσεις" head="0" lemma="ποιέω" orig_form="ποιήσις" postag="v2sfia---" relation="PRED" id="2" shows-iotacism="true"/>
+    <word form="ἀπαιτήσας" head="2" lemma="ἀπαιτέω" orig_form="ἀπαι-τήσις" postag="v-sapamn-" relation="ADV" id="3" ending-mismatch="true"/>
+    <word form="τὰ" head="5" lemma="ὁ" postag="l-p---na-" relation="ATR" id="4"/>
+    <word form="πούβλικα" head="3" lemma="πόβλικος" orig_form="πούπλικα" postag="a-p---na-" relation="OBJ" id="5"/>
+    <word form="ἀπὸ" head="3" lemma="ἀπό" postag="r--------" relation="AuxP" id="6"/>
+    <word form="τοῦ" head="8" lemma="ὁ" postag="l-s---mg-" relation="ATR" id="7"/>
+    <word form="Βέσσου" head="6" lemma="Βέσσος" postag="n-s---mg-" relation="OBJ" id="8" animacy="name"/>
+    <word form="·" head="0" lemma="·" postag="u--------" relation="AuxK" id="9"/>
+  </sentence>
+  <sentence id="3">
+    <word form="καὶ" head="2" lemma="καί" postag="b--------" relation="AuxZ" id="1"/>
+    <word form="ὀφείλει" head="0" lemma="ὀφείλω" orig_form="ὀφείλι" postag="v3spia---" relation="PRED" id="2" shows-iotacism="true"/>
+    <word form="τάλαντον" head="2" lemma="τάλαντον" postag="n-s---na-" relation="OBJ" id="3" animacy="concrete"/>
+    <word form="ἀχύρου" head="3" lemma="ἄχυρος" postag="n-s---mg-" relation="ATR" id="4"/>
+    <word form="·" head="0" lemma="·" postag="u--------" relation="AuxK" id="5"/>
+  </sentence>
+  <sentence id="4">
+    <word form="ἐπεὶ" head="8" lemma="ἐπεί" orig_form="ἐπὶ" postag="c--------" relation="AuxC" id="1" shows-iotacism="true"/>
+    <word form="γὰρ" head="6" lemma="γάρ" postag="d--------" relation="AuxY" id="2"/>
+    <word form="ε" head="4" lemma="ε#" postag="a--------" relation="ATR" id="3" is_number="true"/>
+    <word form="τάλαντα" head="6" lemma="τάλαντον" postag="n-p---na-" relation="OBJ" id="4" animacy="concrete"/>
+    <word form="ὁμοῦ" head="6" lemma="ὁμοῦ" postag="d--------" relation="ADV" id="5"/>
+    <word form="ἔλαβε" head="1" lemma="λαμβάνω" postag="v3saia---" relation="ADV" id="6"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="7"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="8"/>
+  </sentence>
+</treebank>

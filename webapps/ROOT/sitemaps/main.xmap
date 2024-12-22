@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!-- Project main sitemap. -->
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:views>
+    <map:view from-label="content" name="content">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+
+  <map:pipelines>
+    <!-- Mount sub-sitemaps. -->
+    <map:pipeline id="local-mount">
+      <!-- Mount a sitemap for any admin URLs, such as editorial
+           processes like Schematron validation. -->
+      <map:match pattern="admin/**">
+        <map:mount check-reload="yes" src="admin.xmap" uri-prefix="admin/" />
+      </map:match>
+      <!-- Mount a sitemap for (potentially) project-specific internal
+           pipelines. -->
+      <map:match pattern="internal/**">
+        <map:mount check-reload="yes" src="internal.xmap" uri-prefix="internal/" />
+      </map:match>
+      <!-- Mount sitemaps for treebanking functionality. -->
+      <map:match pattern="check/**">
+        <map:mount check-reload="yes" src="check.xmap" uri-prefix="check/"/>
+      </map:match>
+      <map:match pattern="index/**">
+        <map:mount check-reload="yes" src="index.xmap" uri-prefix="index/"/>
+      </map:match>
+      <map:match pattern="lemma-inventory/**">
+        <map:mount check-reload="yes" src="lemma-inventory.xmap" uri-prefix="lemma-inventory/"/>
+      </map:match>
+      <map:match pattern="np/**">
+        <map:mount check-reload="yes" src="np.xmap" uri-prefix="np/"/>
+      </map:match>
+      <map:match pattern="pp/**">
+        <map:mount check-reload="yes" src="pp.xmap" uri-prefix="pp/"/>
+      </map:match>
+      <map:match pattern="search/**">
+        <map:mount check-reload="yes" src="search.xmap" uri-prefix="search/"/>
+      </map:match>
+    </map:pipeline>
+
+    <!-- Main display pipeline. -->
+    <map:pipeline type="noncaching">
+      <!-- Home page (at /). -->
+      <map:match id="local-home-page" pattern="">
+        <map:aggregate element="aggregation" label="content">
+          <map:part src="cocoon://_internal/menu/main.xml" />
+          <map:part src="cocoon://internal/search/corpus_facets.xml"/>
+        </map:aggregate>
+        <map:transform src="../stylesheets/treebank/pp-corpus-display.xsl"/>
+        <map:transform src="cocoon://_internal/template/home.xsl"/>
+        <map:serialize />
+      </map:match>
+
+      <map:match id="display-corpus" pattern="corpus/*.html">
+        <map:aggregate element="aggregation">
+          <map:part src="cocoon://_internal/menu/main.xml" />
+          <map:part src="cocoon://index/search/corpus/{1}.xml"/>
+        </map:aggregate>
+        <map:transform src="../stylesheets/treebank/pp-corpus-display.xsl"/>
+        <map:transform src="cocoon://_internal/template/treebank/corpus-display.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <map:match id="display-corpus-reindex-links" pattern="corpus/*/solr.html">
+        <map:generate src="cocoon://index/search/corpus/{1}.xml"/>
+        <map:transform src="../stylesheets/solr/list-files-for-reindex.xsl"/>
+        <map:serialize />
+      </map:match>
+
+      <map:match id="display-corpus-index-links" pattern="corpus/*/solr-new.html">
+        <map:generate src="cocoon://_internal/dirlist/content/xml/treebank/{1}.xml"/>
+        <map:transform src="../stylesheets/solr/list-files-for-index.xsl"/>
+        <map:serialize />
+      </map:match>
+
+      <map:match id="display-text" pattern="corpus/*/*.html">
+        <map:aggregate element="aggregation">
+          <map:part src="cocoon://pp/tree/{1}/{2}.xml"/>
+          <map:part src="cocoon://_internal/menu/{1}/main.xml" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/display-text.xsl"/>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Display a sentence from a text. -->
+      <map:match id="sentence" pattern="corpus/*/*/sentences/*.html">
+        <!-- {1}: corpus (dir) name
+             {2}: text (file) name
+             {3}: sentence number -->
+        <map:aggregate element="aggregation">
+          <map:part src="cocoon://pp/sentence/{1}/{2}/{3}.xml" />
+          <map:part src="cocoon://_internal/menu/main.xml" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/sentence.xsl" />
+        <map:serialize />
+      </map:match>
+
+      <!-- All queries display -->
+      <map:match id="display-queries" pattern="queries/*.html">
+        <map:generate src="cocoon://_internal/dirlist/content/xml/treebank/{1}.xml"/>
+        <map:transform src="cocoon://_internal/template/treebank/corpus-queries.xsl"/>
+        <map:serialize/>
+      </map:match>
+    </map:pipeline>
+
+    <!-- Error handling, making use of the templating system for
+         errors that fit within the site's design. If this throws any
+         errors, handling will fall back to the default plain error
+         handling in config.xmap. -->
+    <map:handle-errors>
+      <map:generate type="exception" />
+      <map:select type="exception">
+        <map:when test="not-found">
+          <map:transform src="../stylesheets/error/add-not-found-messages.xsl" />
+          <map:transform src="cocoon://_internal/template/error.xsl">
+            <map:parameter name="debug" value="{global:debug}" />
+          </map:transform>
+          <map:serialize status-code="404" />
+        </map:when>
+        <map:otherwise>
+          <map:transform src="cocoon://_internal/template/error.xsl">
+            <map:parameter name="debug" value="{global:debug}" />
+          </map:transform>
+          <map:serialize status-code="500" />
+        </map:otherwise>
+      </map:select>
+    </map:handle-errors>
+  </map:pipelines>
+</map:sitemap>

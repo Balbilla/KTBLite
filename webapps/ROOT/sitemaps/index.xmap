@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:pipelines>
+    <map:pipeline id="treebank-indexing" type="noncaching">
+
+      <!-- Index all documents via a single XML document. Note that
+           depending on the number of documents and their size, this
+           may cause memory (heap space) issues. In such cases, use
+           the "solr" build target: "build.bat solr" -->
+      <map:match id="index-all" pattern="all.html">
+        <map:aggregate element="aggregation">
+          <map:part element="delete" src="cocoon://_internal/solr/delete-all" />
+          <map:part element="insert" src="cocoon:/add.xml" />
+          <map:part element="optimize" src="cocoon://_internal/solr/optimize" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/solr-index-all.xsl" />
+        <map:serialize/>
+      </map:match>
+
+      <map:match id="site-list" pattern="site-list.html">
+        <map:generate src="cocoon://_internal/dirlist/content/xml/treebank.xml" />
+        <map:transform src="../stylesheets/admin/xml-dirs-to-index-list-html.xsl" />
+        <map:serialize />
+      </map:match>
+
+      <!-- Delete all existing data. -->
+      <map:match id="index-delete" pattern="delete.html">
+        <map:aggregate element="response">
+          <map:part element="delete" src="cocoon://_internal/solr/delete-all"/>
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/solr-index.xsl">
+          <map:parameter name="file" value="whole index" />
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Delete corpus. -->
+      <map:match id="index-delete-corpus" pattern="delete/corpus/*.html">
+        <map:aggregate element="response">
+          <map:part element="delete" src="cocoon://_internal/solr/delete-by-file-path/{1}/*.xml"/>
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/solr-index.xsl">
+          <map:parameter name="file" value="corpus {1}"/>
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Optimise all existing data. -->
+      <map:match id="index-optimise" pattern="optimise.html">
+        <map:aggregate element="response">
+          <map:part element="optimize" src="cocoon://_internal/solr/optimize" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/solr-index.xsl" >
+          <map:parameter name="file" value="whole index" />
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Index a single document. -->
+      <map:match id="index-single" pattern="solr-add/**.html">
+        <map:aggregate element="response">
+          <map:part element="add" src="cocoon:/solr-add/{1}.xml"/>
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/solr-index.xsl">
+          <map:parameter name="file" value="{1}.xml" />
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Re-index a single document. Unlike index-single, this
+           deletes any existing data for the document. -->
+      <map:match id="reindex-single" pattern="solr-replace/**.html">
+        <map:aggregate element="response">
+          <map:part element="delete" src="cocoon://_internal/solr/delete-by-file-path/{1}.xml"/>
+          <map:part element="add" src="cocoon:/solr-add/{1}.xml"/>
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/solr-index.xsl">
+          <map:parameter name="file" value="{1}.xml" />
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <map:match id="index-all-add" pattern="add.xml">
+        <map:generate src="cocoon://_internal/dirlist/content/xml/treebank.xml" />
+        <map:transform src="../stylesheets/treebank/prune-source-corpora-for-solr.xsl"/>
+        <map:transform src="../stylesheets/admin/dir-to-xinclude.xsl">
+          <map:parameter name="prefix" value="cocoon://index/solr-add/" />
+        </map:transform>
+        <map:transform type="xinclude" />
+        <map:serialize type="xml" />
+      </map:match>
+
+      <!-- Use this one when checking what information solr is getting when indexing! -->
+      <map:match id="index-single-add" pattern="add/**.xml">
+        <map:generate src="cocoon://np/{1}.xml"/>
+        <map:transform src="../stylesheets/treebank/tree-to-solr.xsl">
+          <map:parameter name="file-path" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Generally speaking you don't want to use this URL
+           directly. It is used when indexing the whole site via the
+           ant build job, however. -->
+      <map:match id="index-single-document-solr" pattern="solr-add/**.xml">
+        <map:generate src="cocoon:/add/{1}.xml"/>
+        <map:transform type="solr">
+          <map:parameter name="url" value="{global:solr-server}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+      
+      <map:match id="reindex-single-document-solr" pattern="solr-replace/**.xml">
+        <map:aggregate element="response">
+          <map:part element="delete" src="cocoon://_internal/solr/delete-by-file-path/{1}.xml"/>
+          <map:part element="add" src="cocoon:/solr-add/{1}.xml"/>
+        </map:aggregate>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+
+    <map:pipeline id="treebank-searching">
+
+      <!-- Create an XML document listing data about the texts in the
+           corpus {1}. -->
+      <map:match id="treebank-search-query" pattern="search/corpus/*.xml">
+        <map:aggregate element="aggregation">
+          <map:part src="../assets/queries/solr/corpus_query.xml"/>
+          <map:part src="cocoon://internal/search/corpus_facets.xml"/>
+        </map:aggregate>
+        <map:transform src="../stylesheets/treebank/corpus-search.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+        </map:transform>
+        <map:transform src="../kiln/stylesheets/solr/generate-query.xsl"/>
+        <map:transform type="xinclude"/>
+        <map:transform src="../stylesheets/treebank/annotate-corpus-search-results.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Create an XML document containing every text in the corpus
+           {1} transformed via the map:match {2}. -->
+      <map:match id="treebank-corpus" pattern="corpus/*/**.xml">
+        <map:generate src="cocoon:/search/corpus/{1}.xml"/>
+        <map:transform src="../stylesheets/treebank/search-results-to-xinclude.xsl">
+          <map:parameter name="prefix" value="cocoon://{2}/"/>
+        </map:transform>
+        <map:transform type="xinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+    </map:pipeline>
+  </map:pipelines>
+
+</map:sitemap>

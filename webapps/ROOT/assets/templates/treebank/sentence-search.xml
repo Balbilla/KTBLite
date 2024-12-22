@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kiln:root xmlns:h="http://apache.org/cocoon/request/2.0"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:param name="query-string"/>
+
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/solr/sentence-results-to-html.xsl"/>
+  
+  <xsl:variable name="metadata_fields" select="('text_corpus', 'text_century', 'text_century_earliest', 'text_century_latest', 'text_century_minimal_range', 'text_genre', 'text_author', 'text_language_type', 'text_verse_type', 'text_language_proficiency')"/>
+  <xsl:variable name="subject_fields" select="('sentence_b_w_o_subjects_pos', 'sentence_b_w_o_subjects_case', 'sentence_b_w_o_infinitive_subjects')"/>
+  <xsl:variable name="object_fields" select="('sentence_b_w_o_objects_pos', 'sentence_b_w_o_objects_case', 'sentence_b_w_o_infinitive_objects')"/>
+  <xsl:variable name="subordination_fields" select="('sentence_count_subordinate_clauses', 'sentence_maximum_subordinate_clauses_depth')"/>
+  <xsl:variable name="order_fields" select="('sentence_b_w_o_pattern', 'sentence_verb_final', 'sentence_object_verb_pattern', 'sentence_subject_verb_pattern', 'sentence_subject_is_name')"/>
+
+  <kiln:parent>
+    <xi:include href="base.xml" />
+  </kiln:parent>
+
+  <kiln:child>
+    <kiln:block name="title">
+      <kiln:super />
+      <xsl:text>Sentence Search</xsl:text>
+    </kiln:block>
+
+    <kiln:block name="page-heading">
+      <kiln:super />
+      <xsl:text>Sentence Search</xsl:text>
+    </kiln:block>
+
+    <kiln:block name="content">
+      <div class="uk-grid">
+        <div class="uk-width-1-4">          
+          <!-- List available facets. -->
+          <xsl:apply-templates select="/aggregation/response/lst[@name='facet_counts']/lst[@name='facet_fields']" mode="search-results" />
+        </div>
+        <div class="uk-width-3-4">
+          <!-- List of currently applied facets. -->
+          <xsl:apply-templates mode="search-results" select="/aggregation/response/lst[@name='responseHeader']/lst[@name='params']/*[@name='fq']" />
+          <!-- List results. -->
+          <xsl:apply-templates select="/aggregation/response/result" mode="search-results" />
+        </div>
+      </div>
+    </kiln:block>
+
+  </kiln:child>
+
+</kiln:root>

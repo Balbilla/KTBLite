@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="199" place_name="Claudianus Mons"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Declaration"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Ἱέραξ" head="2" lemma="Ἱέραξ" postag="n-s---mn-" relation="ATR" id="1" animacy="name"/>
+    <word form="Σουκκέσσῳ" head="3" lemma="Σουκκέσσος" orig_form="Σουκέσσῳ" postag="n-s---md-" relation="OBJ" id="2" animacy="name"/>
+    <word form="χαίρειν" head="5" lemma="χαίρω" postag="v--pna---" relation="OBJ" id="3"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="4"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="5"/>
+  </sentence>
+  <sentence id="2">
+    <word form="εὖ" head="2" lemma="εὖ" postag="d--------" relation="ADV" id="1"/>
+    <word form="ποιήσεις" head="0" lemma="ποιέω" orig_form="ποήσις" postag="v2sfia---" relation="PRED" id="2" shows-iotacism="true"/>
+    <word form="δοὺς" head="2" lemma="δίδωμι" postag="v-sapamn-" relation="ADV" id="3"/>
+    <word form="ἀκίσκλους" head="3" lemma="ἀκίσκλος" postag="n-p---ma-" relation="OBJ" id="4"/>
+    <word form="πέντε" head="4" lemma="πέντε" postag="a--------" relation="ATR" id="5" is_number="true"/>
+    <word form="ἐστελεωμένους" head="4" lemma="στελεόω" postag="v-prpema-" relation="ATR" id="6"/>
+    <word form="ἐπεὶ" head="2" lemma="ἐπεί" orig_form="ἐπὶ" postag="c--------" relation="AuxC" id="7" shows-iotacism="true"/>
+    <word form="οἱ" head="9" lemma="ὁ" postag="l-p---mn-" relation="ATR" id="8"/>
+    <word form="ἀκισκλάριοι" head="11" lemma="ἀκισκλάριος" postag="n-p---mn-" relation="SBJ" id="9"/>
+    <word form="οὐκ" head="11" lemma="οὐ" postag="d--------" relation="AuxZ" id="10"/>
+    <word form="ἔχουσι" head="7" lemma="ἔχω" postag="v3ppia---" relation="ADV" id="11"/>
+    <word form="πῶς" head="13" lemma="πῶς" postag="d--------" relation="ADV" id="12"/>
+    <word form="ἐργάζωνται" head="11" lemma="ἐργάζομαι" postag="v3ppse---" relation="OBJ" id="13"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="14"/>
+  </sentence>
+</treebank>

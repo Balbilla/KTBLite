@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="100" date_not_after="199" place_name="Claudianus Mons"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Letter"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Κορνηλιανὸς" head="3" lemma="Κορνηλιανός" postag="n-s---mn-" relation="SBJ" id="1" animacy="name"/>
+    <word form="Ἀσκ|gap=unknown|" head="0" lemma="_" postag="z--------" relation="AuxK" id="2"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="3"/>
+  </sentence>
+  <sentence id="2">
+    <word form="Ἀσκ|gap=unknown|" head="0" lemma="_" postag="z--------" relation="GAP" id="1"/>
+    <word form="τῷ" head="3" lemma="ὁ" postag="l-s---md-" relation="ATR" id="2"/>
+    <word form="πατρὶ" head="1" lemma="πατήρ" postag="n-s---md-" relation="APOS" id="3" animacy="person"/>
+    <word form="χαίρειν" head="1" lemma="χαίρω" postag="v--pna---" relation="ADV" id="4"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="5"/>
+  </sentence>
+  <sentence id="3">
+    <word form="κόμισαι" head="0" lemma="κομίζω" postag="v2samm---" relation="PRED" id="1"/>
+    <word form="δ|gap=1||gap=unknown|" head="1" lemma="_" postag="z--------" relation="OBJ" id="2"/>
+  </sentence>
+  <sentence id="4">
+    <word form="δ|gap=1||gap=unknown|" head="4" lemma="_" postag="z--------" relation="GAP" id="1"/>
+    <word form="τὸ" head="4" lemma="ὁ" postag="l-s---na-" relation="ATR" id="2"/>
+    <word form="γὰρ" head="5" lemma="γάρ" postag="d--------" relation="AuxY" id="3"/>
+    <word form="σεῦτλον" head="7" lemma="σεῦτλον" postag="n-s---na-" relation="OBJ" id="4"/>
+    <word form="ο" head="1" lemma="_" postag="z--------" relation="AuxG" id="5"/>
+    <word form="ει|gap=unknown|" head="0" lemma="_" postag="z--------" relation="AuxK" id="6"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="7"/>
+  </sentence>
+  <sentence id="5">
+    <word form="ει|gap=unknown|" head="6" lemma="_" postag="z--------" relation="_" id="1"/>
+    <word form="η|gap=3|" head="0" lemma="_" postag="z--------" relation="AuxG" id="2"/>
+    <word form="δὲ" head="5" lemma="δέ" postag="b--------" relation="AuxY" id="3"/>
+    <word form="καὶ" head="5" lemma="καί" postag="b--------" relation="AuxY" id="4"/>
+    <word form="ἀνιεν|gap=1||gap=unknown|" head="1" lemma="_" postag="z--------" relation="AuxK" id="5"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="6"/>
+  </sentence>
+  <sentence id="6">
+    <word form="ἀνιεν|gap=1||gap=unknown|" head="3" lemma="_" postag="z--------" relation="GAP" id="1"/>
+    <word form="|gap=unknown_lines|" head="0" lemma="_" postag="z--------" relation="AuxK" id="2"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="3"/>
+  </sentence>
+</treebank>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="299" place_name="Narmouthis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="List"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="πρὸς" head="11" lemma="πρός" postag="r--------" relation="AuxP" id="1"/>
+    <word form="Πεβῆν" head="5" lemma="Πεβῆς" orig_form="Πεβῆτι" postag="n-s---ma-" relation="ADV_CO" id="2" animacy="name" ending-mismatch="true"/>
+    <word form="καὶ" head="5" lemma="καί" postag="b--------" relation="AuxY" id="3"/>
+    <word form="Πτολεμαῖον" head="5" lemma="Πτολεμαῖος" orig_form="Πτολεμ-αῖς" postag="n-s---mn-" relation="ADV_CO" id="4" animacy="name" ending-mismatch="true"/>
+    <word form="καὶ" head="1" lemma="καί" postag="b--------" relation="COORD" id="5"/>
+    <word form="Φᾶσιν" head="5" lemma="Φᾶσις" orig_form="Φᾶσις" postag="n-s---mn-" relation="ADV_CO" id="6" animacy="name" ending-mismatch="true"/>
+    <word form="Παβοῦτος" head="6" lemma="Παβους" orig_form="Παβοῦς" postag="n-s---mg-" relation="ATR" id="7" animacy="name" ending-mismatch="true"/>
+    <word form="μετὰ" head="6" lemma="μετά" postag="r--------" relation="AuxP" id="8"/>
+    <word form="κολακείας" head="8" lemma="κολακεία" orig_form="κολακίας" postag="n-s---fg-" relation="ADV" id="9" animacy="nonconc" shows-iotacism="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="10"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="11"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ιε" head="3" lemma="ιε#" postag="a--------" relation="ADV" id="1" is_number="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="3"/>
+  </sentence>
+</treebank>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:views>
+    <map:view from-label="content" name="content">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+
+  <map:pipelines>
+    <map:pipeline id="search">
+
+      <map:match id="word-search" pattern="word.html">
+        <map:aggregate element="aggregation" label="content">
+          <map:part src="cocoon://_internal/menu/main.xml" />
+          <map:part src="cocoon://internal/search/word_query.xml" />
+          <map:part src="cocoon://_internal/request.xml" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/search.xsl">
+          <map:parameter name="query-string" value="{request:queryString}" />
+        </map:transform>
+        <map:serialize />
+      </map:match>
+
+      <map:match id="search-citation" pattern="citation.html">
+        <map:generate src="cocoon://internal/search/word_query.xml"/>
+        <map:transform src="../stylesheets/solr/results-to-citations.xsl"/>
+        <map:serialize type="html"/>
+      </map:match>
+
+       <map:match id="np-search" pattern="np.html">
+        <map:aggregate element="aggregation" label="content">
+          <map:part src="cocoon://_internal/menu/main.xml" />
+          <map:part src="cocoon://internal/search/np_query.xml" />
+          <map:part src="cocoon://_internal/request.xml" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/np-search.xsl">
+          <map:parameter name="query-string" value="{request:queryString}" />
+        </map:transform>
+        <map:serialize />
+      </map:match>
+
+      <map:match id="ag-search" pattern="adnominal-genitive.html">
+        <map:aggregate element="aggregation" label="content">
+          <map:part src="cocoon://internal/search/modifier_position.xml"/>
+          <map:part src="cocoon://_internal/menu/main.xml"/>
+          <map:part src="cocoon://_internal/request.xml"/>
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/np-adnominal-genitive.xsl">
+          <map:parameter name="query-string" value="{request:queryString}" />
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <map:match id="np-ag-position-summary" pattern="np-ag-position-summary.html">
+        <map:generate src="../content/xml/ag-summary/np-ag-position-summary.xml"/>
+        <map:transform src="../stylesheets/treebank/ag/np-ag-position-annotate.xsl"/>
+        <map:transform type="xinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="np-ag-position-summary-query" pattern="np-ag-position-summary-query.xml">
+        <map:generate src="cocoon://internal/search/modifier_position.xml"/>
+        <map:transform src="../stylesheets/treebank/ag/np-ag-position-summarize.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="sentence-search" pattern="sentence.html">
+        <map:aggregate element="aggregation" label="content">
+          <map:part src="cocoon://_internal/menu/main.xml" />
+          <map:part src="cocoon://internal/search/sentence_query.xml" />
+          <map:part src="cocoon://_internal/request.xml" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/sentence-search.xsl">
+          <map:parameter name="query-string" value="{request:queryString}" />
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <map:match id="document-search" pattern="document.html">
+        <map:aggregate element="aggregation" label="content">
+          <map:part src="cocoon://_internal/menu/main.xml" />
+          <map:part src="cocoon://internal/search/document_query.xml" />
+          <map:part src="cocoon://_internal/request.xml" />
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/document-search.xsl">
+          <map:parameter name="query-string" value="{request:queryString}" />
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+
+      <!-- Queryset -->
+
+      <map:match id="queryset-results" pattern="queryset/results/**.xml">
+        <map:generate src="../content/xml/queryset/{1}.xml"/>
+        <map:transform src="../stylesheets/solr/queryset-to-query-xinclude.xsl"/>
+        <map:transform type="xinclude"/>
+        <map:transform src="../stylesheets/solr/queryset-prune-results.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="queryset-list" pattern="querysets.xml">
+        <map:generate src="cocoon://_internal/dirlist/content/xml/queryset.xml"/>
+        <map:transform src="../stylesheets/solr/queryset-dir-to-xinclude.xsl"/>
+        <map:transform type="xinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="queryset-for-list" pattern="queryset/list/**.xml">
+        <map:generate src="../content/xml/queryset/{1}.xml"/>
+        <map:transform src="../stylesheets/solr/queryset-for-list.xsl">
+          <map:parameter name="filename" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <!-- Correlation -->
+
+      <map:match id="correlation-results" pattern="correlation/results/**.xml">
+        <map:generate src="../content/xml/correlation/{1}.xml"/>
+        <map:transform src="../stylesheets/solr/correlation-to-query-xinclude.xsl"/>
+        <map:transform type="xinclude"/>
+        <map:transform src="../stylesheets/solr/correlation-prune-results.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="correlation-list" pattern="correlations.xml">
+        <map:generate src="cocoon://_internal/dirlist/content/xml/correlation.xml"/>
+        <map:transform src="../stylesheets/solr/correlation-dir-to-xinclude.xsl"/>
+        <map:transform type="xinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="correlation-for-list" pattern="correlation/list/**.xml">
+        <map:generate src="../content/xml/correlation/{1}.xml"/>
+        <map:transform src="../stylesheets/solr/correlation-for-list.xsl">
+          <map:parameter name="filename" value="{1}"/>
+        </map:transform>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

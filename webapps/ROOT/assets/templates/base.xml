@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kiln:root xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- Imports the default variables. -->
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/defaults.xsl" />
+
+  <!-- Imports the menu stylesheet -->
+  <xsl:import href="cocoon://_internal/template/xsl/stylesheets/menu/menu.xsl" />
+
+  <xsl:import href="cocoon://_internal/url/reverse.xsl" />
+
+  <kiln:block name="html">
+    <html class="no-js">
+      <kiln:block name="head">
+        <head>
+          <meta charset="utf-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta content="IE=edge,chrome=IE8" http-equiv="X-UA-Compatible" />
+          <title><kiln:block name="title">Home</kiln:block></title>
+          <kiln:block name="css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/css/uikit.min.css" />
+            <link href="{$kiln:assets-path}/styles/base.css" rel="stylesheet"
+                  type="text/css"/>
+            <link href="{$kiln:assets-path}/styles/site.css" rel="stylesheet"
+                  type="text/css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/css/theme.default.min.css" integrity="sha512-wghhOJkjQX0Lh3NSWvNKeZ0ZpNn+SPVXX1Qyc9OCaogADktxrBiBdKGDoqVUOyhStvMBmJQ8ZdMHiR3wuEq8+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/css/filter.formatter.min.css" integrity="sha512-5teN5RuH2Ez/zg+vjq7lzVSmPomDOlAkXXmiUtKwANhc452+urltjRJZQvp6N5F+SXnu/6HxJlLiXPkkD+3oSg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/css/jquery.tablesorter.pager.min.css" integrity="sha512-TWYBryfpFn3IugX13ZCIYHNK3/2sZk3dyXMKp3chZL+0wRuwFr1hDqZR9Qd5SONzn+Lja10hercP2Xjuzz5O3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+          </kiln:block>
+          <kiln:block name="js">
+            <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit-icons.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js" integrity="sha512-qzgd5cYSZcosqpzpn7zF2ZId8f/8CHmFKZ8j7mU4OUXTNRd5g+ZHBPsgKEwoqxCtdQvExE5LprwwPAgoicguNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.widgets.min.js" integrity="sha512-dj/9K5GRIEZu+Igm9tC16XPOTz0RdPk9FGxfZxShWf65JJNU2TjbElGjuOo3EhwAJRPhJxwEJ5b+/Ouo+VqZdQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/widgets/widget-columnSelector.min.js" integrity="sha512-QDyBAVOnTGw51BWsu6k7xuVvD2K/q5T1cSEH767RsBT5+QPxy5iEdykZzBVfQ5cd5OQQec8Zn1Qr8CLqrVdO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/extras/jquery.tablesorter.pager.min.js" integrity="sha512-y845ijdup9lDunrcSRQAlFdQICHVhkB5UNguWRX8A3L+guxO7Oow0poojw0PLckhcKij++h85bnyro80fjR9+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/widgets/widget-pager.min.js" integrity="sha512-+X/dsto9+7foPuqwqjm+mJSPYk6Coovg9jQJvM+aBfscXOyBrAKN69GS5Z2TkMLlVHxeiE5doVqelnMfbsS9XQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="{$kiln:assets-path}/scripts/site.js"></script>
+          </kiln:block>
+          <kiln:block name="head-extra"></kiln:block>
+        </head>
+      </kiln:block>
+      <kiln:block name="body">
+        <body>
+          <kiln:block name="navigation">
+            <nav class="uk-navbar-container" data-uk-navbar="">
+              <kiln:block name="main-navigation">
+                <div class="uk-navbar-left">
+                  <a href="{kiln:url-for-match('local-home-page', (), 0)}" class="uk-navbar-item">Home</a>
+                </div>
+                <div class="nav-overlay uk-navbar-left">
+                  <xsl:apply-templates mode="main-menu" select="/aggregation/kiln:nav"/>
+                </div>
+                <div class="nav-overlay uk-navbar-right">
+                  <a class="uk-navbar-toggle" data-uk-search-icon="" data-uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+                </div>
+                <div class="nav-overlay uk-navbar-left uk-flex-1" hidden="">
+                  <div class="uk-navbar-item uk-width-expand">
+                    <form action="{kiln:url-for-match('word-search', ($language), 0)}" class="uk-search uk-search-navbar uk-width-1-1" method="get">
+                      <input class="uk-search-input" name="q" placeholder="Search" required="required" type="search" autofocus="" />
+                    </form>
+                  </div>
+                  <a class="uk-navbar-toggle" data-uk-close="" data-uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+                </div>
+              </kiln:block>
+            </nav>
+          </kiln:block>
+          <div class="uk-container">
+            <kiln:block name="page-header">
+              <header>
+                <h1 class="uk-padding">
+                  <kiln:block name="page-heading"></kiln:block>
+                </h1>
+              </header>
+            </kiln:block>
+            <kiln:block name="content-section">
+              <main>
+                <kiln:block name="content"/>
+              </main>
+            </kiln:block>
+          </div>
+          <kiln:block name="footer">
+            <footer>
+              <p>Powered by <a href="http://kcl-ddh.github.io/kiln/">Kiln</a></p>
+            </footer>
+          </kiln:block>
+          <kiln:block name="end-js"></kiln:block>
+        </body>
+      </kiln:block>
+    </html>
+  </kiln:block>
+</kiln:root>

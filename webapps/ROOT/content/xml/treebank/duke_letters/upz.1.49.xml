@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="-199" date_not_after="-100" place_name="Memphis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Declaration"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="Σαραπίωνι" head="18" lemma="Σαραπίων" postag="n-s---md-" relation="OBJ" id="1" animacy="name"/>
+    <word form="τῶν" head="3" lemma="ὁ" postag="l-p---mg-" relation="ATR" id="2"/>
+    <word form="διαδόχων" head="4" lemma="διάδοχος" postag="n-p---mg-" relation="ATR_CO" id="3" animacy="person"/>
+    <word form="καὶ" head="1" lemma="καί" postag="b--------" relation="COORD" id="4"/>
+    <word form="ὑποδιοικητῆι" head="4" lemma="ὑποδιοικητής" postag="n-s---md-" relation="ATR_CO" id="5"/>
+    <word form="παρὰ" head="5" lemma="παρά" orig_form="παρ" postag="r--------" relation="AuxP" id="6"/>
+    <word form="Θαυῆτος" head="8" lemma="Θαυής" postag="n-s---fg-" relation="ADV_CO" id="7" animacy="name"/>
+    <word form="καὶ" head="6" lemma="καί" postag="b--------" relation="COORD" id="8"/>
+    <word form="Θαῦτος" head="8" lemma="Ταους" postag="n-s---fg-" relation="ADV_CO" id="9" animacy="name"/>
+    <word form="διδυμῶν" head="7" lemma="δίδυμος" orig_form="διδιμῶν" postag="a-p---fg-" relation="CO" id="10" shows-iotacism="true"/>
+    <word form="τῶν" head="12" lemma="ὁ" postag="l-p---fg-" relation="ATR" id="11"/>
+    <word form="λειτουργουσῶν" head="10" lemma="λειτουργέω" postag="v-pppafg-" relation="ATR" id="12"/>
+    <word form="ἐν" head="12" lemma="ἐν" postag="r--------" relation="AuxP" id="13"/>
+    <word form="τῶι" head="13" lemma="τῷ" postag="d--------" relation="ADV" id="14"/>
+    <word form="πρὸς" head="12" lemma="πρός" postag="r--------" relation="AuxP" id="15"/>
+    <word form="Μέμφει" head="15" lemma="Μέμφις" postag="n-s---fd-" relation="ATR" id="16" animacy="name"/>
+    <word form="μεγ" head="0" lemma="_" postag="z--------" relation="AuxK" id="17"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="18"/>
+  </sentence>
+</treebank>

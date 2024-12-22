@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="299" place_name="Narmouthis"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Memorandum"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="πρὸς" head="6" lemma="πρός" postag="r--------" relation="AuxP" id="1"/>
+    <word form="φίλους" head="1" lemma="φίλος" postag="a-p---ma-" relation="ADV" id="2"/>
+    <word form="μετὰ" head="2" lemma="μετά" postag="r--------" relation="AuxP" id="3"/>
+    <word form="κολακείας" head="3" lemma="κολακεία" orig_form="κολα-γίας" postag="n-s---fg-" relation="ADV" id="4" animacy="nonconc" shows-iotacism="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="5"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="6"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ιϛ" head="3" lemma="ιϛ#" postag="a--------" relation="ADV" id="1" is_number="true"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+    <word form="[0]" head="0" lemma="" postag="" relation="PRED" id="3"/>
+  </sentence>
+</treebank>

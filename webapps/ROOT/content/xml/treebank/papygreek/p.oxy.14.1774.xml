@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank xmlns:saxon="http://saxon.sf.net/" text_id="35155" format="aldt" version="1.5" direction="ltr" xml:lang="grc">
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2023-08-01" layer="reg"/>
+  <annotator name="Marja Vierros" address="vierrosm@gmail.com" role="approved" date="2023-08-01" layer="orig"/>
+  <annotator name="Sari Kock" address="kock.sari@gmail.com" role="annotated" date="2021-06-10" layer="orig"/>
+  <annotator name="Sari Kock" address="kock.sari@gmail.com" role="annotated" date="2021-06-10" layer="reg"/>
+  <annotator name="Arttu Alaranta" address="arttu.elmeri.alaranta@gmail.com" role="annotated (previously)" date="2018-10-15" layer="reg"/>
+  <annotator name="Arttu Alaranta" address="arttu.elmeri.alaranta@gmail.com" role="annotated (previously)" date="2018-10-15" layer="orig"/>
+  <document_meta name="p.oxy.14.1774.xml" series_name="p.oxy" series_type="documentary" tm_id="33676" hgv_id="33676" date_not_before="301" date_not_after="325" place_name="Egypt: U19"/>
+  <hand_meta name="m1" id="2">
+    <text_type hypercategory="PRIVATE" category="Letter" subcategory="Private correspondence"/>
+    <person pg_id="499" tm_id="375784" role="author" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Didyme" gender="2" uncertain=""/>
+    <person pg_id="500" tm_id="375783" role="addressee" handwriting="" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Atienateie" gender="2" uncertain=""/>
+    <person pg_id="499" tm_id="375784" role="writer" handwriting="&quot;The hand is slow, with mostly detached letters but a few ligatures. The individual letters are well formed and not without style.&quot; (Bagnall-Cribiore 2006, 194)" honorific_epithet="" ethnic_label="" occupation="" domicile="" age="" education="" name="Didyme" gender="2" uncertain="1"/>
+  </hand_meta>
+  <sentence id="1">
+    <word id="1" orig_form="κυρείᾳ" lemma_orig="κύριος" postag_orig="a-s---fd-" relation_orig="ATR" head_orig="3" form="κυρίᾳ" lemma="κύριος" postag="a-s---fd-" relation="ATR" head="3" textpart="" line_n="1" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="2" orig_form="τῖ" lemma_orig="ὁ" postag_orig="l-s---fd-" relation_orig="ATR" head_orig="3" form="τῇ" lemma="ὁ" postag="l-s---fd-" relation="ATR" head="3" textpart="" line_n="1" lang="grc" hand="m1" ending-mismatch="true"/>
+    <word id="3" orig_form="ἀδελφῇ" lemma_orig="ἀδελφή" postag_orig="n-s---fd-" relation_orig="APOS" head_orig="4" form="ἀδελφῇ" lemma="ἀδελφή" postag="n-s---fd-" relation="APOS" head="4" textpart="" line_n="1" lang="grc" hand="m1" animacy="person"/>
+    <word id="4" orig_form="Ἀτιενα|τείῃ" lemma_orig="Ἀτιενατείη" postag_orig="n-s---fd-" relation_orig="OBJ" head_orig="13" form="Ἀτιενα|τείῃ" lemma="Ἀτιενατείη" postag="n-s---fd-" relation="OBJ" head="13" textpart="" line_n="2" lang="grc" hand="m1" animacy="name"/>
+    <word id="5" orig_form="Διδύμη" lemma_orig="Διδύμη" postag_orig="n-s---fn-" relation_orig="SBJ_CO" head_orig="6" form="Διδύμη" lemma="Διδύμη" postag="n-s---fn-" relation="SBJ_CO" head="6" textpart="" line_n="2" lang="grc" hand="m1" animacy="name"/>
+    <word id="6" orig_form="καὶ" lemma_orig="καί" postag_orig="c--------" relation_orig="COORD" head_orig="13" form="καὶ" lemma="καί" postag="c--------" relation="COORD" head="13" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="7" orig_form="αἱ" lemma_orig="ὁ" postag_orig="l-p---fn-" relation_orig="ATR" head_orig="8" form="αἱ" lemma="ὁ" postag="l-p---fn-" relation="ATR" head="8" textpart="" line_n="2" lang="grc" hand="m1"/>
+    <word id="8" orig_form="ἀδελ|φαὶ" lemma_orig="ἀδελφή" postag_orig="n-p---fn-" relation_orig="SBJ_CO" head_orig="6" form="ἀδελ|φαὶ" lemma="ἀδελφή" postag="n-p---fn-" relation="SBJ_CO" head="6" textpart="" line_n="3" lang="grc" hand="m1" animacy="person"/>
+    <word id="9" orig_form="ἐν" lemma_orig="ἐν" postag_orig="r--------" relation_orig="AuxP" head_orig="13" form="ἐν" lemma="ἐν" postag="r--------" relation="AuxP" head="13" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="10" orig_form="(κ(υρί)ῳ)" lemma_orig="κύριος" postag_orig="n-_---m_-" relation_orig="ADV" head_orig="9" form="(κ(υρί)ῳ)" lemma="κύριος" postag="n-s---md-" relation="ADV" head="9" textpart="" line_n="3" lang="grc" hand="m1" animacy="person"/>
+    <word id="11" orig_form="χαίρειν" lemma_orig="χαίρω" postag_orig="v--pna---" relation_orig="OBJ" head_orig="13" form="χαίρειν" lemma="χαίρω" postag="v--pna---" relation="OBJ" head="13" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="12" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="3" lang="grc" hand="m1"/>
+    <word id="13" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="PRED" head_orig="0" form="[0]" lemma="" postag="" relation="PRED" head="0" insertion_id="0011e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+  <sentence id="2">
+    <word id="1" orig_form="προηγουμένως" lemma_orig="προηγουμένως" postag_orig="d--------" relation_orig="ADV" head_orig="3" form="προηγουμένως" lemma="προηγουμένως" postag="d--------" relation="ADV" head="3" textpart="" line_n="4" lang="grc" hand="m1"/>
+    <word id="2" orig_form="ἀναγκε͂|ον" lemma_orig="ἀναγκαῖος" postag_orig="a-s---nn-" relation_orig="PNOM" head_orig="3" form="ἀναγκαῖ|ον" lemma="ἀναγκαῖος" postag="a-s---nn-" relation="PNOM" head="3" textpart="" line_n="5" lang="grc" hand="m1" ending-mismatch="true"/>
+    <word id="3" orig_form="ἦν" lemma_orig="εἰμί" postag_orig="v3siia---" relation_orig="PRED" head_orig="0" form="ἦν" lemma="εἰμί" postag="v3siia---" relation="PRED" head="0" textpart="" line_n="5" lang="grc" hand="m1"/>
+    <word id="4" orig_form="προσαγορεύειν" lemma_orig="προσαγορεύω" postag_orig="v--pna---" relation_orig="SBJ" head_orig="3" form="προσαγορεύειν" lemma="προσαγορεύω" postag="v--pna---" relation="SBJ" head="3" textpart="" line_n="5" lang="grc" hand="m1"/>
+    <word id="5" orig_form="σαι" lemma_orig="σύ" postag_orig="p2s----a-" relation_orig="OBJ" head_orig="4" form="σε" lemma="σύ" postag="p2s----a-" relation="OBJ" head="4" textpart="" line_n="5" lang="grc" hand="m1"/>
+    <word id="6" orig_form="εὐχόμεναι" lemma_orig="εὔχομαι" postag_orig="v-pppefn-" relation_orig="ADV" head_orig="3" form="εὐχόμεναι" lemma="εὔχομαι" postag="v-pppefn-" relation="ADV" head="3" textpart="" line_n="6" lang="grc" hand="m1"/>
+    <word id="7" orig_form="ὑγιένιν" lemma_orig="ὑγιαίνω" postag_orig="v--pna---" relation_orig="OBJ" head_orig="6" form="ὑγιαίνειν" lemma="ὑγιαίνω" postag="v--pna---" relation="OBJ" head="6" textpart="" line_n="6" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="8" orig_form="σαι" lemma_orig="σύ" postag_orig="p2s----a-" relation_orig="SBJ" head_orig="7" form="σε" lemma="σύ" postag="p2s----a-" relation="SBJ" head="7" textpart="" line_n="6" lang="grc" hand="m1"/>
+    <word id="9" orig_form="ἡμεῖν" lemma_orig="ἐγώ" postag_orig="p1p---fd-" relation_orig="OBJ" head_orig="7" form="ἡμῖν" lemma="ἐγώ" postag="p1p---fd-" relation="OBJ" head="7" textpart="" line_n="6" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="10" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="6" lang="grc" hand="m1"/>
+  </sentence>
+  <sentence id="3">
+    <word id="1" orig_form="γράφε" lemma_orig="γράφω" postag_orig="v2spma---" relation_orig="PRED" head_orig="0" form="γράφε" lemma="γράφω" postag="v2spma---" relation="PRED" head="0" textpart="" line_n="7" lang="grc" hand="m1"/>
+    <word id="2" orig_form="ἡμεν" lemma_orig="ἐγώ" postag_orig="p1p---fd-" relation_orig="OBJ" head_orig="1" form="ἡμῖν" lemma="ἐγώ" postag="p1p---fd-" relation="OBJ" head="1" textpart="" line_n="7" lang="grc" hand="m1" ending-mismatch="true"/>
+    <word id="3" orig_form="," lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxX" head_orig="0" form="," lemma="punc1" postag="u--------" relation="AuxX" head="0" textpart="" line_n="7" lang="grc" hand="m1"/>
+    <word id="4" orig_form="κυρεία" lemma_orig="κυρία" postag_orig="n-s---fv-" relation_orig="ExD" head_orig="1" form="κυρία" lemma="κυρία" postag="n-s---fv-" relation="ExD" head="1" textpart="" line_n="7" lang="grc" hand="m1" animacy="person" shows-iotacism="true"/>
+    <word id="5" orig_form="μου" lemma_orig="ἐγώ" postag_orig="p1s---fg-" relation_orig="ATR" head_orig="4" form="μου" lemma="ἐγώ" postag="p1s---fg-" relation="ATR" head="4" textpart="" line_n="7" lang="grc" hand="m1"/>
+    <word id="6" orig_form="," lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxX" head_orig="0" form="," lemma="punc1" postag="u--------" relation="AuxX" head="0" textpart="" line_n="7" lang="grc" hand="m1"/>
+    <word id="7" orig_form="περὶ" lemma_orig="περί" postag_orig="r--------" relation_orig="AuxP" head_orig="1" form="περὶ" lemma="περί" postag="r--------" relation="AuxP" head="1" textpart="" line_n="7" lang="grc" hand="m1"/>
+    <word id="8" orig_form="τῆς" lemma_orig="ὁ" postag_orig="l-s---fg-" relation_orig="ATR" head_orig="9" form="τῆς" lemma="ὁ" postag="l-s---fg-" relation="ATR" head="9" textpart="" line_n="8" lang="grc" hand="m1"/>
+    <word id="9" orig_form="ὑγίας" lemma_orig="ὑγίεια" postag_orig="n-s---fg-" relation_orig="OBJ_CO" head_orig="11" form="ὑγιείας" lemma="ὑγίεια" postag="n-s---fg-" relation="OBJ_CO" head="11" textpart="" line_n="8" lang="grc" hand="m1" animacy="nonconc"/>
+    <word id="10" orig_form="σου" lemma_orig="σύ" postag_orig="p2s----g-" relation_orig="ATR" head_orig="9" form="σου" lemma="σύ" postag="p2s----g-" relation="ATR" head="9" textpart="" line_n="8" lang="grc" hand="m1"/>
+    <word id="11" orig_form="καὶ" lemma_orig="καί" postag_orig="c--------" relation_orig="COORD" head_orig="7" form="καὶ" lemma="καί" postag="c--------" relation="COORD" head="7" textpart="" line_n="8" lang="grc" hand="m1"/>
+    <word id="12" orig_form="ὧν" lemma_orig="ὅς" postag_orig="p-p---ng-" relation_orig="OBJ" head_orig="13" form="ὧν" lemma="ὅς" postag="p-p---ng-" relation="OBJ" head="13" textpart="" line_n="8" lang="grc" hand="m1"/>
+    <word id="13" orig_form="χρῄζεις" lemma_orig="χρῄζω" postag_orig="v2spia---" relation_orig="ATR" head_orig="14" form="χρῄζεις" lemma="χρῄζω" postag="v2spia---" relation="ATR" head="14" textpart="" line_n="8" lang="grc" hand="m1"/>
+    <word id="14" orig_form="ἐντολικῶν" lemma_orig="ἐντολικός" postag_orig="a-p---ng-" relation_orig="OBJ_CO" head_orig="11" form="ἐντολικῶν" lemma="ἐντολικός" postag="a-p---ng-" relation="OBJ_CO" head="11" textpart="" line_n="9" lang="grc" hand="m1"/>
+    <word id="15" orig_form="ἐξουσίαν" lemma_orig="ἐξουσία" postag_orig="n-s---fa-" relation_orig="OBJ" head_orig="16" form="ἐξουσίαν" lemma="ἐξουσία" postag="n-s---fa-" relation="OBJ" head="16" textpart="" line_n="9" lang="grc" hand="m1" animacy="nonconc"/>
+    <word id="16" orig_form="ἔχου|σα" lemma_orig="ἔχω" postag_orig="v-sppafn-" relation_orig="ADV" head_orig="1" form="ἔχου|σα" lemma="ἔχω" postag="v-sppafn-" relation="ADV" head="1" textpart="" line_n="10" lang="grc" hand="m1"/>
+    <word id="17" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="10" lang="grc" hand="m1"/>
+  </sentence>
+  <sentence id="4">
+    <word id="1" orig_form="εἰ" lemma_orig="εἰ" postag_orig="c--------" relation_orig="AuxC" head_orig="6" form="εἰ" lemma="εἰ" postag="c--------" relation="AuxC" head="6" textpart="" line_n="10" lang="grc" hand="m1"/>
+    <word id="2" orig_form="ἐκομείσθης" lemma_orig="κομίζω" postag_orig="v2saip---" relation_orig="ADV" head_orig="1" form="ἐκομίσθης" lemma="κομίζω" postag="v2saip---" relation="ADV" head="1" textpart="" line_n="10" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="3" orig_form="τὰ" lemma_orig="ὁ" postag_orig="l-p---na-" relation_orig="ATR" head_orig="4" form="τὰ" lemma="ὁ" postag="l-p---na-" relation="ATR" head="4" textpart="" line_n="10" lang="grc" hand="m1"/>
+    <word id="4" orig_form="ἐντολι|κά" lemma_orig="ἐντολικός" postag_orig="a-p---na-" relation_orig="OBJ" head_orig="2" form="ἐντολι|κά" lemma="ἐντολικός" postag="a-p---na-" relation="OBJ" head="2" textpart="" line_n="11" lang="grc" hand="m1"/>
+    <word id="5" orig_form="σου" lemma_orig="σύ" postag_orig="p2s----g-" relation_orig="ATR" head_orig="4" form="σου" lemma="σύ" postag="p2s----g-" relation="ATR" head="4" textpart="" line_n="11" lang="grc" hand="m1"/>
+    <word id="6" orig_form="δήλωσον" lemma_orig="δηλόω" postag_orig="v2sama---" relation_orig="PRED" head_orig="0" form="δήλωσον" lemma="δηλόω" postag="v2sama---" relation="PRED" head="0" textpart="" line_n="11" lang="grc" hand="m1"/>
+    <word id="7" orig_form="ἡμεῖν" lemma_orig="ἐγώ" postag_orig="p1p---fd-" relation_orig="OBJ" head_orig="6" form="ἡμῖν" lemma="ἐγώ" postag="p1p---fd-" relation="OBJ" head="6" textpart="" line_n="11" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="8" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="11" lang="grc" hand="m1"/>
+  </sentence>
+  <sentence id="5">
+    <word id="1" orig_form="ἐλοι|πάσθη" lemma_orig="λοιπάζω" postag_orig="v3saip---" relation_orig="PRED_CO" head_orig="2" form="ἐλοι|πάσθη" lemma="λοιπάζω" postag="v3saip---" relation="PRED_CO" head="2" textpart="" line_n="12" lang="grc" hand="m1"/>
+    <word id="2" orig_form="δὲ" lemma_orig="δέ" postag_orig="c--------" relation_orig="COORD" head_orig="0" form="δὲ" lemma="δέ" postag="c--------" relation="COORD" head="0" textpart="" line_n="12" lang="grc" hand="m1"/>
+    <word id="3" orig_form="παρʼ" lemma_orig="παρά" postag_orig="r--------" relation_orig="AuxP" head_orig="1" form="παρʼ" lemma="παρά" postag="r--------" relation="AuxP" head="1" textpart="" line_n="12" lang="grc" hand="m1"/>
+    <word id="4" orig_form="ἡμεῖν" lemma_orig="ἐγώ" postag_orig="p1p---fd-" relation_orig="ADV" head_orig="3" form="ἡμῖν" lemma="ἐγώ" postag="p1p---fd-" relation="ADV" head="3" textpart="" line_n="12" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="5" orig_form="ἐκ" lemma_orig="ἐκ" postag_orig="r--------" relation_orig="AuxP" head_orig="1" form="ἐκ" lemma="ἐκ" postag="r--------" relation="AuxP" head="1" textpart="" line_n="12" lang="grc" hand="m1"/>
+    <word id="6" orig_form="τοῦ" lemma_orig="ὁ" postag_orig="l-s---ng-" relation_orig="ATR" head_orig="7" form="τοῦ" lemma="ὁ" postag="l-s---ng-" relation="ATR" head="7" textpart="" line_n="12" lang="grc" hand="m1"/>
+    <word id="7" orig_form="ἀργυρείου" lemma_orig="ἀργύριον" postag_orig="n-s---ng-" relation_orig="ADV" head_orig="5" form="ἀργυρίου" lemma="ἀργύριον" postag="n-s---ng-" relation="ADV" head="5" textpart="" line_n="13" lang="grc" hand="m1" animacy="concrete" shows-iotacism="true"/>
+    <word id="8" orig_form="τῶν" lemma_orig="ὁ" postag_orig="l-p---ng-" relation_orig="ATR" head_orig="9" form="τῶν" lemma="ὁ" postag="l-p---ng-" relation="ATR" head="9" textpart="" line_n="13" lang="grc" hand="m1"/>
+    <word id="9" orig_form="ἐντολικῶν" lemma_orig="ἐντολικός" postag_orig="a-p---ng-" relation_orig="ATR" head_orig="7" form="ἐντολικῶν" lemma="ἐντολικός" postag="a-p---ng-" relation="ATR" head="7" textpart="" line_n="13" lang="grc" hand="m1"/>
+    <word id="10" orig_form="σου" lemma_orig="σύ" postag_orig="p2s----g-" relation_orig="ATR" head_orig="9" form="σου" lemma="σύ" postag="p2s----g-" relation="ATR" head="9" textpart="" line_n="14" lang="grc" hand="m1"/>
+    <word id="11" orig_form="ὡς" lemma_orig="ὡς" postag_orig="c--------" relation_orig="AuxC" head_orig="1" form="ὡς" lemma="ὡς" postag="c--------" relation="AuxC" head="1" textpart="" line_n="14" lang="grc" hand="m1"/>
+    <word id="12" orig_form="νομείζω" lemma_orig="νομίζω" postag_orig="v1spia---" relation_orig="ADV" head_orig="11" form="νομίζω" lemma="νομίζω" postag="v1spia---" relation="ADV" head="11" textpart="" line_n="14" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="13" orig_form="((δηνάρια))" lemma_orig="δηνάριον" postag_orig="n-_---n_-" relation_orig="SBJ" head_orig="1" form="((δηνάρια))" lemma="δηνάριον" postag="n-p---nn-" relation="SBJ" head="1" textpart="" line_n="14" lang="grc" hand="m1" animacy="concrete" missing-iota-adscript="true"/>
+    <word id="14" orig_form="Ατ" lemma_orig="Ατ" postag_orig="m-_---__-" relation_orig="ATR" head_orig="13" form="Ατ" lemma="Ατ" postag="m-_---__-" relation="ATR" head="13" textpart="" line_n="14" lang="grc" hand="m1"/>
+    <word id="15" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="14" lang="grc" hand="m1"/>
+  </sentence>
+  <sentence id="6">
+    <word id="1" orig_form="Κανωπηκά" lemma_orig="Κανωπικόν" postag_orig="n-p---na-" relation_orig="OBJ" head_orig="5" form="Κανωπικά" lemma="Κανωπικόν" postag="n-p---na-" relation="OBJ" head="5" textpart="" line_n="15" lang="grc" hand="m1" animacy="name" shows-iotacism="true"/>
+    <word id="2" orig_form="σοι" lemma_orig="σύ" postag_orig="p2s----d-" relation_orig="OBJ" head_orig="3" form="σοι" lemma="σύ" postag="p2s----d-" relation="OBJ" head="3" textpart="" line_n="15" lang="grc" hand="m1"/>
+    <word id="3" orig_form="λημφθέν|τα" lemma_orig="λαμβάνω" postag_orig="v-pappna_" relation_orig="ATR" head_orig="1" form="λημφθέν|τα" lemma="λαμβάνω" postag="v-pappna_" relation="ATR" head="1" textpart="" line_n="16" lang="grc" hand="m1"/>
+    <word id="4" orig_form="αὐτῶν" lemma_orig="αὐτός" postag_orig="p-p---mg-" relation_orig="ATR" head_orig="1" form="αὐτῶν" lemma="αὐτός" postag="p-p---mg-" relation="ATR" head="1" textpart="" line_n="16" lang="grc" hand="m1"/>
+    <word id="5" orig_form="ἀποστελοῦνται" lemma_orig="ἀποστέλλω" postag_orig="v3pfim---" relation_orig="PRED" head_orig="0" form="ἀποστελοῦνται" lemma="ἀποστέλλω" postag="v3pfim---" relation="PRED" head="0" textpart="" line_n="16" lang="grc" hand="m1"/>
+    <word id="6" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="16" lang="grc" hand="m1"/>
+  </sentence>
+  <sentence id="7">
+    <word id="1" orig_form="προσαγόρευε" lemma_orig="προσαγορεύω" postag_orig="v2spma---" relation_orig="PRED" head_orig="0" form="προσαγόρευε" lemma="προσαγορεύω" postag="v2spma---" relation="PRED" head="0" textpart="" line_n="17" lang="grc" hand="m1"/>
+    <word id="2" orig_form="τὴν" lemma_orig="ὁ" postag_orig="l-s---fa-" relation_orig="ATR" head_orig="4" form="τὴν" lemma="ὁ" postag="l-s---fa-" relation="ATR" head="4" textpart="" line_n="17" lang="grc" hand="m1"/>
+    <word id="3" orig_form="κυρείαν" lemma_orig="κύριος" postag_orig="a-s---fa_" relation_orig="ATR" head_orig="4" form="κυρίαν" lemma="κύριος" postag="a-s---fa_" relation="ATR" head="4" textpart="" line_n="17" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="4" orig_form="ἀ|δελφὴν" lemma_orig="ἀδελφή" postag_orig="n-s---fa-" relation_orig="APOS" head_orig="6" form="ἀ|δελφὴν" lemma="ἀδελφή" postag="n-s---fa-" relation="APOS" head="6" textpart="" line_n="18" lang="grc" hand="m1" animacy="person"/>
+    <word id="5" orig_form="μακαρείαν" lemma_orig="μακάριος" postag_orig="a-s---fa_" relation_orig="ATR" head_orig="4" form="μακαρίαν" lemma="μακάριος" postag="a-s---fa_" relation="ATR" head="4" textpart="" line_n="18" lang="grc" hand="m1" shows-iotacism="true"/>
+    <word id="6" orig_form="Ἀσοῦν" lemma_orig="Ἀσοῦς" postag_orig="n-s---fa-" relation_orig="OBJ_CO" head_orig="7" form="Ἀσοῦν" lemma="Ἀσοῦς" postag="n-s---fa-" relation="OBJ_CO" head="7" textpart="" line_n="18" lang="grc" hand="m1" animacy="name"/>
+    <word id="7" orig_form="καὶ" lemma_orig="καί" postag_orig="c--------" relation_orig="COORD" head_orig="1" form="καὶ" lemma="καί" postag="c--------" relation="COORD" head="1" textpart="" line_n="19" lang="grc" hand="m1"/>
+    <word id="8" orig_form="τὴν" lemma_orig="ὁ" postag_orig="l-s---fa-" relation_orig="ATR" head_orig="9" form="τὴν" lemma="ὁ" postag="l-s---fa-" relation="ATR" head="9" textpart="" line_n="19" lang="grc" hand="m1"/>
+    <word id="9" orig_form="μητέραν" lemma_orig="μήτηρ" postag_orig="n-s---fa-" relation_orig="OBJ_CO" head_orig="7" form="μητέρα" lemma="μήτηρ" postag="n-s---fa-" relation="OBJ_CO" head="7" textpart="" line_n="19" lang="grc" hand="m1" animacy="person"/>
+    <word id="10" orig_form="αὐτῆς" lemma_orig="αὐτός" postag_orig="p-s---fg-" relation_orig="ATR" head_orig="9" form="αὐτῆς" lemma="αὐτός" postag="p-s---fg-" relation="ATR" head="9" textpart="" line_n="19" lang="grc" hand="m1"/>
+    <word id="11" orig_form="καὶ" lemma_orig="καί" postag_orig="c--------" relation_orig="" head_orig="" form="καὶ" lemma="καί" postag="c--------" relation="" head="" textpart="" line_n="19" lang="grc" hand="m1"/>
+    <word id="12" orig_form="[_.2]_.1[_.5]_.1[_.1]θ̣αντα" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="[_.2]_.1[_.5]_.1[_.1]θ̣αντα" lemma="" postag="" relation="" head="" textpart="" line_n="20" lang="grc" hand="m1"/>
+    <word id="13" orig_form="τὸν" lemma_orig="ὁ" postag_orig="l-s---ma-" relation_orig="" head_orig="" form="τὸν" lemma="ὁ" postag="l-s---ma-" relation="" head="" textpart="" line_n="20" lang="grc" hand="m1"/>
+    <word id="14" orig_form="[_.?lin]" lemma_orig="" postag_orig="" relation_orig="" head_orig="" form="[_.?lin]" lemma="" postag="" relation="" head="" textpart="" line_n="21" lang="grc" hand="m1"/>
+    <word id="15" orig_form="." lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="." lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="21" lang="grc" hand="m1"/>
+  </sentence>
+  <sentence id="8">
+    <word id="1" orig_form="κυρείᾳ" lemma_orig="κύριος" postag_orig="a-s---fd_" relation_orig="ATR" head_orig="3" form="κυρίᾳ" lemma="κύριος" postag="n-s---fd-" relation="ATR" head="3" textpart="" line_n="21" lang="grc" hand="m1" animacy="person" shows-iotacism="true"/>
+    <word id="2" orig_form="μου" lemma_orig="ἐγώ" postag_orig="p1s---fg-" relation_orig="ATR" head_orig="3" form="μου" lemma="ἐγώ" postag="p1s---fg-" relation="ATR" head="3" textpart="" line_n="21" lang="grc" hand="m1"/>
+    <word id="3" orig_form="ἀδελφῇ" lemma_orig="ἀδελφή" postag_orig="n-s---fd-" relation_orig="APOS" head_orig="4" form="ἀδελφῇ" lemma="ἀδελφή" postag="n-s---fd-" relation="APOS" head="4" textpart="" line_n="21" lang="grc" hand="m1" animacy="person"/>
+    <word id="4" orig_form="Ἀτιεν̣α̣τείῃ" lemma_orig="Ἀτιενατείη" postag_orig="n-s---fd-" relation_orig="OBJ" head_orig="10" form="Ἀτιεν̣α̣τείῃ" lemma="Ἀτιενατείη" postag="n-s---fd-" relation="OBJ" head="10" textpart="" line_n="21" lang="grc" hand="m1" animacy="name"/>
+    <word id="5" orig_form="Διδύμη" lemma_orig="Διδύμη" postag_orig="n-s---fn-" relation_orig="SBJ" head_orig="10" form="Διδύμη" lemma="Διδύμη" postag="n-s---fn-" relation="SBJ" head="10" textpart="" line_n="21" lang="grc" hand="m1" animacy="name"/>
+    <word id="6" orig_form="σὺν" lemma_orig="σύν" postag_orig="r--------" relation_orig="AuxP" head_orig="10" form="σὺν" lemma="σύν" postag="r--------" relation="AuxP" head="10" textpart="" line_n="21" lang="grc" hand="m1"/>
+    <word id="7" orig_form="ταῖς" lemma_orig="ὁ" postag_orig="l-p---fd-" relation_orig="ATR" head_orig="8" form="ταῖς" lemma="ὁ" postag="l-p---fd-" relation="ATR" head="8" textpart="" line_n="21" lang="grc" hand="m1"/>
+    <word id="8" orig_form="ἀ[δελφαῖς]" lemma_orig="" postag_orig="" relation_orig="ADV" head_orig="6" form="ἀ[δελφαῖς]" lemma="ἀδελφή" postag="n-p---fd-" relation="ADV" head="6" textpart="" line_n="21" lang="grc" hand="m1" animacy="person"/>
+    <word id="9" orig_form="[.]" lemma_orig="punc1" postag_orig="u--------" relation_orig="AuxK" head_orig="0" form="[.]" lemma="punc1" postag="u--------" relation="AuxK" head="0" textpart="" line_n="21" lang="grc" hand="m1"/>
+    <word id="10" orig_form="[0]" lemma_orig="" postag_orig="" relation_orig="ExD" head_orig="0" form="[0]" lemma="" postag="" relation="ExD" head="0" insertion_id="0008e" artificial="elliptic" textpart="" line_n="" lang="" hand=""/>
+  </sentence>
+</treebank>

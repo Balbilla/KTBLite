@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<query q_fields="np_has_multiple_modifiers">
+  <df default="true">w_lemma</df>
+  <q default="true">*</q>
+  <np_has_multiple_modifiers>true</np_has_multiple_modifiers>
+  <fq escape="false">document_type:word</fq>
+  <facet>true</facet>
+  <facet.field mincount="1" join="or">text_corpus</facet.field>
+  <facet.field mincount="1">text_century</facet.field>
+  <facet.field mincount="1">text_century_earliest</facet.field>
+  <facet.field>text_century_latest</facet.field>
+  <facet.field>text_century_minimal_range</facet.field>
+  <facet.field mincount="1" join="or">text_genre</facet.field>
+  <facet.field mincount="1" join="or">text_language_type</facet.field>
+  <facet.field mincount="1" join="or">text_language_proficiency</facet.field>
+  <facet.field mincount="1" join="or">text_century</facet.field>
+  <facet.field mincount="1" join="or">text_author</facet.field>
+  <facet.field join="or" mincount="1" sort="count">w_pos</facet.field>
+  <facet.field mincount="1">w_number</facet.field>  
+  <facet.field>w_has_article</facet.field>
+  <facet.field>w_is_proper_name</facet.field>
+  <facet.field mincount="1">w_animacy</facet.field>
+  <facet.field>np_has_multiple_modifiers</facet.field>
+  <facet.field>np_articular_mmnp_position</facet.field>
+  <facet.field sort="count">np_mmnp_distribution</facet.field>  
+  <facet.field join="or">np_types_of_multiple_modifiers</facet.field> 
+  <facet.field mincount="1" sort="count">np_preceding_subtree_sizes</facet.field>
+  <facet.field mincount="1" sort="count">np_following_subtree_sizes</facet.field> 
+  <facet.field>np_preceding_subtree_contour</facet.field>
+  <facet.field>np_following_subtree_contour</facet.field>   
+  <facet.field>np_adjective_coordination</facet.field>
+  <facet.field>np_preceding_adjective_syllable_contour</facet.field>
+  <facet.field>np_following_adjective_syllable_contour</facet.field>
+  <facet.field>np_preceding_noun_syllable_contour</facet.field>
+  <facet.field>np_following_noun_syllable_contour</facet.field>
+  <facet.field>np_preceding_numeral_syllable_contour</facet.field>
+  <facet.field>np_following_numeral_syllable_contour</facet.field>
+  <facet.field>np_preceding_participle_syllable_contour</facet.field>
+  <facet.field>np_following_participle_syllable_contour</facet.field>
+  <facet.field>np_preceding_pp_syllable_contour</facet.field>
+  <facet.field>np_following_pp_syllable_contour</facet.field>
+  <facet.field>np_preceding_pronoun_syllable_contour</facet.field>
+  <facet.field>np_following_pronoun_syllable_contour</facet.field>
+  <facet.field>np_preceding_quantifier_syllable_contour</facet.field>
+  <facet.field>np_following_quantifier_syllable_contour</facet.field>
+  <!-- Dating / greeting formulae -->
+  <facet.field>np_is_in_greeting_formula</facet.field>
+  <facet.field>np_is_in_dating_formula</facet.field>
+  <facet.limit>-1</facet.limit>
+  <facet.mincount>0</facet.mincount>
+  <facet.sort>index</facet.sort>
+  <!-- The number of rows returned by Solr at once (that is the number
+       displayed per page of results). -->
+  <rows default="true">100000</rows>
+</query>

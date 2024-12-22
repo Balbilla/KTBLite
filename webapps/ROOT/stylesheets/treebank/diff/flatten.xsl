@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:tb="https://papygreek.hum.helsinki.fi/py/"
+                xmlns:kiln="http://www.kcl.ac.uk/artshums/depts/ddh/kiln/ns/1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                exclude-result-prefixes="xs"
+                version="2.0">
+
+ <xsl:template match="sentence">
+   <xsl:copy>
+     <xsl:apply-templates select="@*"/>
+     <xsl:apply-templates select=".//word">
+       <xsl:sort select="xs:integer(@id)"/>
+     </xsl:apply-templates>
+   </xsl:copy>
+ </xsl:template>
+  
+  <xsl:template match="word">
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+    </xsl:copy>
+  </xsl:template>
+ 
+  <xsl:template match="@* | node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+</xsl:stylesheet>

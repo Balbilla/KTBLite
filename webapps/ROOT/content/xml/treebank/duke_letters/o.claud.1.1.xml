@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<treebank>
+  <document_meta date_not_before="101" date_not_after="199" place_name="Claudianus Mons"/>
+  <hand_meta id="1" name="m1">
+    <text_type category="Uncertain"/>
+  </hand_meta>
+  <sentence id="1">
+    <word form="ὃς" head="4" lemma="ὅς" orig_form="ὣς" postag="p-s---mn-" relation="SBJ" id="1" ending-mismatch="true"/>
+    <word form="ἄν" head="4" lemma="ἄν" postag="d--------" relation="AuxY" id="2"/>
+    <word form="τις" head="4" lemma="τις" postag="a-s---cn-" relation="SBJ" id="3"/>
+    <word form="εὕρῃ" head="9" lemma="εὑρίσκω" postag="v3sasa---" relation="SBJ" id="4"/>
+    <word form="τοῦτο" head="7" lemma="οὗτος" orig_form="τουτω" postag="a-s---na-" relation="ATR" id="5" ending-mismatch="true"/>
+    <word form="τὸ" head="7" lemma="ὁ" postag="l-s---na-" relation="ATR" id="6"/>
+    <word form="ὄστρακον" head="4" lemma="ὄστρακον" orig_form="ὄσστρα-κον" postag="n-s---na-" relation="OBJ" id="7" animacy="concrete"/>
+    <word form="," head="0" lemma="," postag="u--------" relation="AuxX" id="8"/>
+    <word form="δώσει" head="0" lemma="δίδωμι" orig_form="δώσι" postag="v3sfia---" relation="PRED" id="9" shows-iotacism="true"/>
+    <word form="στατῆρα" head="9" lemma="στατήρ" orig_form="στρατη-ρα" postag="n-s---ma-" relation="OBJ" id="10" animacy="concrete"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="11"/>
+  </sentence>
+  <sentence id="2">
+    <word form="ἔρρωσο" head="0" lemma="ῥώννυμι" orig_form="ἔρωσο" postag="v2srme---" relation="PRED" id="1"/>
+    <word form="." head="0" lemma="." postag="u--------" relation="AuxK" id="2"/>
+  </sentence>
+</treebank>

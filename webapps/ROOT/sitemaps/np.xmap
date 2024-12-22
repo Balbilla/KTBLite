@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <!-- Noun phrase - ultimate edition!
+
+       This pipeline combines all annotations for various np-related phenomena:
+         - adjective semantics
+         - subtree heaviness (previously referred to as mmnp)
+         - syllable length (previously referred to as coordinated adjectives)
+  -->
+
+  <map:views>
+    <map:view from-label="content" name="content">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+
+  <map:pipelines>
+    <map:pipeline id="np-all">
+      <map:match id="preprocess-np-text" pattern="*/*.xml">
+        <map:aggregate element="aggregation">
+          <map:part src="cocoon://pp/sentence/{1}/{2}.xml"/>
+          <map:part src="../content/xml/adjectives-semantics.xml"/>
+        </map:aggregate>
+        <map:transform src="../stylesheets/treebank/np/prune-adjective-semantic-inventory.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-heads.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-members.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-ap-abominations.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-order-patterns.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-subtree-size.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-subtree-contour.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-modifiers.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-modifiers-for-ds.xsl"/>        
+        <map:transform src="../stylesheets/treebank/np/annotate-adjectival-coordination.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-syllables.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-syllable-lengths.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-syllable-contour.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-adjectives-for-hyperbaton.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-instigators.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-degrees.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-verbal-nouns.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-ag-for-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-adj-for-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-demonstrative-for-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-quantifier-for-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-numeral-for-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/ag-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/mmnp-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/pp-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/pp-annotate-preposition.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/pronoun-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/pronoun-annotate-lemma.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/adj-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/demonstrative-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/demonstrative-annotate-lemma.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/noun-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/numeral-annotate-position.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-heads-based-on-genitives.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/annotate-bakker-categories.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/treebank-annotate-word-for-form-mismatch-PG.xsl"/>
+        <map:transform src="../stylesheets/treebank/np/treebank-annotate-tree-for-language-proficiency.xsl"/>
+<!--        <map:transform src="../stylesheets/treebank/np/treebank-annotate-tree-for-language-proficiency-PG.xsl"/>-->
+        <map:transform src="../stylesheets/treebank/np/treebank-score-language-proficiency.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

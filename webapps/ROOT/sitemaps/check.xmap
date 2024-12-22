@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+  <map:views>
+    <map:view from-label="content" name="content">
+      <map:serialize type="xml" />
+    </map:view>
+  </map:views>
+
+  <map:pipelines>
+    <map:pipeline id="check">
+      <map:match id="check-for-dups" pattern="dups/*/*.xml">
+        <map:generate src="../content/xml/treebank/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/check/find-repeating-sentences.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="preprocess-borked-text" pattern="borked/*/*.xml">
+        <map:generate src="cocoon://pp/tree/{1}/{2}.xml"/>
+        <map:transform src="../stylesheets/treebank/check/borked.xsl"/>
+        <map:serialize type="xml"/>
+      </map:match>
+
+      <map:match id="borked-corpus" pattern="corpus/*/broken.html">
+        <map:aggregate element="aggregation">
+          <map:part src="cocoon://index/corpus/{1}/check/borked.xml"/>
+        </map:aggregate>
+        <map:transform src="cocoon://_internal/template/treebank/borked-corpus.xsl">
+          <map:parameter name="corpus" value="{1}"/>
+        </map:transform>
+        <map:serialize/>
+      </map:match>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>
