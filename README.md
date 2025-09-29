@@ -2,7 +2,11 @@
 
 ## Installation
 
-…tba…
+This is a timestamped and stable version of Polina Yordanova and Jaime Norrish's **KTB Lite** application, which has been deposited here in static form as a digital companion to the following chapter, which is based on data within (Julia Balbilla's poems, the works of Sappho, and the "Greek literature" corpus) and query results from this tool.
+
+<blockquote>Marja Vierros and Gabriel Bodard. 2026. "Reception of Sapphic language in Hadrianic verse epigraphy: Building on open philological data." In Valeria Vitale and Gabriel Bodard (eds.), _Open Data in Ancient and Byzantine Studies._ London: University of London Press.</blockquote>
+
+The chapter contains direct links that can be followed only if you have KTB Lite installed on your computer, and will show you the search results on which conclusions and arguments are based.
 
 * Go to [First time installation](#First-time-installation) for instructions on installing a local version of this tool on your PC
 
