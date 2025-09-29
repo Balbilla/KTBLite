@@ -1,12 +1,10 @@
-# KTB-lite
+# Balbilla fork of KTB Lite
 
-## Contents:
-- Intro 
-- Corpora in KTB-lite
-- First time installation 
-- Instructions for using the search
-- Quickstart
+## Installation
 
+…tba…
+
+* Go to [First time installation](#First-time-installation) for instructions on installing a local version of this tool on your PC
 
 ## Intro
 
@@ -38,7 +36,6 @@ Installation steps:
 
 2. In your Command prompt/Terminal navigate to the directory where KTB-lite is. The command to change directory is “cd” and the “path” that leads to the directory. Then press Enter. The folder containing the whole platform is called “ktb-lite”, so if you put it on the Desktop, it would look like this:
 
-
 - For Windows: 
 cd Desktop\ktb-lite
 
@@ -67,7 +64,6 @@ NB! This needs to be running the whole time while you are using the platform! Yo
 
 - If you want to index everything:
 
-  
   - For Windows: build.bat solr
 
   - For Mac: sh build.sh solr
